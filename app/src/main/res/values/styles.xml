@@ -1,0 +1,82 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
+        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+        <!--<item name="colorAccent">@color/colorAccent</item>-->
+    <!--</style>-->
+
+    <!-- 自定义控件风格-->
+    <style name="Custom" />
+
+    <style name="Custom.TabRadioButton">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_margin">@dimen/dp_5</item>
+        <item name="android:gravity">center</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+        <item name="android:textColor">@drawable/bottom_textcolor_drawable_selector</item>
+    </style>
+
+
+    <!--启动页主题-->
+    <style name="AppTheme.Launcher" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- 通过windowBackground可以设置背景色、背景图片、能解析出图片的XML文件等-->
+        <!--<item name="android:windowBackground">@drawable/layer_launcher</item>-->
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+
+    <style name="ImageStyle1" >
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_width">@dimen/px_72</item>
+        <item name="android:layout_height">@dimen/px_72</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">@dimen/dp_14</item>
+    </style>
+
+    <style name="ImageStyle2">
+        <item name="android:layout_width">@dimen/px_72</item>
+        <item name="android:layout_height">@dimen/px_72</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/px_40</item>
+    </style>
+
+    <style name="textStyle1">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/splash_text_color</item>
+        <item name="android:textSize">@dimen/px_26</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:layout_margin">@dimen/px_10</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+    </style>
+
+    <style name="textStyle2">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_marginLeft">@dimen/px_135</item>
+        <item name="android:textColor">@color/splash_text_color</item>
+        <item name="android:textSize">@dimen/px_26</item>
+    </style>
+
+
+
+    <style name="MyCustomTabLayout" parent="Widget.Design.TabLayout">
+        <item name="tabIndicatorColor">?attr/colorAccent</item>
+        <item name="tabIndicatorHeight">0dp</item>
+        <!--<item name="tabPaddingStart">12dp</item>-->
+        <item name="tabTextColor">#6b7984</item>
+        <!--<item name="tabPaddingEnd">12dp</item>-->
+        <item name="tabSelectedTextColor">@color/def_colorPrimaryDark</item>
+    </style>
+
+</resources>

@@ -1,0 +1,19 @@
+#Internal package file, do not edit.
+#Thu Jul 04 14:33:11 CST 2019
+1.base=E\:\\GengYu\\Company\\Project\\app\\build\\intermediates\\assets\\localLine\\debug
+2.path=classes.dex
+0.baseType=DIRECTORY
+3.baseType=DIRECTORY
+2.base=E\:\\GengYu\\Company\\Project\\app\\build\\intermediates\\transforms\\dexMerger\\localLine\\debug\\90
+3.set=NATIVE_RESOURCE
+2.set=DEX
+1.baseType=DIRECTORY
+3.path=lib/armeabi/liblbs.so
+count=4
+1.set=ASSET
+0.path=classes2.dex
+3.base=E\:\\GengYu\\Company\\Project\\app\\build\\intermediates\\transforms\\stripDebugSymbol\\localLine\\debug\\0
+0.set=DEX
+0.base=E\:\\GengYu\\Company\\Project\\app\\build\\intermediates\\transforms\\dexMerger\\localLine\\debug\\90
+2.baseType=DIRECTORY
+1.path=test_dw.html

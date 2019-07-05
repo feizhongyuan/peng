@@ -1,0 +1,266 @@
+[
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_vector_test.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_vector_test.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\notification_icon_background.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\15b6d5c851836cdc731fab284008815d\\res\\drawable\\notification_icon_background.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ic_menu_overflow_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ic_menu_overflow_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\corners_dialog.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\corners_dialog.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ic_arrow_drop_right_black_24dp.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\shape1.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\shape1.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\tab_shoppingmall_selector.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\tab_shoppingmall_selector.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\progressbar_color.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\progressbar_color.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ratingbar_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ratingbar_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\ripple_boderless.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\ripple_boderless.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\select_draglayout_list_bk.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\select_draglayout_list_bk.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ic_clear_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ic_clear_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ic_search_api_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ic_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\notification_tile_bg.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\15b6d5c851836cdc731fab284008815d\\res\\drawable\\notification_tile_bg.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_btn_colored_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\tab_home_selector.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\tab_home_selector.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\shape_circle.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\shape_circle.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\tab_healthy_selector.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\tab_healthy_selector.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ic_voice_search_api_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ic_voice_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\tab_mine_selector.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\tab_mine_selector.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\no_banner.png",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\banner-1.4.10.aar\\5fd1d0462916daa4ec21b2bccdd75be9\\res\\drawable\\no_banner.png"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_dialog_material_background.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_dialog_material_background.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\corners_black_dialog.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\corners_black_dialog.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_list_selector_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ic_ab_back_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ic_ab_back_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\tab_physical_selector.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\tab_physical_selector.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\white_radius.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\banner-1.4.10.aar\\5fd1d0462916daa4ec21b2bccdd75be9\\res\\drawable\\white_radius.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\design_fab_background.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\design_bottom_navigation_item_background.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\drawable\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\none.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\none.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\tooltip_frame_dark.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\tooltip_frame_dark.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ic_go_search_api_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ic_go_search_api_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\design_password_eye.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\drawable\\design_password_eye.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_seekbar_tick_mark_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_seekbar_tick_mark_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\shape2.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\shape2.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\select_item_ropple_bk.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\drawable\\select_item_ropple_bk.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\notification_bg_low.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\15b6d5c851836cdc731fab284008815d\\res\\drawable\\notification_bg_low.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\tooltip_frame_light.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\drawable\\tooltip_frame_light.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\black_background.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\banner-1.4.10.aar\\5fd1d0462916daa4ec21b2bccdd75be9\\res\\drawable\\black_background.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\qidong_1080.png",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\qidong_1080.png"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\gray_radius.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\banner-1.4.10.aar\\5fd1d0462916daa4ec21b2bccdd75be9\\res\\drawable\\gray_radius.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\navigation_empty_icon.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\drawable\\navigation_empty_icon.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\bottom_textcolor_drawable_selector.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\drawable\\bottom_textcolor_drawable_selector.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\drawable\\notification_bg.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\15b6d5c851836cdc731fab284008815d\\res\\drawable\\notification_bg.xml"
+    }
+]

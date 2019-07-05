@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+
+    <!--默认文字颜色-->
+    <color name="def_text_color">#333333</color>
+    <!--activity默认背景颜色-->
+    <color name="def_activity_bk">#f1f1f1</color>
+    <!--状态栏默认颜色-->
+    <color name="def_colorPrimaryDark">#1688fb</color>
+    <!--默认控件颜色-->
+    <color name="def_colorAccent">#50a7ff</color>
+    <!--低版本控件点击颜色-->
+    <color name="def_colorAccent_pressed">#50a7ff</color>
+    <!--默认标题栏颜色-->
+    <color name="def_colorPrimary">#ffffff</color>
+
+    <!-- 标题栏背景色 -->
+    <color name="title_bk_color">#1DB1EC</color>
+    <color name="title_bk_color_pressed">#800000</color>
+
+    <!--默认标题栏字体颜色-->
+    <color name="def_title_text_color">#1688fb</color>
+
+    <color name="tab_text_color">#6b7984</color>
+
+
+</resources>

@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\GengYu\Company\Project\app\src\main\shaders"/></dataSet><dataSet config="localLine"><source path="E:\GengYu\Company\Project\app\src\localLine\shaders"/></dataSet><dataSet config="debug"><source path="E:\GengYu\Company\Project\app\src\debug\shaders"/></dataSet><dataSet config="localLineDebug"><source path="E:\GengYu\Company\Project\app\src\localLineDebug\shaders"/></dataSet></merger>

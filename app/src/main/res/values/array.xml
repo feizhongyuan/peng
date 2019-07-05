@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tab_titles">
+        <item>今日</item>
+        <item>体检</item>
+        <item>商城</item>
+        <item>健康</item>
+        <item>我的</item>
+    </string-array>
+</resources>

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.SearchActivity">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_statusbar"
+        android:background="@color/title_bk_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/back_layout"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/ripple_boderless"
+            >
+
+            <ImageView
+                android:id="@+id/title_back_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/white_back"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:visibility="visible" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+        <EditText
+            android:id="@+id/et_ProductSearch"
+            android:layout_width="@dimen/dp_280"
+            android:layout_height="wrap_content"
+            android:hint="体检套餐/体检机构名称"
+            android:padding="@dimen/dp_5"
+            android:layout_margin="@dimen/dp_8"
+            android:background="@drawable/shape2"
+            android:layout_toRightOf="@id/back_layout"
+            android:drawableRight="@mipmap/fanhui"
+            />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <!--最近搜索-->
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_base_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_statusbar">
+        <TextView
+            android:id="@+id/tv_zuijinsousuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_zuijinsousuo"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+        <ImageView
+            android:id="@+id/img_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/touxiang_pinglun"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_15"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_zuijinsousuo"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            >
+            <TextView
+                android:id="@+id/tv_zuijinsousuo_tijiantaocan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="体检套餐"
+                android:background="@drawable/shape2"
+                android:layout_marginRight="@dimen/dp_10"
+                android:padding="@dimen/dp_3"
+                />
+            <TextView
+                android:id="@+id/tv_zuijinsousuo_jigou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="机构"
+                android:background="@drawable/shape2"
+                android:padding="@dimen/dp_3"
+                />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_base_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_base_1">
+        <TextView
+            android:id="@+id/tv_resou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_resou"
+            android:layout_marginTop="@dimen/dp_20"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+        <com.zhy.autolayout.AutoLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_resou"
+            android:orientation="horizontal"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_marginRight="@dimen/dp_20"
+            >
+            <TextView
+                android:id="@+id/tv_resou_tijiantaocan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="体检套餐"
+                android:background="@drawable/shape2"
+                android:layout_marginRight="@dimen/dp_10"
+                android:padding="@dimen/dp_3"
+                />
+            <TextView
+                android:id="@+id/tv_resou_jigou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="机构"
+                android:background="@drawable/shape2"
+                android:padding="@dimen/dp_3"
+                />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

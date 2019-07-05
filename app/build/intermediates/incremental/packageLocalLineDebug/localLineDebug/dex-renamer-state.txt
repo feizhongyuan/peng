@@ -1,0 +1,7 @@
+#Thu Jul 04 14:33:10 CST 2019
+base.0=E\:\\GengYu\\Company\\Project\\app\\build\\intermediates\\transforms\\dexMerger\\localLine\\debug\\90
+path.1=classes2.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=E\:\\GengYu\\Company\\Project\\app\\build\\intermediates\\transforms\\dexMerger\\localLine\\debug\\90

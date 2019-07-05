@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 定义圆角View -->
+    <!-- 设置背景 -->
+    <solid android:color="#dd222222" />
+
+    <!-- 也可以直接写作<corners android:radius="5dp" /> -->
+    <corners
+        android:bottomLeftRadius="10px"
+        android:bottomRightRadius="10px"
+        android:topLeftRadius="10px"
+        android:topRightRadius="10px" />
+
+</shape>

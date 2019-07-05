@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        >
+        <ImageView
+            android:id="@+id/img_taocan_tu"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_200"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/tv_taocan_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="套餐AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/tv_taocan_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥888"
+            android:textColor="@color/ref_red"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/tv_taocan_jigou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  XX体检机构"
+            android:drawableLeft="@mipmap/dangan"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

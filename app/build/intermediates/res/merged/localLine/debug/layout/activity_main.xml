@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myattr="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    tools:context="com.maqueezu.el.MainActivity">
+    <!--android:fitsSystemWindows="true"-->
+    <!--状态栏与标题留空隙作用-->
+    <include
+        layout="@layout/view_title"
+        android:id="@+id/include1" />
+
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tabs_rg"
+        android:layout_below="@+id/include1" />
+
+
+    <RadioGroup
+        android:id="@+id/tabs_rg"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_60"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/tab_home"
+            style="@style/Custom.TabRadioButton"
+            android:checked="true"
+            android:drawableTop="@drawable/tab_home_selector"
+            android:text="@string/fragmentone_name" />
+
+        <RadioButton
+            android:id="@+id/tab_tijian"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_physical_selector"
+            android:text="@string/fragmenttwo_name" />
+
+
+        <!--<View style="@style/Custom.TabRadioButton" />-->
+
+        <RadioButton
+            android:id="@+id/tab_shangcheng"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_shoppingmall_selector"
+            android:text="@string/fragmentthree_name" />
+
+        <RadioButton
+            android:id="@+id/tab_jiankang"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_healthy_selector"
+            android:text="@string/fragmentfour_name" />
+
+        <RadioButton
+            android:id="@+id/tab_mine"
+            style="@style/Custom.TabRadioButton"
+            android:drawableTop="@drawable/tab_mine_selector"
+            android:text="@string/fragmentfive_name" />
+    </RadioGroup>
+
+
+
+    <!--<android.support.v4.view.ViewPager-->
+        <!--android:id="@+id/mViewPager"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:layout_above="@+id/mTabLayout"-->
+        <!--android:layout_below="@+id/include1"-->
+        <!--/>-->
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0.1dp"-->
+        <!--android:background="@color/white"-->
+        <!--android:visibility="gone"-->
+        <!--/>-->
+
+    <!--<View-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/dp_0_1"-->
+        <!--android:layout_above="@id/mTabLayout"-->
+        <!--android:visibility="gone"/>-->
+
+    <!--<android.support.design.widget.TabLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/dp_50"-->
+        <!--android:id="@+id/mTabLayout"-->
+        <!--app:tabBackground="@color/backgroud"-->
+        <!--app:tabMode="fixed"-->
+        <!--app:tabGravity="fill"-->
+        <!--style="@style/MyCustomTabLayout"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--/>-->
+
+    <!--<com.zhy.autolayout.AutoLinearLayout-->
+        <!--android:layout_width="@dimen/dp_60"-->
+        <!--android:layout_height="@dimen/dp_75"-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--&gt;-->
+        <!--<ImageView-->
+            <!--android:id="@+id/mImage_zhushou"-->
+            <!--android:layout_width="@dimen/dp_50"-->
+            <!--android:layout_height="@dimen/dp_50"-->
+            <!--android:background="@android:color/transparent"-->
+            <!--android:src="@mipmap/logo_zhushou2x"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:clickable="true"-->
+            <!--/>-->
+        <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="@string/fragmentfive_name"-->
+            <!--android:textSize="@dimen/sp_10"-->
+            <!--android:layout_gravity="center"-->
+            <!--android:textColor="@color/title_zhushou"/>-->
+    <!--</com.zhy.autolayout.AutoLinearLayout>-->
+
+</com.zhy.autolayout.AutoRelativeLayout>
+

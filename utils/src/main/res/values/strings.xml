@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">utils</string>
+
+    <string name="addr_name">西安市</string>
+    <string name="name_jiankangxingweizhishu">健康行为指数</string>
+    <string name="name_dengji">优秀</string>
+</resources>

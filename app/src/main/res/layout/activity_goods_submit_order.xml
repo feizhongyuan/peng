@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.shopping_child.GoodsSubmitOrderActivity">
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include1"
+        >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--添加地址-->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/ll_base_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:weightSum="5"
+                >
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_dizhitishi"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    >
+                    <ImageView
+                        android:id="@+id/tishitu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_launcher"
+                        android:layout_margin="@dimen/dp_10"
+                        />
+                    <TextView
+                        android:id="@+id/dizhitishi1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_dizhitishi1"
+                        android:layout_toRightOf="@id/tishitu"
+                        android:layout_marginTop="@dimen/dp_20"
+                        />
+                    <TextView
+                        android:id="@+id/dizhitishi2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_dizhitishi2"
+                        android:layout_below="@id/dizhitishi1"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:layout_toRightOf="@id/tishitu"
+                        />
+                    <TextView
+                        android:id="@+id/dizhitishi3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_dizhitishi3"
+                        android:layout_below="@id/dizhitishi2"
+                        android:layout_marginTop="@dimen/dp_3"
+                        android:layout_toRightOf="@id/tishitu"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="@dimen/dp_0_1"
+                    android:layout_height="match_parent"
+                    android:background="@color/black"/>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <ImageView
+                        android:id="@+id/img_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/touxiang_nan"
+                        android:layout_centerInParent="true"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <!--订单中的商品-->
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_base_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_base_1"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_10">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecycler_goodsOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+            <!--套餐总价-->
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_2"
+                android:padding="@dimen/dp_10"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_taocanzongjia"
+                    />
+                <TextView
+                    android:id="@+id/tv_taocaozongjia_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1111"
+                    android:textStyle="bold"
+                    android:textColor="@color/ref_red"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    />
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/rl_base_3"
+                />
+            <!--优惠-->
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_3"
+                android:padding="@dimen/dp_10"
+                >
+                <TextView
+                    android:id="@+id/youhui"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_youhui"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="已选优惠劵"
+                    android:textColor="@color/ref_red"
+                    android:background="@color/huise"
+                    android:layout_toRightOf="@id/youhui"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:padding="@dimen/dp_1"
+                    />
+                <TextView
+                    android:id="@+id/tv_youhuijuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="-￥1111  "
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:drawableRight="@mipmap/fanhui"
+                    />
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/rl_base_4"
+                />
+            <!--麻雀币-->
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_4"
+                android:padding="@dimen/dp_10"
+                >
+                <TextView
+                    android:id="@+id/maquebi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_maquebi"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="可抵扣XX元"
+                    android:layout_toRightOf="@id/maquebi"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/tab_healthy_selector"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    />
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/rl_base_5"
+                />
+            <!--订单金额-->
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_5"
+                android:layout_marginTop="@dimen/dp_20"
+                >
+
+                <TextView
+                    android:id="@+id/tv_OrderAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥1111"
+                    android:textStyle="bold"
+                    android:textColor="@color/ref_red"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_dingdanjine"
+                    android:layout_toLeftOf="@id/tv_OrderAmount"
+                    android:layout_marginRight="@dimen/dp_20"
+                    />
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <!--底部栏-->
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@id/rl_base_6"
+        android:layout_marginTop="@dimen/dp_100"
+        android:weightSum="3">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <TextView
+                android:id="@+id/tv_OrderAmount1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginRight="@dimen/dp_10"
+                android:text="￥1111"
+                android:textColor="@color/ref_red"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/heji"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/tv_OrderAmount1"
+                android:layout_toLeftOf="@id/tv_OrderAmount1"
+                android:text="@string/name_heji" />
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_tijiaodingdan"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/huise">
+
+            <TextView
+                android:id="@+id/tv_tijiaodingdan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/name_tijiaodingdan"
+                android:textSize="@dimen/sp_15" />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

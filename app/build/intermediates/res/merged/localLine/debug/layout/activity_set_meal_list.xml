@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.child.physicalexamination_child.SetMealListActivity">
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"></include>
+
+    <!-- tabIndicatorColor：指示器颜色-->
+    <!-- tabTextColor：  tab栏字体颜色-->
+    <!-- tabSelectedTextColor：tab栏字体被选颜色-->
+    <!--app:tabIndicatorColor    指示器颜色-->
+    <!--app:tabTextColor         tab栏字体颜色-->
+    <!--app:tabSelectedTextColor tab栏字体被选颜色-->
+    <!--app:tabIndicatorHeight   指示器高度-->
+    <!--app:tabBackground        tab背景颜色-->
+    <!--app:tabMaxWidth          tab栏最大宽度-->
+    <!--app:tabTextAppearance    tab栏字体样式-->
+    <!--app:tabMinWidth          tab栏最小-->
+    <!--
+    app:tabMode="";有scrollable和fixed两个属性值
+     scrollable:可滑动;
+     fixed:不能滑动，平分tabLayout宽度;
+
+     app:tabGravity="";有center和fill两个属性值
+     fill:tabs平均填充整个宽度;
+     center:tab居中显示;-->
+    <!--<android.support.design.widget.TabLayout-->
+        <!--android:id="@+id/tab_toolbar_taocanliebiao"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="?attr/actionBarSize"-->
+        <!--android:layout_below="@id/include1"-->
+        <!--android:layout_gravity="top"-->
+        <!--android:background="#ffffff"-->
+        <!--android:fillViewport="false"-->
+        <!--android:isScrollContainer="true"-->
+        <!--app:tabMode="fixed"-->
+        <!--app:layout_scrollFlags="scroll"-->
+        <!--app:tabIndicatorColor="@color/colorAccent"-->
+        <!--app:tabIndicatorHeight="2.0dp"-->
+        <!--app:tabSelectedTextColor="@color/colorAccent"-->
+        <!--app:tabTextColor="#ced0d3"-->
+        <!--&gt;-->
+        <!--&lt;!&ndash;<android.support.design.widget.TabItem&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:text="a" />&ndash;&gt;-->
+
+    <!--</android.support.design.widget.TabLayout>-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:background="@color/black"
+        android:layout_below="@id/include1"
+        />
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_base_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:orientation="horizontal"
+        android:layout_below="@id/include1"
+        >
+        <TextView
+            android:id="@+id/tv_jigoudengji"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="机构等级"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            />
+        <View
+            android:layout_width="@dimen/dp_0_1"
+            android:layout_height="wrap_content"
+            android:background="@color/black"/>
+        <TextView
+            android:id="@+id/tv_xiaoliang"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="销量"
+            android:gravity="center"
+            android:padding="@dimen/dp_10"
+            />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:background="@color/black"
+        android:layout_below="@id/ll_base_1"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager_taocanliebiao"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ll_base_1"
+        />
+</com.zhy.autolayout.AutoRelativeLayout>

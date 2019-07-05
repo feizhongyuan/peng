@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="SwipeBackLayoutStyle" format="reference" />
+
+    <declare-styleable name="buttom_button">
+        <attr name="image" format="reference|color" />
+        <attr name="check_image" format="reference|color" />
+        <attr name="text" format="reference"
+            />
+    </declare-styleable>
+
+    <declare-styleable name="title_attributes">
+        <attr name="title_value" format="reference"/>
+    </declare-styleable>
+
+</resources>

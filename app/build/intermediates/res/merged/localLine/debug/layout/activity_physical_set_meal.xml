@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.child.physicalexamination_child.PhysicalSetMealActivity">
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"></include>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include1"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_taocan_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/huise"
+            >
+            <ImageView
+                android:id="@+id/img_taocan_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
+                />
+            <TextView
+                android:id="@+id/tv_taocan_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_taocanfenlei_1"
+                android:layout_below="@id/img_taocan_1"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_5"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_1"
+                android:layout_toLeftOf="@id/tv_taocan_1"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_10"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_1"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toRightOf="@id/tv_taocan_1"
+                android:layout_marginLeft="@dimen/dp_10"
+                />
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_taocan_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/huise"
+            android:layout_marginTop="@dimen/dp_10">
+            <ImageView
+                android:id="@+id/img_taocan_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
+                />
+            <TextView
+                android:id="@+id/tv_taocan_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_taocanfenlei_2"
+                android:layout_below="@id/img_taocan_2"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_5"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_2"
+                android:layout_toLeftOf="@id/tv_taocan_2"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_10"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_2"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toRightOf="@id/tv_taocan_2"
+                android:layout_marginLeft="@dimen/dp_10"
+                />
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_taocan_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/huise"
+            android:layout_marginTop="@dimen/dp_10">
+            <ImageView
+                android:id="@+id/img_taocan_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
+                />
+            <TextView
+                android:id="@+id/tv_taocan_3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_taocanfenlei_3"
+                android:layout_below="@id/img_taocan_3"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_5"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_3"
+                android:layout_toLeftOf="@id/tv_taocan_3"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_10"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_3"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toRightOf="@id/tv_taocan_3"
+                android:layout_marginLeft="@dimen/dp_10"
+                />
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_taocan_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/dp_10"
+            android:background="@color/huise"
+            android:layout_marginTop="@dimen/dp_10"
+            >
+            <ImageView
+                android:id="@+id/img_taocan_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
+                />
+            <TextView
+                android:id="@+id/tv_taocan_4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_taocanfenlei_4"
+                android:layout_below="@id/img_taocan_4"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/dp_5"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_4"
+                android:layout_toLeftOf="@id/tv_taocan_4"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_marginRight="@dimen/dp_10"
+                />
+            <View
+                android:layout_width="@dimen/dp_60"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/img_taocan_4"
+                android:layout_marginTop="@dimen/dp_12"
+                android:layout_toRightOf="@id/tv_taocan_4"
+                android:layout_marginLeft="@dimen/dp_10"
+                />
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

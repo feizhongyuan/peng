@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.home_child.AddressActivity">
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_statusbar"
+        android:background="@color/title_bk_color"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height">
+        <com.zhy.autolayout.AutoLinearLayout
+            android:id="@+id/back_layout"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:background="@drawable/ripple_boderless"
+            >
+
+            <ImageView
+                android:id="@+id/title_back_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/white_back"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:visibility="visible" />
+
+        </com.zhy.autolayout.AutoLinearLayout>
+
+        <TextView
+            android:id="@+id/title_text"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:layout_marginLeft="@dimen/title_height"
+            android:layout_marginRight="@dimen/title_height"
+            android:background="@drawable/ripple_boderless"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/white"
+            android:textSize="@dimen/common_larger" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

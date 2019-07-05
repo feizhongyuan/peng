@@ -1,0 +1,111 @@
+apply plugin: 'com.android.library'
+
+
+
+buildscript {
+    repositories {
+
+        flatDir{
+            dirs 'libs'
+        }
+    }
+}
+
+android {
+    compileSdkVersion 27
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+
+    api 'com.android.support:multidex:1.0.3'
+    api 'com.android.support:recyclerview-v7:27.0.2'
+    api 'com.android.support:design:27.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //android ioc 控制反转 示例中并未使用
+    compile 'com.google.dagger:dagger-android:2.22.1'
+    compile 'com.google.dagger:dagger-android-support:2.22.1'
+    // if you use the support libraries
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.22.1'
+    //发布/订阅事件总线
+    api 'org.greenrobot:eventbus:3.1.1'
+
+    //数据库
+    api 'org.greenrobot:greendao:3.2.0'
+//    Okhttp
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
+    api 'com.squareup.okhttp3:okhttp:3.12.1'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile 'com.squareup.retrofit2:retrofit:2.4.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.4.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.4.0'
+//    rxjava
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'io.reactivex:rxjava:1.1.9'
+    compile 'io.reactivex.rxjava2:rxandroid:2.1.0'
+    compile 'io.reactivex.rxjava2:rxjava:2.2.3'
+
+    //facebook stetho 在浏览器开发者工具中中调试Android应用
+    //1.在谷歌浏览器中输入 chrome://inspect/#devices   会展示出可连接调试的Application 和webview，其中webview不需要此库就直接可以在谷歌浏览器中断点调试
+    //2.保持浏览器可以浏览 http://www.google.com
+    //3点击对应的 inspect
+    //4.等待去谷歌下载对应的webview驱动
+    //注：webview与app在谷歌浏览器的调试开关均由com.maqueezu.el.Constant.debug 的值控制
+    implementation 'com.facebook.stetho:stetho:1.5.1'
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.5.1'
+
+    //第三方webview，统一了与js的交互规则 内部集成腾讯浏览服务x5内核 使用x5内核就只能以32位模式运行 否则将会自动使用系统自带浏览器
+    // https://x5.tencent.com/tbs/technical.html#/detail/sdk/1/34cf1488-7dc2-41ca-a77f-0014112bcab7
+    api 'com.github.wendux:DSBridge-Android:c6d5155915'
+
+    //多种可选头底部上下拉刷新控件，当前仅默认集成 https://github.com/scwang90/SmartRefreshLayout
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-24'
+
+    //图片加载库
+    api 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+
+    //json解析库
+    api 'com.google.code.gson:gson:2.8.5'
+
+    //  autoLayout
+    compile 'com.zhy:autolayout:1.4.5'
+
+    //banner轮播框架
+    implementation 'com.youth.banner:banner:1.4.10'
+
+    //    Butternife
+//    api 'com.jakewharton:butterknife:8.8.1'
+//    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+//    cannot access android.arch.lifecycle.ViewModelStoreoWner
+//    implementation 'android.arch.lifecycle:extensions:1.0.3'
+
+}

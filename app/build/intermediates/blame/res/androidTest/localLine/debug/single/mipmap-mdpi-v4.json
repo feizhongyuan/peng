@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\androidTest\\localLine\\debug\\mipmap-mdpi-v4\\ic_launcher_round.png",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\mipmap-mdpi-v4\\ic_launcher_round.png"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\androidTest\\localLine\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\mipmap-mdpi-v4\\ic_launcher.png"
+    }
+]

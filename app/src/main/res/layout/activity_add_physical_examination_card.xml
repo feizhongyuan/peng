@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.physicalexamination_child.AddPhysicalExaminationCardActivity">
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1" />
+
+    <EditText
+        android:id="@+id/et_physicalExmination_card"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/include1"
+        android:background="@null"
+        android:padding="@dimen/dp_5"
+        android:hint="@string/name_qingshurutijiankahao"
+        />
+    <Button
+        android:id="@+id/bt_nextStep"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:text="@string/name_xiayibu"
+        android:layout_below="@id/et_physicalExmination_card"
+        android:layout_marginTop="@dimen/dp_5"
+        />
+</com.zhy.autolayout.AutoRelativeLayout>

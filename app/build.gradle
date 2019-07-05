@@ -1,0 +1,159 @@
+apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
+
+
+
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.maqueezu.el"
+        minSdkVersion 15
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        multiDexEnabled true
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        //这里标记仅使用 armeabi armeabi-v7a 目录下的so库
+        ndk { abiFilters "armeabi", "armeabi-v7a" }
+    }
+    signingConfigs {
+        release {
+        }
+        debug {
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storeFile file('C:/Users/任鹏飞/.android/debug.keystore')
+            storePassword 'android'
+        }
+    }
+    buildTypes {
+        release {
+            //Zipalign优化
+            zipAlignEnabled true
+            minifyEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            multiDexEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.debug
+            minifyEnabled false
+            debuggable true
+        }
+    }
+    sourceSets.main {
+        jni.srcDirs = []
+        jniLibs.srcDir "src/main/libs"
+    }
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+    //添加如下标签即可分渠道打包
+    flavorDimensions "default"
+    productFlavors {
+        onLine {
+            versionCode 1000
+            versionName '1.0.0'
+
+            //下列的配置根据实际需要增加删除
+            buildConfigField "boolean", "isDebug", 'true'
+            buildConfigField "String", "Host", '"http://113.141.67.6:10000/"'
+            buildConfigField "String", "channelid", '"00000000-0000-0000-0000-000000000000"'
+            buildConfigField "String", "secret", '"00000000-0000-0000-0000-000000000000"'
+            buildConfigField "String", "webPageUrl", '"http://113.141.67.6:10000/"'
+        }
+
+        offLine {
+            versionCode 1000
+            versionName '1.0.0'
+
+            buildConfigField "boolean", "isDebug", 'true'
+            buildConfigField "String", "Host", '"http://113.141.67.6:10000/"'
+            buildConfigField "String", "channelid", '"00000000-0000-0000-0000-000000000000"'
+            buildConfigField "String", "secret", '"00000000-0000-0000-0000-000000000000"'
+            buildConfigField "String", "webPageUrl", '"http://113.141.67.6:10000/"'
+        }
+
+        localLine {
+            versionCode 1000
+            versionName '1.0.0'
+
+            buildConfigField "boolean", "isDebug", 'true'
+            buildConfigField "String", "Host", '"http://www.maqueezu.com/"'
+            buildConfigField "String", "channelid", '"00000000-0000-0000-0000-000000000000"'
+            buildConfigField "String", "secret", '"00000000-0000-0000-0000-000000000000"'
+            buildConfigField "String", "webPageUrl", '"http://113.141.67.6:10000/"'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    //修改生成的apk名字
+    android.applicationVariants.all { variant ->
+        variant.outputs.all {
+            def appName = 'app'
+            def buildName
+            def versionCode
+            def versionName
+            variant.productFlavors.each { product ->
+                buildName = product.name
+                versionCode = product.versionCode
+                versionName = product.versionName
+            }
+            outputFileName = appName + "_" + buildName + "_" + versionCode + "_V" + versionName + "_" + getDate() + ".apk"
+        }
+    }
+    /** orm框架所需要的配置
+     * orm与aop 在android上的实现都是通过使用编译时注解来在编译时修改代码
+     */
+    greendao {
+        //数据库版本号
+        schemaVersion 1
+        //代码生成目录
+        targetGenDir 'src/main/java'
+        //代码生成包名
+        daoPackage 'com.maqueezu.el.dao'
+    }
+    buildToolsVersion '26.0.2'
+}
+
+//获取时间戳
+def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('yyyyMMddHHmm')
+    return formattedDate
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:support-v4:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation project(':utils')
+
+    //banner轮播框架
+    implementation 'com.youth.banner:banner:1.4.10'
+
+}
+
+
+configurations.all {
+    resolutionStrategy.eachDependency { DependencyResolveDetails details ->
+        def requested = details.requested
+        if (requested.group == 'com.android.support') {
+            if (requested.name.startsWith("multidex")) {
+                details.useVersion '1.0.3'
+            } else {
+                details.useVersion '27.0.2'
+            }
+        }
+    }
+}

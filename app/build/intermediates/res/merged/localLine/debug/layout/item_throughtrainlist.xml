@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/dp_10"
+        >
+        <ImageView
+            android:id="@+id/img_shangpin_tu"
+            android:layout_width="@dimen/dp_200"
+            android:layout_height="@dimen/dp_200"
+            android:src="@mipmap/ic_launcher"
+            android:layout_gravity="center"
+            />
+        <TextView
+            android:id="@+id/tv_shangpin_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/tv_shangpin_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥888"
+            android:textColor="@color/ref_red"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+    </com.zhy.autolayout.AutoLinearLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

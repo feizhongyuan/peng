@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dp_10"
+    >
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/huise"
+        >
+        <TextView
+            android:id="@+id/tv_organ_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="陕西省中医医院"
+            />
+        <TextView
+            android:id="@+id/tv_organ_biaoqian1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="电子报告"
+            android:background="@color/huise"
+            android:padding="@dimen/dp_2"
+            android:layout_below="@id/tv_organ_title"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/tv_organ_biaoqian2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="三甲医院"
+            android:background="@color/huise"
+            android:padding="@dimen/dp_2"
+            android:layout_below="@id/tv_organ_title"
+            android:layout_toRightOf="@id/tv_organ_biaoqian1"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_10"
+            android:visibility="visible"
+            />
+        <TextView
+            android:id="@+id/tv_organ_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周一至周日 08:00-17:30"
+            android:layout_below="@id/tv_organ_biaoqian1"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <TextView
+            android:id="@+id/tv_organ_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="陕西省西安市莲湖区西华门大街2-4号"
+            android:layout_below="@id/tv_organ_time"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+
+        <ImageView
+            android:id="@+id/img_organ_telphone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/ic_launcher"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+
+        <TextView
+            android:id="@+id/tv_organ_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2.7km"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/tv_organ_time"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

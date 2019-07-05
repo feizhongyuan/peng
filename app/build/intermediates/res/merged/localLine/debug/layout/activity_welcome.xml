@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.Launcher"
+    android:id="@+id/layout"
+    tools:context="com.maqueezu.el.ui.activity.WelcomeActivity">
+    <ImageView
+        android:id="@+id/mImage_qidong"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/qidong_1080"
+        android:layout_centerInParent="true"
+        android:scaleType="centerCrop"
+        />
+</com.zhy.autolayout.AutoRelativeLayout>

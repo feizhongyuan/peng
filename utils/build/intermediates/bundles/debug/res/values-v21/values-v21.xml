@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="AppTheme" parent="AppBaseTheme">
+        <item name="android:colorPrimaryDark">@color/title_bk_color</item>
+        <item name="android:colorPrimary">@color/title_bk_color</item>
+        <item name="colorAccent">@color/title_bk_color</item>
+        <item name="android:windowBackground">@color/activity_bk</item>
+    </style>
+</resources>

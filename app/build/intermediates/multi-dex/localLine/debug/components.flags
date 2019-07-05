@@ -1,0 +1,96 @@
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\1'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\0.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\2.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\3.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\4.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\5.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\6.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\7.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\8.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\9.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\10.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\11.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\12.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\13.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\14.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\15.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\16.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\17.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\18.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\19.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\20.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\21.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\22.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\23.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\24.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\25.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\26.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\27.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\28.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\29.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\30.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\31.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\32.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\33.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\34.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\35.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\36.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\37.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\38.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\39.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\40.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\41.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\42.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\43.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\44.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\45.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\46.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\47.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\48.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\49.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\50.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\51.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\52.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\53.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\processing-tools\runtime-deps\localLine\debug\desugar_try_with_resources.jar'(**.class)
+-outjars 'E:\GengYu\Company\Project\app\build\intermediates\multi-dex\localLine\debug\componentClasses.jar'
+
+-libraryjars 'E:\AndroidStudio2\Tool\sdk\build-tools\26.0.2\lib\shrinkedAndroid.jar'
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **
+-dontwarn **
+-printconfiguration 'E:\GengYu\Company\Project\app\build\intermediates\multi-dex\localLine\debug\components.flags'
+
+
+# view AndroidManifest.xml #generated:17
+-keep class com.maqueezu.el.MyApplication {
+    <init>(...);
+}
+
+-keep public class * extends android.app.Instrumentation {
+    <init>();
+}
+
+-keep public class * extends android.app.Application {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.ir.** {
+    <fields>;
+    <methods>;
+}

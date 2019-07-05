@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/dp_10"
+    android:layout_marginTop="@dimen/dp_10">
+
+    <ImageView
+        android:id="@+id/img_submitOrder_img"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/tv_submitOrder_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@id/img_submitOrder_img"
+        android:text="套餐名称" />
+
+    <TextView
+        android:id="@+id/tv_submitOrder_price"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_submitOrder_img"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:layout_toRightOf="@id/img_submitOrder_img"
+        android:text="￥1111"
+        android:textColor="@color/ref_red"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_submitOrder_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/img_submitOrder_img"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="X1" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:layout_below="@id/tv_submitOrder_price"
+        android:layout_marginTop="@dimen/dp_5"
+        android:background="@color/black" />
+
+    <TextView
+        android:id="@+id/tv_submitOrder_express"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/tv_submitOrder_count"
+        android:layout_marginRight="@dimen/dp_10"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="快递¥0.00" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_submitOrder_count"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_marginRight="@dimen/dp_10"
+        android:text="配送方式:"
+        android:layout_toLeftOf="@id/tv_submitOrder_express"
+        />
+</com.zhy.autolayout.AutoRelativeLayout>

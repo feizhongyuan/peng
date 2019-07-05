@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\GengYu\Company\Project\app\src\main\jniLibs"/><source path="E:\GengYu\Company\Project\app\src\main\libs"/></dataSet><dataSet config="localLine"><source path="E:\GengYu\Company\Project\app\src\localLine\jniLibs"/></dataSet><dataSet config="debug"><source path="E:\GengYu\Company\Project\app\src\debug\jniLibs"/></dataSet><dataSet config="localLineDebug"><source path="E:\GengYu\Company\Project\app\src\localLineDebug\jniLibs"/></dataSet></merger>

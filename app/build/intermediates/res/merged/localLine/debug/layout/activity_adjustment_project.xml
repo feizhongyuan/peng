@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.physicalexamination_child.AdjustmentProjectActivity">
+
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include1"
+        >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_marginTop="@dimen/dp_5"
+                android:layout_marginBottom="@dimen/dp_5"
+                >
+                <TextView
+                    android:id="@+id/tv_adjustment_tijianjigou"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XX体检机构"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginTop="@dimen/dp_10"
+                    />
+                <TextView
+                    android:id="@+id/tv_adjustment_taocan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="XX套餐"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/dp_100"
+                    />
+                <TextView
+                    android:id="@+id/tv_adjustment_heji_numSum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="￥888.88"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_5"
+                    />
+                <TextView
+                    android:id="@+id/tv_adjustment_heji"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_heji"
+                    android:layout_toLeftOf="@id/tv_adjustment_heji_numSum"
+                    android:layout_alignParentBottom="true"
+                    />
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/tv_adjustment_heji"
+                    android:layout_alignParentBottom="true"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="XX"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="个项目,"
+                        />
+
+                </com.zhy.autolayout.AutoLinearLayout>
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_1"
+                >
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_single_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/huise"
+                    android:padding="@dimen/dp_8"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_yixuanxiangmu"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        />
+                    <TextView
+                        android:id="@+id/tv_adjustment_yixuan_sum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥400.00"
+                        android:textColor="@color/ref_red"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_xiaoji"
+                        android:layout_toLeftOf="@id/tv_adjustment_yixuan_sum"
+                        />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecycler_yixuanxiangmu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_single_1"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_2"
+                >
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_single_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/huise"
+                    android:padding="@dimen/dp_8"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_kexuanxiangmu"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        />
+                    <TextView
+                        android:id="@+id/tv_adjustment_kexuan_sum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="￥400.00"
+                        android:textColor="@color/ref_red"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_xiaoji"
+                        android:layout_toLeftOf="@id/tv_adjustment_kexuan_sum"
+                        />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecycler_kexuanxiangmu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_single_2"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <Button
+                android:id="@+id/bt_querentijiao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/name_querentijiao"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/rl_base_3"
+                android:layout_marginTop="@dimen/dp_30"
+                />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</com.zhy.autolayout.AutoRelativeLayout>
