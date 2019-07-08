@@ -62,7 +62,7 @@ android {
 
             //下列的配置根据实际需要增加删除
             buildConfigField "boolean", "isDebug", 'true'
-            buildConfigField "String", "Host", '"http://113.141.67.6:10000/"'
+            buildConfigField "String", "Host", '"http://www.maqueezu.com/"'
             buildConfigField "String", "channelid", '"00000000-0000-0000-0000-000000000000"'
             buildConfigField "String", "secret", '"00000000-0000-0000-0000-000000000000"'
             buildConfigField "String", "webPageUrl", '"http://113.141.67.6:10000/"'
@@ -73,7 +73,7 @@ android {
             versionName '1.0.0'
 
             buildConfigField "boolean", "isDebug", 'true'
-            buildConfigField "String", "Host", '"http://113.141.67.6:10000/"'
+            buildConfigField "String", "Host", '"http://www.maqueezu.com/"'
             buildConfigField "String", "channelid", '"00000000-0000-0000-0000-000000000000"'
             buildConfigField "String", "secret", '"00000000-0000-0000-0000-000000000000"'
             buildConfigField "String", "webPageUrl", '"http://113.141.67.6:10000/"'

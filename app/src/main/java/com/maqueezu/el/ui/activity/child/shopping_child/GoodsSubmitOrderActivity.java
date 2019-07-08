@@ -1,22 +1,27 @@
 package com.maqueezu.el.ui.activity.child.shopping_child;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
+import com.maqueezu.el.ui.adapter.GoodsSubmitOrderAdapter;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
+import java.util.ArrayList;
+import java.util.List;
 /**
  * 商品提交订单页
  */
-public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.OnClickListener {
+public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -47,6 +52,8 @@ public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.
     private TextView heji;
     private TextView tv_tijiaodingdan;
     private AutoRelativeLayout rl_tijiaodingdan;
+
+    private List<String> list ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -123,6 +130,10 @@ public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.
 
     private void initDate() {
         title_text.setText(R.string.name_tijiaodingdan);
+        list = new ArrayList<>();
+        list.add("name1");
+        list.add("name2");
+        mRecycler_goodsOrder.setAdapter(new GoodsSubmitOrderAdapter(this,list,this));
 
     }
 
@@ -145,7 +156,21 @@ public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.
             case R.id.rl_dizhitishi:
                 Toast.makeText(this, "添加地址", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.rl_tijiaodingdan:
+            case R.id.tv_tijiaodingdan:
+                Intent intent = new Intent(this,GoodsPaymentOrderActivity.class);
+                Bundle bundle = new Bundle();
+                intent.putExtras(bundle);
+                startActivity(intent);
+                break;
+            default:
+                break;
 
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
     }
 }

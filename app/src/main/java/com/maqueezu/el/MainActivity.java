@@ -34,6 +34,7 @@ import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.presenter.HomePresenter;
 import com.maqueezu.el.ui.activity.SearchActivity;
 import com.maqueezu.el.ui.activity.child.home_child.AddressActivity;
+import com.maqueezu.el.ui.activity.child.home_child.AllMessageActivity;
 import com.maqueezu.el.ui.fragment.HealthyFragment;
 import com.maqueezu.el.ui.fragment.HomeFragment;
 import com.maqueezu.el.ui.fragment.MyFragment;
@@ -549,21 +550,29 @@ public class MainActivity extends BaseActivity<HomeContract.View, HomePresenter<
             case R.id.title_image_buttn://消息
                 ToastUtil.showToast(this, "打开消息");
                 Log.e("aaaa", "打开消息");
+                Bundle bundle = new Bundle();
+                multiplexIntent(this, AllMessageActivity.class,bundle);
                 break;
             case R.id.title_image_buttn2://搜索
                 ToastUtil.showToast(this,"打开搜索");
                 Log.e("aaaa", "打开搜索");
-                Intent intent1 = new Intent(this, SearchActivity.class);
-                startActivity(intent1);
+                Bundle bundle1 = new Bundle();
+                multiplexIntent(this,SearchActivity.class,bundle1);
                 break;
             case R.id.et_ProductSearch:
 //                submit();
-                Intent intent2 = new Intent(this, SearchActivity.class);
-                startActivity(intent2);
+                Bundle bundle2 = new Bundle();
+                multiplexIntent(this,SearchActivity.class,bundle2);
                 break;
             default:
                 break;
         }
+    }
+
+    public void multiplexIntent(Context context,Class cla,Bundle bundle){
+        Intent intent = new Intent(context,cla);
+        intent.putExtras(bundle);
+        startActivity(intent);
     }
 
 

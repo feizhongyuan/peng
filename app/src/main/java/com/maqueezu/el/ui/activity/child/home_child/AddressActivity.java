@@ -57,6 +57,9 @@ public class AddressActivity extends AppCompatActivity implements View.OnClickLi
             case R.id.title_back_image:
                 finish();
                 break;
+
+            default:
+                break;
         }
     }
 }

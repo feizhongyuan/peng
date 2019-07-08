@@ -29,9 +29,7 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.test.TestActivity" >
-
-        </activity>
+        <activity android:name=".ui.test.TestActivity" />
         <activity android:name=".ui.test.Test1Activity" />
         <activity android:name=".ui.activity.WelcomeActivity">
             <intent-filter>
@@ -63,7 +61,10 @@
         <activity android:name=".ui.activity.child.shopping_child.GoodsDetailActivity" />
         <activity android:name=".ui.activity.child.shopping_child.ShoppingCartActivity" />
         <activity android:name=".ui.activity.child.shopping_child.GoodsSubmitOrderActivity" />
-        <activity android:name=".ui.activity.child.home_child.SignInActivity"></activity>
+        <activity android:name=".ui.activity.child.home_child.SignInActivity" />
+        <activity android:name=".ui.activity.child.shopping_child.GoodsPaymentOrderActivity" />
+        <activity android:name=".ui.activity.child.home_child.AllMessageActivity" />
+        <activity android:name=".ui.activity.MultiplexActivity"></activity>
     </application>
 
 </manifest>

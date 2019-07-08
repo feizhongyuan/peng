@@ -384,7 +384,7 @@
                android:background="#ffffff"
                android:fillViewport="false"
                android:isScrollContainer="true"
-               app:tabMode="fixed"
+               app:tabMode="scrollable"
                app:layout_scrollFlags="scroll"
                app:tabIndicatorColor="@color/colorAccent"
                app:tabIndicatorHeight="2.0dp"
@@ -403,6 +403,7 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
                android:layout_below="@id/tab_toolbar_jiankangzixun"
+               android:layout_marginBottom="@dimen/dp_10"
                />
 
        </com.zhy.autolayout.AutoRelativeLayout>

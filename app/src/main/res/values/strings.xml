@@ -153,6 +153,20 @@
     <string name="name_dizhitishi3">点击添加</string>
 
 
+    <string name="name_shouhuoren">收货人:</string>
+    <string name="name_shouhuodizhi">收货地址:</string>
+    <string name="name_peisongfangshi">配送方式</string>
+
+    <string name="name_xiaoxi">消息</string>
+    <string name="name_guanfangxiaoxi">官方消息</string>
+    <string name="name_zhanghutongzhi">账户通知</string>
+    <string name="name_fuwutongzhi">服务通知</string>
+    <string name="name_wuliuzhushou">物流助手</string>
+    <string name="name_hudongxiaoxi">互动消息</string>
+    <string name="name_pingtaikefu">平台客服</string>
+    <string name="name_yixuekefu">医学客服</string>
+
+
     <string name="name_youpinshangcheng">优品商城</string>
     <string name="name_tesejiuyi">特色就医</string>
     <string name="name_hulipeihu">护理陪护</string>

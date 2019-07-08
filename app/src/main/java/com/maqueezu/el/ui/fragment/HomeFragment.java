@@ -21,6 +21,7 @@ import android.widget.TextView;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.pojo.GoodsCatBean;
+import com.maqueezu.el.ui.activity.MultiplexActivity;
 import com.maqueezu.el.ui.activity.child.home_child.SignInActivity;
 import com.maqueezu.el.ui.adapter.FragmentAdapter;
 import com.maqueezu.el.ui.adapter.HealthyGridViewAdapter;
@@ -78,7 +79,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private AutoRelativeLayout rl_item_waterripple;
 
 
-    private String[] arr = {"关注", "推荐", "养生", "减肥", "女性", "男性", "防癌", "慢性病"};
+    private String[] arr = {"关注", "推荐", "养生", "减肥", "女性", "男性", "防癌", "慢性病","疾病1","疾病2","疾病3","疾病4",};
     private List<Fragment> fragments;
     private AdvertBean.DataBean data = null;
     private GoodsCatBean goodsCatBean = null;
@@ -283,13 +284,18 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 //
 //                break;
             case R.id.tv_guizeshuoming://规则说明
-
+                Intent intent1 = new Intent(mActivity, MultiplexActivity.class);
+                Bundle bundle = new Bundle();
+                intent1.putExtras(bundle);
+                startActivity(intent1);
                 break;
             case R.id.rl_renwu://任务项
                 break;
             case R.id.rl_dingdan://订单项
                 break;
             case R.id.img_lingqumaquebi://领取麻雀币
+                break;
+            default:
                 break;
 
         }

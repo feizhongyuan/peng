@@ -18,8 +18,17 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/dp_10"
         android:layout_toRightOf="@id/img_submitOrder_img"
-        android:text="套餐名称" />
+        android:text="商品名称商品名称商品名称商品名称商品名称商品名称商品名称商品名称" />
 
+    <TextView
+        android:id="@+id/tv_submitOrder_attribute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_submitOrder_title"
+        android:layout_toRightOf="@id/img_submitOrder_img"
+        android:layout_marginLeft="@dimen/dp_10"
+        android:text="规格1，规格2"
+        />
     <TextView
         android:id="@+id/tv_submitOrder_price"
         android:layout_width="wrap_content"

@@ -1,6 +1,8 @@
 package com.maqueezu.el.ui.fragment;
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,18 +19,28 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.ui.adapter.HealthyInformationAdapter;
 import com.maqueezu.utils.ui.base.BaseFragment;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.DefaultRefreshFooterCreator;
+import com.scwang.smartrefresh.layout.api.DefaultRefreshHeaderCreator;
+import com.scwang.smartrefresh.layout.api.RefreshFooter;
+import com.scwang.smartrefresh.layout.api.RefreshHeader;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.footer.ClassicsFooter;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 
 /**
  * 今日-健康资讯
  */
-public class HealthyInformationFragment extends BaseFragment implements AdapterView.OnItemClickListener{
+public class HealthyInformationFragment extends BaseFragment implements AdapterView.OnItemClickListener {
 
     private View rootView;
     private TextView tv;
     private String titleName;
     private GoodsCatBean goodsCatBean;
     private RecyclerView mRecyclerView_HealthyInformation;
-    private SwipeRefreshLayout srl_swipe_refresh_layout;
+    private SmartRefreshLayout smart_refresh_layout;
 
     public HealthyInformationFragment() {
         // Required empty public constructor
@@ -77,8 +89,8 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
     protected void initView(View mRootView) {
 
 
-        mRecyclerView_HealthyInformation = (RecyclerView) rootView.findViewById(R.id.mRecyclerView_HealthyInformation);
-//        srl_swipe_refresh_layout = (SwipeRefreshLayout) rootView.findViewById(R.id.srl_swipe_refresh_layout);
+        mRecyclerView_HealthyInformation = (RecyclerView) mRootView.findViewById(R.id.mRecyclerView_HealthyInformation);
+        smart_refresh_layout = (SmartRefreshLayout) rootView.findViewById(R.id.smart_refresh_layout);
 
         mRecyclerView_HealthyInformation.setLayoutManager(new LinearLayoutManager(getContext()));
     }
@@ -89,9 +101,24 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
             titleName = arguments.getString("titleName");
             goodsCatBean = (GoodsCatBean) arguments.getSerializable("goods");
         }
-        Log.e("TAG","-----设置goodsCatBean："+goodsCatBean);
+        Log.e("TAG", "-----设置goodsCatBean：" + goodsCatBean);
         HealthyInformationAdapter healthyInformationAdapter = new HealthyInformationAdapter(getContext(), goodsCatBean.getData(), this);
         mRecyclerView_HealthyInformation.setAdapter(healthyInformationAdapter);
+
+//         刷新完成
+        smart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                refreshLayout.finishRefresh(2000);
+            }
+        });
+//        加载更多
+        smart_refresh_layout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                refreshLayout.finishRefresh(2000);
+            }
+        });
 
     }
 
@@ -102,6 +129,26 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(mActivity, "点击第"+(position+1)+"条", Toast.LENGTH_SHORT).show();
+        Toast.makeText(mActivity, "点击第" + (position + 1) + "条", Toast.LENGTH_SHORT).show();
+    }
+
+    //static 代码段可以防止内存泄露
+    static {
+        //设置全局的Header构建器
+//        SmartRefreshLayout.setDefaultRefreshHeaderCreator(new DefaultRefreshHeaderCreator() {
+//            @Override
+//            public RefreshHeader createRefreshHeader(Context context, RefreshLayout layout) {
+//                layout.setPrimaryColorsId(R.color.colorPrimary, android.R.color.white);//全局设置主题颜色
+//                return new ClassicsHeader(context);//.setTimeFormat(new DynamicTimeFormat("更新于 %s"));//指定为经典Header，默认是 贝塞尔雷达Header
+//            }
+//        });
+        //设置全局的Footer构建器
+        SmartRefreshLayout.setDefaultRefreshFooterCreator(new DefaultRefreshFooterCreator() {
+            @Override
+            public RefreshFooter createRefreshFooter(Context context, RefreshLayout layout) {
+                //指定为经典Footer，默认是 BallPulseFooter
+                return new ClassicsFooter(context).setDrawableSize(20);
+            }
+        });
     }
 }

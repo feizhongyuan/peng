@@ -1477,10 +1477,13 @@
     <string name="name_fragment_mine"/>
     <string name="name_fragment_shangcheng"/>
     <string name="name_fragment_tijian">体检</string>
+    <string name="name_fuwutongzhi">服务通知</string>
     <string name="name_gegnduo">更多</string>
     <string name="name_gouwuche">购物车</string>
+    <string name="name_guanfangxiaoxi">官方消息</string>
     <string name="name_guizeshuoming">规则说明</string>
     <string name="name_heji">合计:</string>
+    <string name="name_hudongxiaoxi">互动消息</string>
     <string name="name_hulipeihu">护理陪护</string>
     <string name="name_huodongguize">活动规则</string>
     <string name="name_jianbuyoujiang">健步有奖</string>
@@ -1513,6 +1516,8 @@
     <string name="name_muyinghuli">母婴护理</string>
     <string name="name_neike">内科</string>
     <string name="name_nianling">年龄</string>
+    <string name="name_peisongfangshi">配送方式</string>
+    <string name="name_pingtaikefu">平台客服</string>
     <string name="name_pingtaituijian">平台推荐</string>
     <string name="name_pinzhishenghuo">品质生活</string>
     <string name="name_qingshurutijiankahao">请输入体检卡号</string>
@@ -1527,6 +1532,8 @@
     <string name="name_shichangjia">市场价</string>
     <string name="name_shipinbaojian">食品保健</string>
     <string name="name_shoucang">收藏</string>
+    <string name="name_shouhuodizhi">收货地址:</string>
+    <string name="name_shouhuoren">收货人:</string>
     <string name="name_taocanfenlei_1">中老年体检</string>
     <string name="name_taocanfenlei_2">青年白领</string>
     <string name="name_taocanfenlei_3">专项体检</string>
@@ -1551,8 +1558,10 @@
     <string name="name_weixinzhifu">微信支付</string>
     <string name="name_wenxintishi">温馨提示</string>
     <string name="name_wenxintishi_xiangqing">\t\t\t Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodaleluctus nunc eget.</string>
+    <string name="name_wuliuzhushou">物流助手</string>
     <string name="name_xiadanshijian">下单时间</string>
     <string name="name_xiaoji">小计:</string>
+    <string name="name_xiaoxi">消息</string>
     <string name="name_xiayibu">下一步</string>
     <string name="name_xingbie">性别</string>
     <string name="name_xingming">姓名</string>
@@ -1560,6 +1569,7 @@
     <string name="name_yiliaofuwu">医疗服务</string>
     <string name="name_yiliaofuwu_jieshao">-内外科陪护/妇产科陪护/就医绿色通道/贴针灸/医学微视</string>
     <string name="name_yixuanxiangmu">已选项目</string>
+    <string name="name_yixuekefu">医学客服</string>
     <string name="name_yixueweishi">医学微视</string>
     <string name="name_yongyaotixing">用药提醒</string>
     <string name="name_youhui">优惠</string>
@@ -1567,6 +1577,7 @@
     <string name="name_youpinshangcheng">优品商城</string>
     <string name="name_yuezhifu">余额支付</string>
     <string name="name_zanwupaihang">暂无排行</string>
+    <string name="name_zhanghutongzhi">账户通知</string>
     <string name="name_zhenxuanjigou">甄选机构</string>
     <string name="name_zhenxuantaocan">甄选套餐</string>
     <string name="name_zhichimendian">支持门店</string>

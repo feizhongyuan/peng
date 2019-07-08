@@ -4,11 +4,11 @@
     android:layout_height="match_parent"
     tools:context="com.maqueezu.el.ui.fragment.HealthyInformationFragment">
 
-    <!-- 用SwipeRefreshLayout包裹RecyclerView-->
-    <!--<android.support.v4.widget.SwipeRefreshLayout-->
-        <!--android:id="@+id/srl_swipe_refresh_layout"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent">-->
+     <!--用SmartRefreshLayout包裹RecyclerView-->
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smart_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <android.support.v7.widget.RecyclerView
             android:id="@+id/mRecyclerView_HealthyInformation"
             android:layout_width="match_parent"
@@ -17,6 +17,6 @@
             >
         </android.support.v7.widget.RecyclerView>
 
-    <!--</android.support.v4.widget.SwipeRefreshLayout>-->
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </com.zhy.autolayout.AutoRelativeLayout>
