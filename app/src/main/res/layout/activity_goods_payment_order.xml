@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/include1"
+        android:fillViewport="true"
         >
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
@@ -402,6 +403,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rl_zhifu_3"
+                android:layout_marginBottom="@dimen/dp_10"
                 >
                 <TextView
                     android:layout_width="wrap_content"
@@ -423,7 +425,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_alignParentBottom="true"
-        android:layout_below="@id/zhifujinggao"
         android:weightSum="3"
         >
         <com.zhy.autolayout.AutoRelativeLayout

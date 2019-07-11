@@ -77,39 +77,39 @@ public final class R {
         public static final int srlTextUpdate = 0x7f010053;
     }
     public static final class id {
-        public static final int FixedBehind = 0x7f0e0041;
-        public static final int FixedFront = 0x7f0e0042;
-        public static final int MatchLayout = 0x7f0e0043;
-        public static final int Scale = 0x7f0e0044;
-        public static final int Translate = 0x7f0e0045;
-        public static final int srl_classics_arrow = 0x7f0e02a9;
-        public static final int srl_classics_center = 0x7f0e02ac;
-        public static final int srl_classics_progress = 0x7f0e02ab;
-        public static final int srl_classics_title = 0x7f0e02aa;
-        public static final int srl_classics_update = 0x7f0e02ad;
+        public static final int FixedBehind = 0x7f0f0041;
+        public static final int FixedFront = 0x7f0f0042;
+        public static final int MatchLayout = 0x7f0f0043;
+        public static final int Scale = 0x7f0f0044;
+        public static final int Translate = 0x7f0f0045;
+        public static final int srl_classics_arrow = 0x7f0f02d6;
+        public static final int srl_classics_center = 0x7f0f02d9;
+        public static final int srl_classics_progress = 0x7f0f02d8;
+        public static final int srl_classics_title = 0x7f0f02d7;
+        public static final int srl_classics_update = 0x7f0f02da;
     }
     public static final class layout {
-        public static final int srl_classics_footer = 0x7f04007d;
-        public static final int srl_classics_header = 0x7f04007e;
+        public static final int srl_classics_footer = 0x7f040085;
+        public static final int srl_classics_header = 0x7f040086;
     }
     public static final class string {
-        public static final int srl_component_falsify = 0x7f070013;
-        public static final int srl_content_empty = 0x7f070014;
-        public static final int srl_footer_failed = 0x7f070015;
-        public static final int srl_footer_finish = 0x7f070016;
-        public static final int srl_footer_loading = 0x7f070017;
-        public static final int srl_footer_nothing = 0x7f070018;
-        public static final int srl_footer_pulling = 0x7f070019;
-        public static final int srl_footer_refreshing = 0x7f07001a;
-        public static final int srl_footer_release = 0x7f07001b;
-        public static final int srl_header_failed = 0x7f07001c;
-        public static final int srl_header_finish = 0x7f07001d;
-        public static final int srl_header_loading = 0x7f07001e;
-        public static final int srl_header_pulling = 0x7f07001f;
-        public static final int srl_header_refreshing = 0x7f070020;
-        public static final int srl_header_release = 0x7f070021;
-        public static final int srl_header_secondary = 0x7f070022;
-        public static final int srl_header_update = 0x7f070023;
+        public static final int srl_component_falsify = 0x7f080013;
+        public static final int srl_content_empty = 0x7f080014;
+        public static final int srl_footer_failed = 0x7f080015;
+        public static final int srl_footer_finish = 0x7f080016;
+        public static final int srl_footer_loading = 0x7f080017;
+        public static final int srl_footer_nothing = 0x7f080018;
+        public static final int srl_footer_pulling = 0x7f080019;
+        public static final int srl_footer_refreshing = 0x7f08001a;
+        public static final int srl_footer_release = 0x7f08001b;
+        public static final int srl_header_failed = 0x7f08001c;
+        public static final int srl_header_finish = 0x7f08001d;
+        public static final int srl_header_loading = 0x7f08001e;
+        public static final int srl_header_pulling = 0x7f08001f;
+        public static final int srl_header_refreshing = 0x7f080020;
+        public static final int srl_header_release = 0x7f080021;
+        public static final int srl_header_secondary = 0x7f080022;
+        public static final int srl_header_update = 0x7f080023;
     }
     public static final class styleable {
         public static final int[] BallPulseFooter = { 0x7f01003f, 0x7f010101, 0x7f010102 };

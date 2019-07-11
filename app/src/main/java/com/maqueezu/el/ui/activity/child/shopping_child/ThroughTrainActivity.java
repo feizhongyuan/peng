@@ -38,8 +38,8 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
     private AutoLinearLayout ll_base_1;
     private ViewPager view_pager_shangpinliebiao;
 
-    private AdvertBean.DataBean data;
     private ArrayList<Fragment> fragments;
+    private AdvertBean.DataBean dataBean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,11 +84,11 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
     private void initDate() {
         Intent intent = getIntent();
         String name = getIntent().getStringExtra("name");
-        data = (AdvertBean.DataBean) intent.getSerializableExtra("data");
+        dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");
         title_text.setText(name);
         fragments = new ArrayList<>();
-        fragments.add(ThroughTrainListItemFragment.newInstance(data));
-        fragments.add(ThroughTrainListItemFragment.newInstance(data));
+        fragments.add(ThroughTrainListItemFragment.newInstance(dataBean));
+        fragments.add(ThroughTrainListItemFragment.newInstance(dataBean));
 
         FragmentAdapter2 adapter = new FragmentAdapter2(getSupportFragmentManager(), fragments);
         view_pager_shangpinliebiao.setAdapter(adapter);
@@ -97,6 +97,17 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
     private void initListener() {
 
     }
+//
+//    @Subscribe(threadMode = ThreadMode.MAIN)
+//    public void onEvent1(AdvertBean advert) {
+//        getAdvert(advert);
+//    }
+//
+//    private void getAdvert(AdvertBean advert) {
+//        dataBean = advert.getData();
+//        WeakReference<AdvertBean.DataBean> weakReference = new WeakReference<>(dataBean);
+//
+//    }
 
     @Override
     public void onClick(View v) {

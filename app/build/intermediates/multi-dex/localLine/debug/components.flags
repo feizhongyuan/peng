@@ -22,7 +22,6 @@
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\21.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\22.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\23.jar'(**.class)
--injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\24.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\25.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\26.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\27.jar'(**.class)
@@ -41,7 +40,6 @@
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\40.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\41.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\42.jar'(**.class)
--injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\43.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\44.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\45.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\46.jar'(**.class)
@@ -52,6 +50,9 @@
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\51.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\52.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\53.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\54.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\55.jar'(**.class)
+-injars 'E:\GengYu\Company\Project\app\build\intermediates\transforms\desugar\localLine\debug\56.jar'(**.class)
 -injars 'E:\GengYu\Company\Project\app\build\intermediates\processing-tools\runtime-deps\localLine\debug\desugar_try_with_resources.jar'(**.class)
 -outjars 'E:\GengYu\Company\Project\app\build\intermediates\multi-dex\localLine\debug\componentClasses.jar'
 

@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.maqueezu.el.ui.fragment.HealthyInformationFragment">
+    tools:context="com.maqueezu.el.ui.fragment.home_child.HealthyInformationFragment">
 
      <!--用SmartRefreshLayout包裹RecyclerView-->
     <com.scwang.smartrefresh.layout.SmartRefreshLayout

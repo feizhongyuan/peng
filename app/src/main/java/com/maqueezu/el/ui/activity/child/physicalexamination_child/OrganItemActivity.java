@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -12,6 +14,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.el.ui.adapter.FragmentAdapter2;
+import com.maqueezu.el.ui.fragment.physicalexamination_child.OrganItem2Fragment;
+import com.maqueezu.el.ui.fragment.physicalexamination_child.OrganItemFragment;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -39,6 +44,8 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
     private ViewPager mViewPager_organ;
     private AdvertBean.DataBean.AdvListBean advListBean;
     private TextView tv_organ_item_address;
+    private AutoLinearLayout rl_tijianjigou;
+    private AutoLinearLayout rl_jigoutaocan;
 
     private List<Fragment> fragments;
 
@@ -84,6 +91,10 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
         mViewPager_organ.setOnClickListener(this);
         tv_organ_item_address = (TextView) findViewById(R.id.tv_organ_item_address);
         tv_organ_item_address.setOnClickListener(this);
+        rl_tijianjigou = (AutoLinearLayout) findViewById(R.id.rl_tijianjigou);
+        rl_tijianjigou.setOnClickListener(this);
+        rl_jigoutaocan = (AutoLinearLayout) findViewById(R.id.rl_jigoutaocan);
+        rl_jigoutaocan.setOnClickListener(this);
     }
 
     private void initData() {
@@ -99,8 +110,13 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
 
         fragments = new ArrayList<>();
 
+        fragments.add(OrganItemFragment.newInstance(advListBean));
+        fragments.add(OrganItem2Fragment.newInstance());
 
+        FragmentAdapter2 adapter = new FragmentAdapter2(getSupportFragmentManager(), fragments);
+        mViewPager_organ.setAdapter(adapter);
 
+        mViewPager_organ.setCurrentItem(0);
 
     }
 
@@ -112,8 +128,42 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.back_layout:
+            case R.id.title_back_image:
                 this.finish();
+                break;
+            case R.id.rl_tijianjigou:
+            case R.id.img_organ_item_tijianjigou_img:
+            case R.id.tv_organ_item_tijianjigou_tv:
+                mViewPager_organ.setCurrentItem(0);
+                break;
+            case R.id.rl_jigoutaocan:
+            case R.id.img_organ_item_jigoutaocan_img:
+            case R.id.tv_organ_item_jigoutaocan_tv:
+                mViewPager_organ.setCurrentItem(1);
+                break;
+            default:
                 break;
         }
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        return super.dispatchTouchEvent(ev);
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        return super.onTouchEvent(event);
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        return super.onKeyUp(keyCode, event);
+    }
+
 }

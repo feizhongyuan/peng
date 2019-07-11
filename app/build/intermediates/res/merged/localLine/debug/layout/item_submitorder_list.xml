@@ -7,8 +7,8 @@
 
     <ImageView
         android:id="@+id/img_submitOrder_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/dp_100"
+        android:layout_height="@dimen/dp_100"
         android:layout_marginLeft="@dimen/dp_10"
         android:src="@mipmap/ic_launcher" />
 

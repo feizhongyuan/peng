@@ -1481,6 +1481,7 @@
     <string name="name_gegnduo">更多</string>
     <string name="name_gouwuche">购物车</string>
     <string name="name_guanfangxiaoxi">官方消息</string>
+    <string name="name_guanzhu">+关注</string>
     <string name="name_guizeshuoming">规则说明</string>
     <string name="name_heji">合计:</string>
     <string name="name_hudongxiaoxi">互动消息</string>
@@ -1495,7 +1496,7 @@
     <string name="name_jiankangshebei">健康设备</string>
     <string name="name_jiankangxingweizhishu">健康行为指数</string>
     <string name="name_jiankangyundong">健康运动</string>
-    <string name="name_jiankangzixun">健康咨询</string>
+    <string name="name_jiankangzixun">健康资讯</string>
     <string name="name_jiarugouwuche">加入购物车</string>
     <string name="name_jiuyijilu">就医记录</string>
     <string name="name_kankanqitajigou">看看其他机构</string>
@@ -1558,8 +1559,10 @@
     <string name="name_weixinzhifu">微信支付</string>
     <string name="name_wenxintishi">温馨提示</string>
     <string name="name_wenxintishi_xiangqing">\t\t\t Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodaleluctus nunc eget.</string>
+    <string name="name_wenzhangpinglun">文章评论</string>
     <string name="name_wuliuzhushou">物流助手</string>
     <string name="name_xiadanshijian">下单时间</string>
+    <string name="name_xiangqingjieshao">详情介绍</string>
     <string name="name_xiaoji">小计:</string>
     <string name="name_xiaoxi">消息</string>
     <string name="name_xiayibu">下一步</string>
@@ -2868,6 +2871,13 @@
     <style name="RtlUnderlay.Widget.AppCompat.ActionButton.Overflow" parent="Base.Widget.AppCompat.ActionButton">
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
+    </style>
+    <style name="TabLayoutTextSize">
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="TabLayoutTextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
     </style>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>

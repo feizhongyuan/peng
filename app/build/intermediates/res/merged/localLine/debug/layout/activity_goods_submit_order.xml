@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/include1"
+        android:fillViewport="true"
         >
         <com.zhy.autolayout.AutoRelativeLayout
             android:layout_width="match_parent"
@@ -218,6 +219,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rl_base_5"
                 android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_20"
                 >
 
                 <TextView
@@ -240,61 +242,62 @@
 
             </com.zhy.autolayout.AutoRelativeLayout>
 
+            <!--底部栏-->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/rl_base_6"
+                android:layout_marginTop="@dimen/dp_100"
+                android:weightSum="3">
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2">
+
+                    <TextView
+                        android:id="@+id/tv_OrderAmount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:text="￥1111"
+                        android:textColor="@color/ref_red"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/heji"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/tv_OrderAmount1"
+                        android:layout_toLeftOf="@id/tv_OrderAmount1"
+                        android:text="@string/name_heji" />
+
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_tijiaodingdan"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/huise">
+
+                    <TextView
+                        android:id="@+id/tv_tijiaodingdan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="@string/name_tijiaodingdan"
+                        android:textSize="@dimen/sp_15" />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
         </com.zhy.autolayout.AutoRelativeLayout>
     </android.support.v4.widget.NestedScrollView>
 
-    <!--底部栏-->
-    <com.zhy.autolayout.AutoLinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:layout_alignParentBottom="true"
-        android:layout_below="@id/rl_base_6"
-        android:layout_marginTop="@dimen/dp_100"
-        android:weightSum="3">
-
-        <com.zhy.autolayout.AutoRelativeLayout
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="match_parent"
-            android:layout_weight="2">
-
-            <TextView
-                android:id="@+id/tv_OrderAmount1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:layout_marginRight="@dimen/dp_10"
-                android:text="￥1111"
-                android:textColor="@color/ref_red"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/heji"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@id/tv_OrderAmount1"
-                android:layout_toLeftOf="@id/tv_OrderAmount1"
-                android:text="@string/name_heji" />
-
-
-        </com.zhy.autolayout.AutoRelativeLayout>
-
-        <com.zhy.autolayout.AutoRelativeLayout
-            android:id="@+id/rl_tijiaodingdan"
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@color/huise">
-
-            <TextView
-                android:id="@+id/tv_tijiaodingdan"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
-                android:text="@string/name_tijiaodingdan"
-                android:textSize="@dimen/sp_15" />
-
-        </com.zhy.autolayout.AutoRelativeLayout>
-
-    </com.zhy.autolayout.AutoLinearLayout>
 
 </com.zhy.autolayout.AutoRelativeLayout>

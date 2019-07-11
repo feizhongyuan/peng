@@ -19,6 +19,7 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.AddCardProcessActivity;
+import com.maqueezu.el.ui.activity.child.shopping_child.GoodsDetailActivity;
 import com.maqueezu.el.ui.activity.child.shopping_child.GoodsSortActivity;
 import com.maqueezu.el.ui.activity.child.shopping_child.ShoppingCartActivity;
 import com.maqueezu.el.ui.activity.child.shopping_child.ThroughTrainActivity;
@@ -334,72 +335,49 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
             case R.id.img_jiankangyundong:
             case R.id.tv_jiankangyundong:
                 String s = tv_jiankangyundong.getText().toString();
-                Bundle bundle = new Bundle();
-                bundle.putString("name", s);
-                bundle.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity,s,data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_muyinghuli:
             case R.id.img_muyinghuli:
             case R.id.tv_muyinghuli:
                 String s1 = tv_muyinghuli.getText().toString();
-                Bundle bundle1 = new Bundle();
-                bundle1.putString("name", s1);
-                bundle1.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle1, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity,s1,data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_jiankangshebei:
             case R.id.img_jiankangshebei:
             case R.id.tv_jiankangshebei:
                 String s2 = tv_jiankangshebei.getText().toString();
-                Bundle bundle2 = new Bundle();
-                bundle2.putString("name", s2);
-                bundle2.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle2, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity,s2,data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_shipinbaojian:
             case R.id.img_shipinbaojian:
             case R.id.tv_shipinbaojian:
                 String s3 = tv_shipinbaojian.getText().toString();
-                Bundle bundle3 = new Bundle();
-                bundle3.putString("name", s3);
-                bundle3.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle3, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity,s3,data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_jiankangjiaju:
             case R.id.img_jiankangjiaju:
             case R.id.tv_jiankangjiaju:
                 String s4 = tv_jiankangjiaju.getText().toString();
-                Bundle bundle4 = new Bundle();
-                bundle4.putString("name", s4);
-                bundle4.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle4, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity,s4,data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_meizhuangxihu:
             case R.id.img_meizhuangxihu:
             case R.id.tv_meizhuangxihu:
                 String s5 = tv_meizhuangxihu.getText().toString();
-                Bundle bundle5 = new Bundle();
-                bundle5.putString("name", s5);
-                bundle5.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle5, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity,s5,data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_jiankangbaoxian:
             case R.id.img_jiankangbaoxian:
             case R.id.tv_jiankangbaoxian:
                 String s6 = tv_jiankangbaoxian.getText().toString();
-                Bundle bundle6 = new Bundle();
-                bundle6.putString("name", s6);
-                bundle6.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle6, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity,s6,data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_fenlei:
             case R.id.img_fenlei:
             case R.id.tv_fenlei:
-                Bundle bundle7 = new Bundle();
-                bundle7.putString("name", "全部分类");
-                bundle7.putSerializable("data", goodsCatBean);
-                multiplexIntent(mActivity, bundle7, GoodsSortActivity.class);
+
+//                multiplexIntentGoods(mActivity,"全部分类",goodsCatBean, GoodsSortActivity.class);
                 break;
             case R.id.tv_chakanxiangqing://查看详情
                 Intent intent1 = new Intent(mActivity,AddCardProcessActivity.class);
@@ -409,31 +387,19 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
                 startActivity(intent1);
                 break;
             case R.id.mTv_gengduo_remaituijian:
-                Bundle bundle9 = new Bundle();
-                bundle9.putString("name", "热卖推荐");
-                bundle9.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle9, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity, "热卖推荐",data, ThroughTrainActivity.class);
                 break;
             case R.id.mTv_gengduo_pinzhishenghuo:
-                Bundle bundle10 = new Bundle();
-                bundle10.putString("name", "品质生活");
-                bundle10.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle10, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity, "品质生活",data, ThroughTrainActivity.class);
                 break;
             case R.id.mTv_gengduo_pinzhishenghuo_1:
-                Bundle bundle11 = new Bundle();
-                bundle11.putString("name", "品质生活");
-                bundle11.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle11, ThroughTrainActivity.class);
+                multiplexIntentData(mActivity, "品质生活",data, ThroughTrainActivity.class);
                 break;
             case R.id.rl_shoppingCart:
             case R.id.img_shoppingCart:
             case R.id.shoppingCart_num_background:
             case R.id.tv_shoppingCart_num:
-                Bundle bundle12 = new Bundle();
-                bundle12.putString("name", "购物车");
-                bundle12.putSerializable("data", data);
-                multiplexIntent(mActivity, bundle12, ShoppingCartActivity.class);
+                multiplexIntentData(mActivity, "购物车",data, ShoppingCartActivity.class);
                 break;
             default:
                 break;
@@ -444,11 +410,7 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
     public void OnBannerClick(int position) {
         Toast.makeText(mActivity, "" + (position + 1), Toast.LENGTH_SHORT).show();
         AdvertBean.DataBean.AdvListBean advListBean = advList.get(position);
-        Bundle bundle = new Bundle();
-        bundle.putString("name", advListBean.getAname());
-        bundle.putSerializable("data", data);
-        multiplexIntent(mActivity, bundle, ThroughTrainActivity.class);
-
+        multiplexIntentData(mActivity,advListBean.getAname(),data,ThroughTrainActivity.class);
 
     }
 
@@ -457,9 +419,19 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
         Toast.makeText(mActivity, "" + (position + 1), Toast.LENGTH_SHORT).show();
     }
 
-    private void multiplexIntent(Context context, Bundle bundle, Class cla) {
+    private void multiplexIntentData(Context context,String name,AdvertBean.DataBean dataBean, Class cla) {
         Intent intent = new Intent(context, cla);
+        Bundle bundle = new Bundle();
+        bundle.putString("name",name);
+        bundle.putSerializable("data", dataBean);
         intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
+    private void multiplexIntentGoods(Context context,String name,GoodsCatBean goodsCatBean,Class cla){
+        Intent intent = new Intent(context,cla);
+        intent.putExtra("name",name);
+        intent.putExtra("goods", goodsCatBean);
         startActivity(intent);
     }
 

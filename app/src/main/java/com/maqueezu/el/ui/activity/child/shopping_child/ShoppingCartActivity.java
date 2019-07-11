@@ -21,6 +21,7 @@ import com.maqueezu.utils.tools.ToastUtil;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -58,7 +59,6 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
-
         initView();
         initDate();
         initListener();
@@ -107,7 +107,8 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         String name = intent.getStringExtra("name");
         title_text.setText(name);
 
-        intent.getSerializableExtra("data");//获取传递的类
+        AdvertBean.DataBean dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");//商城模块传递的类
+        AdvertBean.DataBean.AdvListBean advListBean = (AdvertBean.DataBean.AdvListBean) intent.getSerializableExtra("advListBean");//商城详情页传递的类
 
         shoppingCartBeanList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
@@ -298,6 +299,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         //跳转到支付界面
 
         Intent intent = new Intent(this,GoodsSubmitOrderActivity.class);
+        intent.putExtra("price",tv_total_price.getText().toString());
         startActivity(intent);
 
     }

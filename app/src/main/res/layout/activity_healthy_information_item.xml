@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.home_child.HealthyInformationItemActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+
+        <!--标题区-->
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        <TextView
+            android:id="@+id/tv_information_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="文章标题文章标题文章标题文章标题文章标题"
+            android:textSize="@dimen/sp_18"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_margin="@dimen/dp_10"
+
+            />
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_healthyNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_information_item_title"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginBottom="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            >
+            <ImageView
+                android:id="@+id/img_healthyNumber_img"
+                android:layout_width="@dimen/dp_40"
+                android:layout_height="@dimen/dp_40"
+                android:src="@mipmap/ic_launcher"
+                />
+            <TextView
+                android:id="@+id/tv_healthyNumber_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="减肥大拿"
+                android:layout_toRightOf="@id/img_healthyNumber_img"
+                android:layout_marginLeft="@dimen/dp_5"
+                />
+            <TextView
+                android:id="@+id/tv_healthyNumber_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2019-7-11"
+                android:layout_toRightOf="@id/img_healthyNumber_img"
+                android:layout_alignBottom="@id/img_healthyNumber_img"
+                android:layout_marginLeft="@dimen/dp_5"
+                />
+
+            <TextView
+                android:id="@+id/tv_healthyNumber_guanzhu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_guanzhu"
+                android:padding="@dimen/dp_3"
+                android:background="@drawable/shape1"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                />
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <!--内容区-->
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_healthyNumber"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            >
+            <ImageView
+                android:id="@+id/img_information_item_img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_launcher"
+                android:layout_centerHorizontal="true"
+                />
+            <TextView
+                android:id="@+id/tv_information_item_content"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_information_item_img"
+                android:layout_marginBottom="@dimen/dp_10"
+                android:text="
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+
+
+
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean euismod bibendum laoreet. Proin gravida dolor sit amet lacus accumsan et viverra justo commodo. Proin sodales pulvinar tempor. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam fermentum, nulla luctus pharetra vulputate, felis tellus mollis orci, sed rhoncus sapien nunc eget.
+"
+                />
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            android:background="@color/black"
+            android:layout_below="@id/rl_content"
+            />
+
+        <!--文章评论区-->
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_pinglun"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_content"
+            android:layout_marginTop="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            >
+            <TextView
+                android:id="@+id/wenzhangpinglun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_wenzhangpinglun"
+                android:layout_marginBottom="@dimen/dp_10"
+                />
+            <TextView
+                android:id="@+id/tv_wenzhangpinglun_sum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(XX)"
+                android:layout_toRightOf="@id/wenzhangpinglun"
+                android:layout_marginBottom="@dimen/dp_10"
+                />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/mRecycler_comment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/wenzhangpinglun"
+                android:layout_marginBottom="@dimen/dp_45"
+                >
+
+            </android.support.v7.widget.RecyclerView>
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <ImageView
+            android:id="@+id/img_information_back"
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_20"
+            android:src="@mipmap/fanhui"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_gravity="center"
+            />
+        <EditText
+            android:id="@+id/et_information_pinglun"
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="6"
+            android:layout_height="wrap_content"
+            android:hint="我也说两句"
+            android:background="@drawable/shape1"
+            android:padding="@dimen/dp_5"
+            android:layout_gravity="center"
+            android:gravity="center"
+            />
+
+        <ImageView
+            android:id="@+id/img_information_message"
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_25"
+            android:src="@mipmap/fenxiang"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+        <ImageView
+            android:id="@+id/img_information_collection"
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_25"
+            android:src="@mipmap/fenxiang"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+        <ImageView
+            android:id="@+id/img_information_share"
+            android:layout_width="@dimen/dp_0"
+            android:layout_weight="1"
+            android:layout_height="@dimen/dp_25"
+            android:src="@mipmap/fenxiang"
+            android:layout_gravity="center"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

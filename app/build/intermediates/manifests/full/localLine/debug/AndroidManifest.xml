@@ -39,8 +39,10 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name="com.maqueezu.el.ui.test.TestActivity" />
-        <activity android:name="com.maqueezu.el.ui.test.Test1Activity" />
+        <activity android:name="com.maqueezu.el.ui.test.TestActivity" >
+        </activity>
+        <activity android:name="com.maqueezu.el.ui.test.Test1Activity" >
+        </activity>
         <activity android:name="com.maqueezu.el.ui.activity.WelcomeActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -49,7 +51,6 @@
             </intent-filter>
         </activity>
         <activity android:name="com.maqueezu.el.ui.activity.child.home_child.AddressActivity" />
-        <activity android:name="com.maqueezu.el.ui.test.Test2Activity" />
         <activity android:name="com.maqueezu.el.ui.activity.child.home_child.HealthyBehaviorActivity" />
         <activity android:name="com.maqueezu.el.ui.activity.SearchActivity" />
         <activity android:name="com.maqueezu.el.ui.activity.child.physicalexamination_child.PhysicalSetMealActivity" />
@@ -75,6 +76,7 @@
         <activity android:name="com.maqueezu.el.ui.activity.child.shopping_child.GoodsPaymentOrderActivity" />
         <activity android:name="com.maqueezu.el.ui.activity.child.home_child.AllMessageActivity" />
         <activity android:name="com.maqueezu.el.ui.activity.MultiplexActivity" />
+        <activity android:name="com.maqueezu.el.ui.activity.child.home_child.HealthyInformationItemActivity" />
         <activity
             android:name="com.maqueezu.utils.ui.FragmentContainerActivity"
             android:configChanges="orientation|screenSize|keyboardHidden|keyboard|"

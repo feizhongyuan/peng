@@ -20,12 +20,12 @@
         "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\layout\\view_title.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_submit_order.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_submit_order.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\fragment_archives.xml",
@@ -108,12 +108,12 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\9d79d01d68dfeaae0ed10ec79e97e489\\res\\layout\\notification_template_big_media_custom.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_action_menu_layout.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_action_menu_layout.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\notification_template_part_time.xml",
@@ -132,12 +132,12 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\9d79d01d68dfeaae0ed10ec79e97e489\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_goods_submit_order.xml",
-        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_goods_submit_order.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\layout\\design_navigation_item_header.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_goods_submit_order.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_goods_submit_order.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\notification_template_media_custom.xml",
@@ -256,10 +256,6 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.0.2.aar\\15b6d5c851836cdc731fab284008815d\\res\\layout\\notification_action.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_test2.xml",
-        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_test2.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_recommend_setmeal.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_recommend_setmeal.xml"
     },
@@ -274,6 +270,10 @@
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_select_dialog_material.xml",
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_select_dialog_material.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\header_item.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\header_item.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_dialog_title_material.xml",
@@ -308,6 +308,10 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_popup_menu_header_item_layout.xml"
     },
     {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_healthy_information_item.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_healthy_information_item.xml"
+    },
+    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\fragment_my.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\fragment_my.xml"
     },
@@ -320,16 +324,20 @@
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\fragment_load_data.xml"
     },
     {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\city_list_item.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\city_list_item.xml"
+    },
+    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\item_shoppingcart_group.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\item_shoppingcart_group.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\progress.xml",
-        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\layout\\progress.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_goods_detail.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_goods_detail.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\progress.xml",
+        "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\layout\\progress.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\design_navigation_item.xml",
@@ -344,12 +352,16 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_screen_simple.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\item_singleproject.xml",
-        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\item_singleproject.xml"
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\right_list_item.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\right_list_item.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_custom_expert.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_custom_expert.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\item_singleproject.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\item_singleproject.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\design_layout_tab_icon.xml",
@@ -388,12 +400,24 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\9d79d01d68dfeaae0ed10ec79e97e489\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\fragment_medical_service.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\fragment_medical_service.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\fragment_oragn_item__item_.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\fragment_oragn_item__item_.xml"
+    },
+    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_action_bar_title_item.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\design_navigation_menu_item.xml",
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\layout\\design_navigation_menu_item.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\overlay.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\overlay.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\notification_template_big_media_narrow_custom.xml",
@@ -412,20 +436,16 @@
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_set_meal_list.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\fragment_home.xml",
-        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\fragment_home.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\item_menu_list.xml",
         "source": "E:\\GengYu\\Company\\Project\\utils\\build\\intermediates\\bundles\\debug\\res\\layout\\item_menu_list.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_action_mode_bar.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_adjustment_project.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_adjustment_project.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\abc_action_mode_bar.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\abc_expanded_menu_layout.xml",
@@ -440,20 +460,28 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\item_singleproject2.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\item_singleproject2.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.0.2.aar\\47ec22179afd5680c067c9792384b493\\res\\layout\\select_dialog_item_material.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\activity_use_physical_examination_card.xml",
         "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\activity_use_physical_examination_card.xml"
     },
     {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\fragment_organ_item2.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\fragment_organ_item2.xml"
+    },
+    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\design_bottom_sheet_dialog.xml",
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\layout\\design_bottom_sheet_dialog.xml"
+    },
+    {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\left_list_item.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\left_list_item.xml"
     },
     {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\design_layout_tab_text.xml",

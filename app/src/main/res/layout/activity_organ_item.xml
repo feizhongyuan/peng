@@ -45,147 +45,166 @@
             android:textSize="@dimen/common_larger" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
-    <ImageView
-        android:id="@+id/img_organ_item_tu"
+    <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_below="@id/rl_statusbar"
-        android:src="@mipmap/ic_launcher"
-        android:scaleType="fitXY"
-        />
-    <TextView
-        android:id="@+id/tv_organ_item_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="XXX体检机构"
-        android:layout_below="@id/img_organ_item_tu"
-        android:textSize="@dimen/sp_15"
-        android:layout_marginTop="@dimen/dp_10"
-        android:layout_marginLeft="@dimen/dp_10"
-        />
-    <TextView
-        android:id="@+id/tv_organ_item_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="工作时间"
-        android:layout_below="@id/tv_organ_item_title"
-        android:layout_marginTop="@dimen/dp_10"
-        android:layout_marginLeft="@dimen/dp_10"
-        />
-    <com.zhy.autolayout.AutoLinearLayout
-        android:id="@+id/ll_base_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/tv_organ_item_time"
-        android:layout_marginTop="@dimen/dp_10"
-        android:orientation="horizontal"
-        android:weightSum="5"
+        android:fillViewport="true"
         >
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="wrap_content"
-            android:layout_weight="4"
-            android:orientation="horizontal"
-            android:padding="@dimen/dp_10"
-            >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
             <ImageView
-                android:layout_width="wrap_content"
+                android:id="@+id/img_organ_item_tu"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@mipmap/dizhi"
-                android:layout_gravity="center"
+                android:src="@mipmap/ic_launcher"
+                android:scaleType="fitXY"
                 />
             <TextView
-                android:id="@+id/tv_organ_item_address"
+                android:id="@+id/tv_organ_item_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="西安西安西安西安西安西安西安西安西安西安西安西安西安西安"
-                />
-        </com.zhy.autolayout.AutoLinearLayout>
-
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center"
-            android:padding="@dimen/dp_10"
-            >
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@mipmap/kefu_01"
-                />
-        </com.zhy.autolayout.AutoLinearLayout>
-
-
-    </com.zhy.autolayout.AutoLinearLayout>
-
-    <com.zhy.autolayout.AutoLinearLayout
-        android:id="@+id/ll_base_2"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/dp_50"
-        android:orientation="horizontal"
-        android:weightSum="2"
-        android:layout_below="@id/ll_base_1"
-        android:layout_marginLeft="@dimen/dp_10"
-        android:layout_marginRight="@dimen/dp_10"
-        >
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical"
-            >
-            <ImageView
-                android:id="@+id/img_organ_item_tijianjigou_img"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/tab_healthy_selector"
+                android:text="XXX体检机构"
+                android:layout_below="@id/img_organ_item_tu"
+                android:textSize="@dimen/sp_15"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
                 />
             <TextView
-                android:id="@+id/tv_organ_item_tijianjigou_tv"
+                android:id="@+id/tv_organ_item_time"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_5"
-                android:text="体检机构"
+                android:text="工作时间"
+                android:layout_below="@id/tv_organ_item_title"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_marginLeft="@dimen/dp_10"
                 />
-        </com.zhy.autolayout.AutoLinearLayout>
-
-        <com.zhy.autolayout.AutoLinearLayout
-            android:layout_width="@dimen/dp_0"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            >
-            <ImageView
-                android:id="@+id/img_organ_item_jigoutaocan_img"
-                android:layout_width="wrap_content"
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/ll_base_1"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:src="@drawable/tab_physical_selector"
-                />
+                android:layout_below="@id/tv_organ_item_time"
+                android:layout_marginTop="@dimen/dp_10"
+                android:orientation="horizontal"
+                android:weightSum="5"
+                >
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/dizhi"
+                        android:layout_gravity="center"
+                        />
+                    <TextView
+                        android:id="@+id/tv_organ_item_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="西安西安西安西安西安西安西安西安西安西安西安西安西安西安"
+                        />
+                </com.zhy.autolayout.AutoLinearLayout>
 
-            <TextView
-                android:id="@+id/tv_organ_item_jigoutaocan_tv"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="机构套餐"
-                android:layout_marginTop="@dimen/dp_5"
-                />
-        </com.zhy.autolayout.AutoLinearLayout>
-
-    </com.zhy.autolayout.AutoLinearLayout>
-
-    <android.support.v4.view.ViewPager
-        android:id="@+id/mViewPager_organ"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/ll_base_2">
-
-    </android.support.v4.view.ViewPager>
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/kefu_01"
+                        />
+                </com.zhy.autolayout.AutoLinearLayout>
 
 
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/ll_base_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_below="@id/ll_base_1"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                >
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:id="@+id/rl_tijianjigou"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    >
+                    <ImageView
+                        android:id="@+id/img_organ_item_tijianjigou_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tab_healthy_selector"
+                        />
+                    <TextView
+                        android:id="@+id/tv_organ_item_tijianjigou_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/dp_5"
+                        android:text="体检机构"
+                        />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:id="@+id/rl_jigoutaocan"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+                    <ImageView
+                        android:id="@+id/img_organ_item_jigoutaocan_img"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/tab_physical_selector"
+                        />
+
+                    <TextView
+                        android:id="@+id/tv_organ_item_jigoutaocan_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="机构套餐"
+                        android:layout_marginTop="@dimen/dp_5"
+                        />
+                </com.zhy.autolayout.AutoLinearLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/ll_base_2"
+                >
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/mViewPager_organ"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_500"
+                    >
+
+                </android.support.v4.view.ViewPager>
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
 
 
 </com.zhy.autolayout.AutoRelativeLayout>

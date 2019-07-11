@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context="com.maqueezu.el.ui.activity.child.home_child.AddressActivity">
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rl_statusbar"
@@ -40,6 +41,125 @@
             android:singleLine="true"
             android:textColor="@color/white"
             android:textSize="@dimen/common_larger" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/city_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_statusbar"
+        android:orientation="vertical" >
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_dangqianCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_dangqianCity"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_25"
+                android:layout_marginRight="@dimen/dp_20"
+                android:background="#f0f0f0"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/dp_15"
+                android:textColor="#bcbcbc"
+                android:textSize="@dimen/sp_12"
+                android:visibility="visible" />
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_below="@id/tv_dangqianCity"
+                android:background="#ffffff"
+                android:layout_marginRight="@dimen/dp_20">
+                <TextView
+                    android:id="@+id/dangqian_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    android:text="name"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="#333333"
+                    android:padding="@dimen/dp_5"
+                    android:background="#cccccc"
+                    />
+                <View
+                    android:id="@+id/view_item_top_line1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="#dbdbdb"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_alignParentTop="true"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_dingweiCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_dangqianCity"
+            >
+            <TextView
+                android:id="@+id/tv_dingweiCity"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_25"
+                android:background="#f0f0f0"
+                android:paddingLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_20"
+                android:gravity="center_vertical"
+                android:textColor="#bcbcbc"
+                android:textSize="@dimen/sp_12"
+                android:visibility="visible" />
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_below="@id/tv_dingweiCity"
+                android:background="#ffffff"
+                android:layout_marginRight="@dimen/dp_20">
+                <TextView
+                    android:id="@+id/dingwei_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:singleLine="true"
+                    android:layout_centerVertical="true"
+                    android:text="name"
+                    android:textSize="@dimen/sp_15"
+                    android:textColor="#333333"
+                    android:padding="5dp"
+                    android:background="#cccccc"
+                    />
+                <View
+                    android:id="@+id/view_item_top_line2"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_5"
+                    android:background="#dbdbdb"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:layout_alignParentTop="true"/>
+            </com.zhy.autolayout.AutoRelativeLayout>
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+
+        <ListView
+            android:id="@+id/mListView_City"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_dingweiCity"
+            android:background="#E8E8E8"
+            android:divider="@null"
+            android:scrollbars="none" />
+
+        <com.maqueezu.el.ui.view.citylist.MyLetterListView
+            android:layout_marginTop="@dimen/dp_60"
+            android:layout_marginBottom="@dimen/dp_60"
+            android:id="@+id/cityLetterListView"
+            android:layout_width="@dimen/dp_25"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
 

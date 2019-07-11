@@ -198,7 +198,7 @@ public class GoodsDetailActivity extends AppCompatActivity implements View.OnCli
             case R.id.tv_goodsDetail_item_gouwuche:
                 Bundle bundle = new Bundle();
                 bundle.putString("name", "购物车");
-                bundle.putSerializable("data", advListBean);
+                bundle.putSerializable("advListBean", advListBean);
                 multiplexIntent(this, bundle, ShoppingCartActivity.class);
                 Toast.makeText(this, "购物车", Toast.LENGTH_SHORT).show();
                 break;
@@ -206,7 +206,7 @@ public class GoodsDetailActivity extends AppCompatActivity implements View.OnCli
             case R.id.tv_goodsDetail_item_addShoppingCart:
                 Bundle bundle1 = new Bundle();
                 bundle1.putString("name", "购物车");
-                bundle1.putSerializable("data", advListBean);
+                bundle1.putSerializable("advListBean", advListBean);
                 multiplexIntent(this, bundle1, ShoppingCartActivity.class);
                 Toast.makeText(this, "加入购物车", Toast.LENGTH_SHORT).show();
                 break;

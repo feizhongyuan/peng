@@ -33,6 +33,15 @@
         <item name="android:windowIsTranslucent">true</item>
     </style>
 
+    <!--设置Tablayout字体大小-->
+    <style name="TabLayoutTextSize">
+        <item name="android:textSize">10sp</item>
+    </style>
+    <!--设置Tablayout字体加粗-->
+    <style name="TabLayoutTextStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 
     <style name="ImageStyle1" >
         <item name="android:layout_alignParentTop">true</item>

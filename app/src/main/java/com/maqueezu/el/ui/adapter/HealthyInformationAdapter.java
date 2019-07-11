@@ -4,14 +4,12 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.GoodsCatBean;
-import com.maqueezu.el.ui.fragment.HealthyInformationFragment;
+import com.maqueezu.el.ui.fragment.home_child.HealthyInformationFragment;
 import com.maqueezu.utils.ui.recyclerView.adapter.BaseRecyclerAdapter;
 import com.maqueezu.utils.ui.recyclerView.adapter.MyViewHolder;
 
@@ -40,8 +38,8 @@ public class HealthyInformationAdapter extends BaseRecyclerAdapter<GoodsCatBean.
 
         Holder holder = (Holder) viewHolder;
         holder.information_title.setText(list.get(position).getName());
-        holder.information_author.setText(list.get(position).getLevel()+"");
-        holder.information_yueduliang.setText(list.get(position).getName()+"阅读量");
+        holder.information_author.setText(list.get(position).getLevel()+"作者");
+        holder.information_yueduliang.setText(list.get(position).getLevel()+"阅读量");
 //        Glide.with(context).load(list.get(position).getImage()).into(holder.information_img1);
 //        Glide.with(context).load(list.get(position).getImage()).into(holder.information_delete);
         holder.information_img1.setBackgroundResource(R.drawable.ic_launcher);

@@ -27,7 +27,7 @@ public class GoodsSortActivity extends AppCompatActivity {
     private RecyclerView mRecycler_goodsSort;
     private FrameLayout fl_fragment;
     private Context mContext;
-    private GoodsCatBean goodsCatBean;
+//    private GoodsCatBean goodsCatBean;
 
     private List<String> titles;
 
@@ -50,9 +50,9 @@ public class GoodsSortActivity extends AppCompatActivity {
     }
 
     private void initDate() {
-        Intent intent = getIntent();
-        String name = intent.getStringExtra("name");
-        goodsCatBean = (GoodsCatBean) intent.getSerializableExtra("data");
+//        Intent intent = getIntent();
+//        String name = intent.getStringExtra("name");
+//        goodsCatBean = (GoodsCatBean) intent.getSerializableExtra("data");
 
         titles = new ArrayList<>();
         titles.add("一级分类1");

@@ -21,6 +21,9 @@ import com.maqueezu.utils.ui.base.BaseActivity;
 import com.maqueezu.utils.ui.web.WebFragment;
 import com.maqueezu.utils.view.TitleView;
 
+/**
+ * 测试功能页
+ */
 public class TestActivity extends BaseActivity {
 
     private TitleView titleView;

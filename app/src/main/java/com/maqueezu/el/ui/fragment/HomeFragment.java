@@ -2,6 +2,7 @@ package com.maqueezu.el.ui.fragment;
 
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -26,6 +27,8 @@ import com.maqueezu.el.ui.activity.child.home_child.SignInActivity;
 import com.maqueezu.el.ui.adapter.FragmentAdapter;
 import com.maqueezu.el.ui.adapter.HealthyGridViewAdapter;
 import com.maqueezu.el.ui.adapter.MedicalGridViewAdapter;
+import com.maqueezu.el.ui.fragment.home_child.HealthyInformationFragment;
+import com.maqueezu.el.ui.fragment.home_child.MedicalServiceFragment;
 import com.maqueezu.utils.tools.ToastUtil;
 import com.maqueezu.utils.ui.base.BaseFragment;
 import com.maqueezu.utils.ui.custom.WaterRippleHelper;
@@ -64,9 +67,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private AutoLinearLayout rl_pingjia;//任务与订单总框
     private ImageView img_lingqumaquebi;//领取麻雀币图
     private AutoRelativeLayout rl_base_1;
-    private TextView tv_yiliaofuwu_title;
-    private AutoRelativeLayout rl_yiliaofuwu;
-    private GridView mGridView_yiliaofuwu;//医疗服务展示图
+    private TabLayout tab_yiliaofuwu;//医疗服务标题
+    private ViewPager view_pager_yiliaofuwu;//医疗服务信息展示
+//    private TextView tv_yiliaofuwu_title;
+//    private AutoRelativeLayout rl_yiliaofuwu;
+//    private GridView mGridView_yiliaofuwu;//医疗服务展示图
     private AutoRelativeLayout rl_base_2;
     private TextView mTv_gengduo_jiankangshangpin;
     private AutoRelativeLayout rl_jiankanglan;
@@ -79,8 +84,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private AutoRelativeLayout rl_item_waterripple;
 
 
-    private String[] arr = {"关注", "推荐", "养生", "减肥", "女性", "男性", "防癌", "慢性病","疾病1","疾病2","疾病3","疾病4",};
+    private String[] arr = {"关注", "推荐", "养生", "减肥", "女性", "男性", "防癌", "慢性病", "疾病1", "疾病2", "疾病3", "疾病4",};
+    private String[] project = {"医疗服务","内外科陪护","妇产科陪护","就医绿色通道","贴针灸","医学微视"};
     private List<Fragment> fragments;
+    private List<Fragment> fragmentList;
     private AdvertBean.DataBean data = null;
     private GoodsCatBean goodsCatBean = null;
 
@@ -147,10 +154,10 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         img_lingqumaquebi = (ImageView) rootView.findViewById(R.id.img_lingqumaquebi);
         img_lingqumaquebi.setOnClickListener(this);
         rl_base_1 = (AutoRelativeLayout) rootView.findViewById(R.id.rl_base_1);
-        tv_yiliaofuwu_title = (TextView) rootView.findViewById(R.id.tv_yiliaofuwu_title);
-        tv_yiliaofuwu_title.setOnClickListener(this);
-        rl_yiliaofuwu = (AutoRelativeLayout) rootView.findViewById(R.id.rl_yiliaofuwu);
-        mGridView_yiliaofuwu = (GridView) rootView.findViewById(R.id.mGridView_yiliaofuwu);
+//        tv_yiliaofuwu_title = (TextView) rootView.findViewById(R.id.tv_yiliaofuwu_title);
+//        tv_yiliaofuwu_title.setOnClickListener(this);
+//        rl_yiliaofuwu = (AutoRelativeLayout) rootView.findViewById(R.id.rl_yiliaofuwu);
+//        mGridView_yiliaofuwu = (GridView) rootView.findViewById(R.id.mGridView_yiliaofuwu);
         rl_base_2 = (AutoRelativeLayout) rootView.findViewById(R.id.rl_base_2);
         mTv_gengduo_jiankangshangpin = (TextView) rootView.findViewById(R.id.mTv_gengduo_jiankangshangpin);
         mTv_gengduo_jiankangshangpin.setOnClickListener(this);
@@ -164,29 +171,54 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         view_pager_jiankangzixun.setOnClickListener(this);
         rl_base_4 = (AutoRelativeLayout) rootView.findViewById(R.id.rl_base_4);
         rl_item_waterripple = (AutoRelativeLayout) rootView.findViewById(R.id.rl_item_waterripple);
+        tab_yiliaofuwu = (TabLayout) rootView.findViewById(R.id.tab_yiliaofuwu);
+        view_pager_yiliaofuwu = (ViewPager) rootView.findViewById(R.id.view_pager_yiliaofuwu);
     }
 
     @Override
     protected void initData(Bundle arguments) {
 
-
+//        TextView title = (TextView)(((LinearLayout) ((LinearLayout) tab_yiliaofuwu.getChildAt(0)).getChildAt(0)).getChildAt(1));
+//        title.setTextSize(12);
+//        title.setTextAppearance(getActivity(), R.style.TabLayoutTextSize);
 
     }
 
     @Override
     protected void initListener() {
-        mGridView_yiliaofuwu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//        mGridView_yiliaofuwu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+//                String aname = data.getAdvList().get(position).getAname();
+//                ToastUtil.showToast(getContext(), (position + 1) + ":" + aname);
+//            }
+//        });
+        mGridView_jiankangshangpin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String aname = data.getAdvList().get(position).getAname();
                 ToastUtil.showToast(getContext(), (position + 1) + ":" + aname);
             }
         });
-        mGridView_jiankangshangpin.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        tab_yiliaofuwu.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String aname = data.getAdvList().get(position).getAname();
-                ToastUtil.showToast(getContext(), (position + 1) + ":" + aname);
+            public void onTabSelected(TabLayout.Tab tab) {
+                view_pager_yiliaofuwu.setCurrentItem(tab.getPosition());
+                TextView title = (TextView)(((LinearLayout) ((LinearLayout) tab_yiliaofuwu.getChildAt(0)).getChildAt(tab.getPosition())).getChildAt(1));
+                title.setTextAppearance(getActivity(), R.style.TabLayoutTextStyle);
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                view_pager_yiliaofuwu.setCurrentItem(tab.getPosition());
+                TextView title = (TextView)(((LinearLayout) ((LinearLayout) tab_yiliaofuwu.getChildAt(0)).getChildAt(tab.getPosition())).getChildAt(1));
+                title.setTextAppearance(getActivity(), Typeface.NORMAL);
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
             }
         });
     }
@@ -212,6 +244,7 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
         gridView.setHorizontalSpacing(5); // 设置列表项水平间距
         gridView.setStretchMode(GridView.NO_STRETCH);
         gridView.setNumColumns(size); // 设置列数量=列表集合数
+        gridView.setVerticalScrollBarEnabled(false);//隐藏滚动条
 
         gridView.setAdapter(adapter);
     }
@@ -234,14 +267,15 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
 
         fragments = new ArrayList<>();
 
-        if (goodsCatBean != null){
-            Log.e("TAG","--------获取goodsCatBean:"+goodsCatBean.toString());
+        if (goodsCatBean != null) {
+            Log.e("TAG", "--------获取goodsCatBean:" + goodsCatBean.toString());
 
             for (int i = 0; i < arr.length; i++) {
-                fragments.add(HealthyInformationFragment.newInstance(arr[i], goodsCatBean));
+                HealthyInformationFragment healthyInformationFragment = HealthyInformationFragment.newInstance(arr[i]);
+                fragments.add(healthyInformationFragment);
             }
         }
-        FragmentAdapter adapter = new FragmentAdapter(getActivity().getSupportFragmentManager(), fragments, arr);
+        FragmentAdapter adapter = new FragmentAdapter(getChildFragmentManager(), fragments, arr);
         view_pager_jiankangzixun.setAdapter(adapter);
         view_pager_jiankangzixun.setOffscreenPageLimit(fragments.size());
         tab_toolbar_jiankangzixun.setupWithViewPager(view_pager_jiankangzixun);
@@ -252,13 +286,24 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private void getAdvert(AdvertBean advert) {
 //        广告获取
         data = advert.getData();
-        Log.e("TAG","广告获取--"+data.toString());
+        Log.e("TAG", "广告获取--" + data.toString());
 
-        if (data != null){
-            Log.e("TAG","------获取data："+data.toString());
-            MedicalGridViewAdapter medicalGridViewAdapter = new MedicalGridViewAdapter(getContext(), this.data);
-            setGridView(mGridView_yiliaofuwu, this.data, medicalGridViewAdapter, 300);
-            medicalGridViewAdapter.notifyDataSetChanged();
+        fragmentList = new ArrayList<>();
+
+        for (int i = 0; i < project.length; i++) {
+            MedicalServiceFragment medicalServiceFragment = MedicalServiceFragment.newInstance(project[i],advert);
+            fragmentList.add(medicalServiceFragment);
+        }
+
+        FragmentAdapter fragmentAdapter = new FragmentAdapter(getFragmentManager(),fragmentList,project);
+        view_pager_yiliaofuwu.setAdapter(fragmentAdapter);
+        tab_yiliaofuwu.setupWithViewPager(view_pager_yiliaofuwu);
+
+        if (data != null) {
+            Log.e("TAG", "------获取data：" + data.toString());
+//            MedicalGridViewAdapter medicalGridViewAdapter = new MedicalGridViewAdapter(getContext(), this.data);
+//            setGridView(mGridView_yiliaofuwu, this.data, medicalGridViewAdapter, 300);
+//            medicalGridViewAdapter.notifyDataSetChanged();
 
             HealthyGridViewAdapter healthyGridViewAdapter = new HealthyGridViewAdapter(getContext(), this.data);
             setGridView(mGridView_jiankangshangpin, this.data, healthyGridViewAdapter, 150);

@@ -23,6 +23,9 @@ import com.maqueezu.utils.ui.base.BaseActivity;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 登录验证页
+ */
 public class Test1Activity extends BaseActivity<IMineView, MinePresenter<IMineView>> implements IMineView, View.OnClickListener {
 
 
