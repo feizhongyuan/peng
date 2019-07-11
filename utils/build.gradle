@@ -58,7 +58,7 @@ dependencies {
     api 'org.greenrobot:eventbus:3.1.1'
 
     //数据库
-    api 'org.greenrobot:greendao:3.2.0'
+    api 'org.greenrobot:greendao:3.2.2'
 //    Okhttp
     implementation 'com.squareup.okhttp3:logging-interceptor:3.12.1'
     api 'com.squareup.okhttp3:okhttp:3.12.1'
