@@ -1593,6 +1593,7 @@
     <string name="name_zhuanjia_zhiyi2">体检定制专家会在48小时内跟您联系</string>
     <string name="name_zhuanjia_zhiyi3">联系时间：工作日9:00～18:00</string>
     <string name="name_zhuanjiadingzhi">专家定制（VIP）</string>
+    <string name="name_zhuanjiadingzhijilu">专家定制记录</string>
     <string name="name_zijidingzhi">自己定制</string>
     <string name="name_zuijinsousuo">最近搜索</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>

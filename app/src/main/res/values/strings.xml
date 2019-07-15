@@ -40,6 +40,8 @@
     <string name="name_tijianjigou">体检机构</string>
     <string name="name_tijiantaocan">体检套餐</string>
     <string name="name_dingzhitijian">定制体检</string>
+    <string name="name_zhuanjiadingzhijilu">专家定制记录</string>
+
 
     <string name="name_tijianka">体检卡</string>
     <string name="name_lijibangka">立即绑卡</string>

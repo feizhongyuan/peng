@@ -43,7 +43,7 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
     private String titleName;
     private GoodsCatBean goodsCatBean;
     private RecyclerView mRecyclerView_HealthyInformation;
-    private SmartRefreshLayout smart_refresh_layout;
+    private SmartRefreshLayout smart_refresh_layout;//下拉刷新
     private HealthyInformationAdapter healthyInformationAdapter;
 
     public HealthyInformationFragment() {
@@ -126,6 +126,8 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
         mRecyclerView_HealthyInformation.setAdapter(healthyInformationAdapter);
         mRecyclerView_HealthyInformation.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
 
+        smart_refresh_layout.setEnableLoadMore(false);//是否启用上拉加载功能
+        smart_refresh_layout.setEnableAutoLoadMore(true);//是否启用列表惯性滑动到底部时自动加载更多
 //         刷新完成
         smart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
             @Override
@@ -164,6 +166,18 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Toast.makeText(mActivity, "点击第" + (position + 1) + "条", Toast.LENGTH_SHORT).show();
+//        goodsCatBean = new GoodsCatBean();
+//        List<GoodsCatBean.DataBean> dataBeans = new ArrayList<>();
+//        for (int i = 0; i < 10; i++) {
+//            GoodsCatBean.DataBean dataBean = new GoodsCatBean.DataBean();
+//            dataBean.setName("标题标题标题标题标题标题标题标题"+i);
+//            int i1 = new Random().nextInt(1000);
+//            dataBean.setLevel(i1+i);
+//            dataBeans.add(dataBean);
+//        }
+//
+//        goodsCatBean.setData(dataBeans);
+
         Intent intent = new Intent(getContext(), HealthyInformationItemActivity.class);
         Bundle bundle = new Bundle();
         bundle.putSerializable("goods",goodsCatBean);

@@ -51,55 +51,71 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"/>
                 </com.zhy.autolayout.AutoRelativeLayout>
-                <com.zhy.autolayout.AutoLinearLayout
+
+                <!--更新平台推荐-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_pingtaituijian_item"
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/dp_100"
-                    android:weightSum="2"
+                    android:layout_height="wrap_content"
                     android:layout_below="@id/rl_pingtaituijian"
                     >
-                    <com.zhy.autolayout.AutoRelativeLayout
-                        android:layout_width="@dimen/dp_0"
-                        android:layout_weight="1"
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/mRecycler_platform"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="@dimen/dp_10"
-                        >
-                        <ImageView
-                            android:id="@+id/img_tijiantaocan"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background"
-                            android:layout_centerInParent="true"
-                            />
-                        <TextView
-                            android:id="@+id/tv_tijiantaocao"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/name_tijiantaocan"
-                            android:layout_centerHorizontal="true"
-                            />
-                    </com.zhy.autolayout.AutoRelativeLayout>
-                    <com.zhy.autolayout.AutoRelativeLayout
-                        android:layout_width="@dimen/dp_0"
-                        android:layout_weight="1"
-                        android:layout_height="wrap_content"
-                        android:padding="@dimen/dp_10">
-                        <ImageView
-                            android:id="@+id/img_tijianjigou"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/ic_launcher_background"
-                            android:layout_centerInParent="true"
-                            />
-                        <TextView
-                            android:id="@+id/tv_tijianjigou"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="@string/name_tijianjigou"
-                            android:layout_centerHorizontal="true"
-                            />
-                    </com.zhy.autolayout.AutoRelativeLayout>
+                        android:layout_centerHorizontal="true"
+                        ></android.support.v7.widget.RecyclerView>
+                </com.zhy.autolayout.AutoRelativeLayout>
 
-                </com.zhy.autolayout.AutoLinearLayout>
+                <!--<com.zhy.autolayout.AutoLinearLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="@dimen/dp_100"-->
+                    <!--android:weightSum="2"-->
+                    <!--android:layout_below="@id/rl_pingtaituijian_item"-->
+                    <!--&gt;-->
+                    <!--<com.zhy.autolayout.AutoRelativeLayout-->
+                        <!--android:layout_width="@dimen/dp_0"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="@dimen/dp_10"-->
+                        <!--&gt;-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/img_tijiantaocan"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@drawable/ic_launcher_background"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--/>-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/tv_tijiantaocao"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="@string/name_tijiantaocan"-->
+                            <!--android:layout_centerHorizontal="true"-->
+                            <!--/>-->
+                    <!--</com.zhy.autolayout.AutoRelativeLayout>-->
+                    <!--<com.zhy.autolayout.AutoRelativeLayout-->
+                        <!--android:layout_width="@dimen/dp_0"-->
+                        <!--android:layout_weight="1"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:padding="@dimen/dp_10">-->
+                        <!--<ImageView-->
+                            <!--android:id="@+id/img_tijianjigou"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:src="@drawable/ic_launcher_background"-->
+                            <!--android:layout_centerInParent="true"-->
+                            <!--/>-->
+                        <!--<TextView-->
+                            <!--android:id="@+id/tv_tijianjigou"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:text="@string/name_tijianjigou"-->
+                            <!--android:layout_centerHorizontal="true"-->
+                            <!--/>-->
+                    <!--</com.zhy.autolayout.AutoRelativeLayout>-->
+
+                <!--</com.zhy.autolayout.AutoLinearLayout>-->
 
             </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -109,7 +125,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rl_base_1"
+                android:clipChildren="false"
+                android:layerType="software"
                 >
+                <!--android:clipChildren="false"-->
+                <!--作用就是限制子view在父View范围内显示。-->
+                <!--注意RelativeLayout和ViewPager都要设置，否则没有效果。-->
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/rl_tijianka"
                     android:layout_width="match_parent"
@@ -133,6 +154,17 @@
                         android:textSize="@dimen/sp_16"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"/>
+                    <TextView
+                        android:id="@+id/tv_tijianka_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/sp_16"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/tv_tijianka_title"
+                        android:text="(1/11)"
+                        />
 
                     <TextView
                         android:id="@+id/mTv_tijianka_lijibangka"
@@ -145,24 +177,32 @@
                         />
                 </com.zhy.autolayout.AutoRelativeLayout>
 
-                <HorizontalScrollView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/rl_tijianka"
-                    >
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical">
-                        <GridView
-                            android:id="@+id/mGridView_tijianka"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:numColumns="auto_fit"
-                            android:stretchMode="spacingWidthUniform"></GridView>
-                    </LinearLayout>
-                </HorizontalScrollView>
+                <!--<HorizontalScrollView-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_below="@+id/rl_tijianka"-->
+                    <!--&gt;-->
+                    <!--<LinearLayout-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:orientation="vertical">-->
+                        <!--<GridView-->
+                            <!--android:id="@+id/mGridView_tijianka"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:gravity="center"-->
+                            <!--android:numColumns="auto_fit"-->
+                            <!--android:stretchMode="spacingWidthUniform"></GridView>-->
+                    <!--</LinearLayout>-->
+                <!--</HorizontalScrollView>-->
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/mViewPager_tijianka"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_180"
+                    android:layout_below="@id/rl_tijianka"
+                    android:padding="@dimen/dp_10"
+                    android:clipChildren="false"
+                    ></android.support.v4.view.ViewPager>
 
             </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -197,6 +237,16 @@
                         android:textSize="@dimen/sp_16"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"/>
+                    <TextView
+                        android:id="@+id/tv_dingzhijilu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/sp_16"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:text="@string/name_zhuanjiadingzhijilu"
+                        />
                 </com.zhy.autolayout.AutoRelativeLayout>
 
                 <com.zhy.autolayout.AutoLinearLayout

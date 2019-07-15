@@ -1,9 +1,11 @@
 package com.maqueezu.el.pojo;
 
+import java.io.Serializable;
+
 /**
  * 购物车Bean类
  */
-public class ShoppingCartBean {
+public class ShoppingCartBean implements Serializable {
 
     private int id;
     private String imageUrl;

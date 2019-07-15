@@ -18,6 +18,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/7/1 11:41
+ *
+ * 双列表-左列表适配
  */
 
 public class GoodsSortLeftListAdapter extends BaseRecyclerAdapter<String> {

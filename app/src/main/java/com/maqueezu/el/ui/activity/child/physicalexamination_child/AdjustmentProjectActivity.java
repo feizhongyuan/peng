@@ -14,7 +14,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
-import com.maqueezu.el.ui.adapter.SingleProjectAdatper;
+import com.maqueezu.el.pojo.ShoppingCartBean;
 import com.maqueezu.el.ui.adapter.SingleProjectAdatper2;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -25,7 +25,7 @@ import java.util.List;
 /**
  * 调整体检项目
  */
-public class AdjustmentProjectActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class AdjustmentProjectActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -34,22 +34,29 @@ public class AdjustmentProjectActivity extends AppCompatActivity implements View
     private TextView title_text;
     private TextView right_text;
     private AutoRelativeLayout rl_statusbar;
-    private TextView tv_adjustment_tijianjigou;
-    private TextView tv_adjustment_taocan;
-    private TextView tv_adjustment_heji_numSum;
-    private TextView tv_adjustment_heji;
+    private TextView tv_adjustment_tijianjigou;//体检机构
+    private TextView tv_adjustment_taocan;//体检套餐
+    private TextView tv_adjustment_heji_numSum;//总价合计
+    private TextView tv_adjustment_heji;//合计字符
+    private TextView tv_adjustment_count;//项目个数
     private AutoRelativeLayout rl_base_1;
-    private TextView tv_adjustment_yixuan_sum;
+    private TextView tv_adjustment_yixuan_sum;//已选项目总价
     private AutoRelativeLayout rl_single_1;
-    private RecyclerView mRecycler_yixuanxiangmu;
+    private RecyclerView mRecycler_yixuanxiangmu;//已选项目列表
     private AutoRelativeLayout rl_base_2;
-    private TextView tv_adjustment_kexuan_sum;
+    private TextView tv_adjustment_kexuan_sum;//可选项目总价
     private AutoRelativeLayout rl_single_2;
-    private RecyclerView mRecycler_kexuanxiangmu;
+    private RecyclerView mRecycler_kexuanxiangmu;//可选项目列表
     private AutoRelativeLayout rl_base_3;
-    private Button bt_querentijiao;
+    private Button bt_querentijiao;//确认提交
 
-    private List<String> list;
+    private List<ShoppingCartBean> shoppingCartBeanList;
+    private SingleProjectAdatper2 yixuanAdaper;
+    private SingleProjectAdatper2 kexuanAdapter;
+
+    private double totalPrice = 0.00;// 购买的商品总价
+    private int totalCount = 0;// 购买的商品总数量
+    private List<ShoppingCartBean> kexuanList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -108,25 +115,92 @@ public class AdjustmentProjectActivity extends AppCompatActivity implements View
 
         mRecycler_yixuanxiangmu.setLayoutManager(new LinearLayoutManager(this));
         mRecycler_kexuanxiangmu.setLayoutManager(new LinearLayoutManager(this));
+        tv_adjustment_count = (TextView) findViewById(R.id.tv_adjustment_count);
+        tv_adjustment_count.setOnClickListener(this);
     }
 
     private void initDate() {
         title_text.setText(R.string.name_tiaozhengxiangmu);
 
-        list = new ArrayList<>();
-        for (int i = 0; i < 4; i++) {
-            list.add("AA项目");
+        shoppingCartBeanList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            ShoppingCartBean shoppingCartBean = new ShoppingCartBean(0, "AA项目"+i, "", 1, 100.00, 1);
+            shoppingCartBeanList.add(shoppingCartBean);
         }
 
-        SingleProjectAdatper2 adatper = new SingleProjectAdatper2(this,list,this);
-        mRecycler_yixuanxiangmu.setAdapter(adatper);
-        mRecycler_yixuanxiangmu.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
-        mRecycler_kexuanxiangmu.setAdapter(adatper);
-        mRecycler_kexuanxiangmu.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        kexuanList = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            ShoppingCartBean shoppingCartBean = new ShoppingCartBean(0, "AA项目"+i, "", 1, 100.00, 1);
+            kexuanList.add(shoppingCartBean);
+        }
+
+//        已选项目
+        yixuanAdaper = new SingleProjectAdatper2(this, shoppingCartBeanList, new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(AdjustmentProjectActivity.this, ""+shoppingCartBeanList.get(position).getShoppingName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+//        可选项目
+        kexuanAdapter = new SingleProjectAdatper2(this, kexuanList, new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(AdjustmentProjectActivity.this, ""+shoppingCartBeanList.get(position).getShoppingName(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        mRecycler_yixuanxiangmu.setAdapter(yixuanAdaper);
+        mRecycler_yixuanxiangmu.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
+        mRecycler_kexuanxiangmu.setAdapter(kexuanAdapter);
+        mRecycler_kexuanxiangmu.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     private void initListener() {
+        yixuanAdaper.setCheckListener(new SingleProjectAdatper2.CheckListener() {
+            @Override
+            public void checkGroup(int position, boolean isChecked) {
+                shoppingCartBeanList.get(position).setChoosed(isChecked);
+//                if (isAllCheck()) {
+//                    cb_select_all.setChecked(true);
+//                } else {
+//                    cb_select_all.setChecked(false);
+                    yixuanAdaper.notifyDataSetChanged();
+                    statistics();
+//                }
+            }
+        });
 
+        kexuanAdapter.setCheckListener(new SingleProjectAdatper2.CheckListener() {
+            @Override
+            public void checkGroup(int position, boolean isChecked) {
+                kexuanList.get(position).setChoosed(isChecked);
+//                if (isAllCheck()) {
+//                    cb_select_all.setChecked(true);
+//                } else {
+//                    cb_select_all.setChecked(false);
+                kexuanAdapter.notifyDataSetChanged();
+                statisticsKeXuan();
+//                }
+            }
+        });
+
+
+
+    }
+
+    private void statisticsKeXuan() {
+        totalCount = 0;
+        totalPrice = 0.00;
+        for (int i = 0; i < kexuanList.size(); i++) {
+            ShoppingCartBean shoppingCartBean = kexuanList.get(i);
+            if (shoppingCartBean.isChoosed()) {
+                totalCount++;
+                totalPrice += shoppingCartBean.getPrice() * shoppingCartBean.getCount();
+            }
+        }
+        tv_adjustment_kexuan_sum.setText("¥" + totalPrice);
     }
 
     @Override
@@ -137,7 +211,7 @@ public class AdjustmentProjectActivity extends AppCompatActivity implements View
                 finish();
                 break;
             case R.id.bt_querentijiao://确认提交
-                Intent intent = new Intent(this,SubmitOrderActivity.class);
+                Intent intent = new Intent(this, SubmitOrderActivity.class);
                 Bundle bundle = new Bundle();
                 intent.putExtras(bundle);
                 startActivity(intent);
@@ -148,8 +222,40 @@ public class AdjustmentProjectActivity extends AppCompatActivity implements View
         }
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, ""+(position+1), Toast.LENGTH_SHORT).show();
+    /**
+     * 遍历list集合
+     *
+     * @return
+     */
+    private boolean isAllCheck() {
+
+        for (ShoppingCartBean group : shoppingCartBeanList) {
+            if (!group.isChoosed()) {
+                return false;
+            }
+        }
+        return true;
     }
+
+    /**
+     * 统计操作
+     * 1.先清空全局计数器<br>
+     * 2.遍历所有子元素，只要是被选中状态的，就进行相关的计算操作
+     * 3.给底部的textView进行数据填充
+     */
+    public void statistics() {
+        totalCount = 0;
+        totalPrice = 0.00;
+        for (int i = 0; i < shoppingCartBeanList.size(); i++) {
+            ShoppingCartBean shoppingCartBean = shoppingCartBeanList.get(i);
+            if (shoppingCartBean.isChoosed()) {
+                totalCount++;
+                totalPrice += shoppingCartBean.getPrice() * shoppingCartBean.getCount();
+            }
+        }
+        tv_adjustment_heji_numSum.setText("¥" + totalPrice);
+        tv_adjustment_count.setText(totalCount+"");
+        tv_adjustment_yixuan_sum.setText("¥" + totalPrice);
+    }
+
 }

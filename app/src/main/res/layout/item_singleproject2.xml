@@ -5,18 +5,18 @@
     android:orientation="horizontal"
     android:padding="@dimen/dp_10"
     >
-    <ImageView
-        android:id="@+id/img_singleProject"
+    <CheckBox
+        android:id="@+id/cb_select"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/tab_home_selector"
+        android:background="@drawable/tab_home_selector"
         />
 
     <TextView
         android:id="@+id/tv_singleProject_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/img_singleProject"
+        android:layout_toRightOf="@id/cb_select"
         android:layout_centerVertical="true"
         android:text="AA项目"
         />

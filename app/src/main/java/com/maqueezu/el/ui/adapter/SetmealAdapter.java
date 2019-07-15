@@ -20,6 +20,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/6/17 13:41
+ *
+ * 套餐适配
  */
 
 public class SetmealAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvListBean> {

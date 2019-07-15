@@ -132,6 +132,10 @@
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\support-media-compat-27.0.2.aar\\9d79d01d68dfeaae0ed10ec79e97e489\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
+        "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\item_platform_tuijian.xml",
+        "source": "E:\\GengYu\\Company\\Project\\app\\src\\main\\res\\layout\\item_platform_tuijian.xml"
+    },
+    {
         "merged": "E:\\GengYu\\Company\\Project\\app\\build\\intermediates\\res\\merged\\localLine\\debug\\layout\\design_navigation_item_header.xml",
         "source": "C:\\Users\\任鹏飞\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.0.2.aar\\694a2792fcec5c9139d3de4086837650\\res\\layout\\design_navigation_item_header.xml"
     },

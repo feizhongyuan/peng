@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -22,7 +23,7 @@ import java.util.List;
 
 public class HealthyInformationAdapter extends BaseRecyclerAdapter<GoodsCatBean.DataBean> {
 
-    public HealthyInformationAdapter(Context context, List<GoodsCatBean.DataBean> list, HealthyInformationFragment itemClickListener) {
+    public HealthyInformationAdapter(Context context, List<GoodsCatBean.DataBean> list, AdapterView.OnItemClickListener itemClickListener) {
         super(context, list, itemClickListener);
     }
 

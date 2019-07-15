@@ -14,7 +14,7 @@ import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
- * 体检套餐
+ * 体检套餐分类 （弃用）
  */
 public class PhysicalSetMealActivity extends AppCompatActivity implements View.OnClickListener {
 

@@ -18,6 +18,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/6/26 16:15
+ *
+ * 机构适配器
  */
 
 public class OrganAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvListBean>{

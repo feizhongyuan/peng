@@ -3,6 +3,7 @@ package com.maqueezu.el.ui.view.doublelistview;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
@@ -202,5 +203,10 @@ public class PinnedHeaderListView extends ListView implements OnScrollListener {
 
         public abstract void onSectionClick(AdapterView<?> adapterView, View view, int section, long id);
 
+    }
+
+    @Override
+    public boolean onTouchEvent(MotionEvent ev) {
+        return super.onTouchEvent(ev);
     }
 }

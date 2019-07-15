@@ -19,6 +19,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/7/8 9:57
+ *
+ * 商品提交订单适配
  */
 
 public class GoodsSubmitOrderAdapter extends BaseRecyclerAdapter<String> {

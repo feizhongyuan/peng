@@ -4,6 +4,8 @@ package com.maqueezu.el.ui.fragment;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -91,6 +93,32 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     private AdvertBean.DataBean data = null;
     private GoodsCatBean goodsCatBean = null;
 
+    private int count;
+    private int count1;
+    private int sum;
+
+    Handler handler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            //removeMessages(0);
+            if (count == 0){
+
+                waterrippleView.setDepthRate((float)count1/sum);
+                waterrippleView.startRefresh();
+                waterrippleView.startRefresh2();
+            }
+            if(count<count1){
+                count+=10;
+                handler.sendEmptyMessage(0);
+            }else if(count>count1) {
+                count=count1;
+            }
+            tv_jiankangxingweizhishu.setText(count+"");
+//      risenumber.withNumber((float) count).start();//自定义数字
+        }
+    };
+
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -108,8 +136,11 @@ public class HomeFragment extends BaseFragment implements View.OnClickListener {
     }
 
     private void initWaterRipple() {
-        WaterRippleHelper waterRippleHelper = new WaterRippleHelper(getContext());
-        waterRippleHelper.showEvent(rl_item_waterripple, "waterRipple", 666, 1000);
+//        WaterRippleHelper waterRippleHelper = new WaterRippleHelper(getContext());
+//        waterRippleHelper.showEvent(rl_item_waterripple, "waterRipple", 666, 1000);
+        count1 = 666;
+        sum = 1000;
+        waterrippleView.startRefresh2();
     }
 
     @Override

@@ -20,6 +20,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/7/1 15:54
+ *
+ * 购物车适配
  */
 
 public class ShoppingCartAdater extends BaseAdapter {
@@ -169,10 +171,9 @@ public class ShoppingCartAdater extends BaseAdapter {
          * @param isFlang       子元素选中与否
          */
         void onItemIncreaseClick(int position, View view,boolean isFlang);
-        //删除接口方法
 
         /**
-         *
+         * 删除接口方法
          * @param position      元素位置
          * @param view          展示变化后数量的View
          * @param isFlang       子元素选中与否

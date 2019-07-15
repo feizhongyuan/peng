@@ -16,6 +16,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/6/28 14:54
+ *
+ * 体检卡使用适配
  */
 
 public class SingleProjectAdatper extends BaseRecyclerAdapter<String> {

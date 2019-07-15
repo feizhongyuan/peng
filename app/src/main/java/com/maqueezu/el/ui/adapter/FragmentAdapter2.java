@@ -10,6 +10,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/6/26 14:48
+ *
+ * Fragment适配2
  */
 
 public class FragmentAdapter2 extends FragmentPagerAdapter{

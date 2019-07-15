@@ -30,7 +30,7 @@ public class OrganItem2Fragment extends BaseFragment {
     private ListView left_listview;
     private PinnedHeaderListView pinnedListView;
 
-    private String[] leftStr = {"全部", "体检大类1", "体检大类2", "体检大类3", "体检大类4", "体检大类5"};
+    private String[] leftStr = {"全部", "体检小类1", "体检小类2", "体检小类3", "体检小类4", "体检小类5"};
     private boolean[] flagArray = {true, false, false, false, false, false, false, false, false};
     private boolean isScroll = true;
     private LeftListAdapter leftListAdapter;

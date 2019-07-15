@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.maqueezu.el.MainActivity;
 import com.maqueezu.el.R;
 import com.maqueezu.el.ui.adapter.SingleProjectAdatper;
 import com.zhy.autolayout.AutoLinearLayout;
@@ -34,22 +33,25 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
     private TextView title_text;
     private TextView right_text;
     private AutoRelativeLayout rl_statusbar;
-    private TextView tv_useCard_tijianjigou;
-    private TextView tv_useCard_taocan;
-    private TextView tv_useCard_heji_numSum;
-    private TextView tv_useCard_heji;
+    private TextView tv_useCard_tijianjigou;//体检机构
+    private TextView tv_useCard_taocan;//体检套餐
+    private TextView tv_useCard_heji_numSum;//合计总价
+    private TextView tv_useCard_count;//合计总项目列表数
+    private TextView tv_useCard_heji;//合计字符
     private AutoRelativeLayout rl_base_1;
-    private TextView tv_useCard_waike_sum;
+    private TextView tv_useCard_waike_sum;//外科总价
     private AutoRelativeLayout rl_single_1;
-    private RecyclerView mRecycler_waike;
+    private RecyclerView mRecycler_waike;//外科项目列表
     private AutoRelativeLayout rl_base_2;
-    private TextView tv_useCard_neike_sum;
+    private TextView tv_useCard_neike_sum;//内科总价
+    private TextView tv_useCard_waike_title;//外科标题
+    private TextView tv_useCard_neike_title;//内科标题
     private AutoRelativeLayout rl_single_2;
-    private RecyclerView mRecycler_neike;
+    private RecyclerView mRecycler_neike;//内科列表
     private AutoRelativeLayout rl_base_3;
-    private Button bt_recommend;
-    private Button bt_tiaozhengtijianxiangmu;
-    private Button bt_kankanqitajigou;
+    private Button bt_recommend;//推荐项目
+    private Button bt_tiaozhengtijianxiangmu;//调整项目
+    private Button bt_kankanqitajigou;//看看其他机构
 
     private List<String> list;
 
@@ -114,6 +116,12 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
 
         mRecycler_waike.setLayoutManager(new LinearLayoutManager(this));
         mRecycler_neike.setLayoutManager(new LinearLayoutManager(this));
+        tv_useCard_count = (TextView) findViewById(R.id.tv_useCard_count);
+        tv_useCard_count.setOnClickListener(this);
+        tv_useCard_waike_title = (TextView) findViewById(R.id.tv_useCard_waike_title);
+        tv_useCard_waike_title.setOnClickListener(this);
+        tv_useCard_neike_title = (TextView) findViewById(R.id.tv_useCard_neike_title);
+        tv_useCard_neike_title.setOnClickListener(this);
     }
 
     private void initDate() {
@@ -124,11 +132,11 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
             list.add("AA项目");
         }
 
-        SingleProjectAdatper adatper = new SingleProjectAdatper(this,list,this);
+        SingleProjectAdatper adatper = new SingleProjectAdatper(this, list, this);
         mRecycler_waike.setAdapter(adatper);
-        mRecycler_waike.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        mRecycler_waike.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mRecycler_neike.setAdapter(adatper);
-        mRecycler_neike.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        mRecycler_neike.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     private void initListener() {
@@ -146,7 +154,7 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
 
                 break;
             case R.id.bt_tiaozhengtijianxiangmu://调整体检项目
-                Intent intent = new Intent(this,AdjustmentProjectActivity.class);
+                Intent intent = new Intent(this, AdjustmentProjectActivity.class);
                 startActivity(intent);
                 break;
             case R.id.bt_kankanqitajigou://看看其他机构
@@ -159,6 +167,6 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, ""+(position + 1), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "" + (position + 1), Toast.LENGTH_SHORT).show();
     }
 }

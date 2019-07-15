@@ -18,6 +18,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/7/1 10:08
+ *
+ * Fragment商品展示适配（价格 | 销量）
  */
 
 public class ThroughTrainListAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvListBean> {

@@ -47,7 +47,7 @@
                     android:id="@+id/tv_adjustment_heji_numSum"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="￥888.88"
+                    android:text="￥0.00"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginRight="@dimen/dp_10"
@@ -68,6 +68,7 @@
                     android:layout_alignParentBottom="true"
                     >
                     <TextView
+                        android:id="@+id/tv_adjustment_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="XX"

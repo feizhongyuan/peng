@@ -1,5 +1,6 @@
 package com.maqueezu.el.ui.activity.child.home_child;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -7,12 +8,14 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
+import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.ui.adapter.HealthyInformationAdapter;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -22,7 +25,7 @@ import static com.maqueezu.el.MyApplication.getContext;
 /**
  * 健康资讯详情页
  */
-public class HealthyInformationItemActivity extends AppCompatActivity implements View.OnClickListener {
+public class HealthyInformationItemActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private TextView tv_information_item_title;//文章标题
     private ImageView img_healthyNumber_img;//健康号头像
@@ -77,7 +80,6 @@ public class HealthyInformationItemActivity extends AppCompatActivity implements
         tv_wenzhangpinglun_sum = (TextView) findViewById(R.id.tv_wenzhangpinglun_sum);
         tv_wenzhangpinglun_sum.setOnClickListener(this);
         mRecycler_comment = (RecyclerView) findViewById(R.id.mRecycler_comment);
-        mRecycler_comment.setOnClickListener(this);
         rl_pinglun = (AutoRelativeLayout) findViewById(R.id.rl_pinglun);
         img_information_back = (ImageView) findViewById(R.id.img_information_back);
         img_information_back.setOnClickListener(this);
@@ -95,10 +97,12 @@ public class HealthyInformationItemActivity extends AppCompatActivity implements
     }
 
     private void initData() {
+        Intent intent = getIntent();
+        GoodsCatBean goodsCatBean = (GoodsCatBean) intent.getSerializableExtra("goods");
 
-//        HealthyInformationAdapter healthyInformationAdapter = new HealthyInformationAdapter(this, goodsCatBean.getData(), this);
-//        mRecycler_comment.setAdapter(healthyInformationAdapter);
-//        mRecycler_comment.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
+        HealthyInformationAdapter healthyInformationAdapter = new HealthyInformationAdapter(this, goodsCatBean.getData(),this);
+        mRecycler_comment.setAdapter(healthyInformationAdapter);
+        mRecycler_comment.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
 
 
 
@@ -129,5 +133,10 @@ public class HealthyInformationItemActivity extends AppCompatActivity implements
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Toast.makeText(this, "点击第" + (position + 1) + "条", Toast.LENGTH_SHORT).show();
     }
 }

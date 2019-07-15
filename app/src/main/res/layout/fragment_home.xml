@@ -9,10 +9,15 @@
        android:layout_width="match_parent"
        android:layout_height="match_parent"
        android:fillViewport="true"
+       android:focusableInTouchMode="true"
+       android:descendantFocusability="blocksDescendants"
        >
        <com.zhy.autolayout.AutoRelativeLayout
            android:layout_width="match_parent"
-           android:layout_height="match_parent">
+           android:layout_height="match_parent"
+           android:focusable="true"
+           android:focusableInTouchMode="true"
+           >
 
            <com.zhy.autolayout.AutoRelativeLayout
                android:id="@+id/rl_base_1"

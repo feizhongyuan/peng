@@ -18,6 +18,8 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/6/26 15:10
+ *
+ * 套餐列表适配
  */
 
 public class SetMealListAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvListBean> {
