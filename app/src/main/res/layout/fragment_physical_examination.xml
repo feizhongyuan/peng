@@ -13,18 +13,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/img_physical"
+            <com.youth.banner.Banner
+                android:id="@+id/mBanner_PhysicalExamination"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_200"
-                android:src="@drawable/ic_launcher_background"
-                />
+                android:layout_height="@dimen/dp_200"></com.youth.banner.Banner>
+
             <!--平台推荐-->
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/rl_base_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/img_physical"
+                android:layout_below="@id/mBanner_PhysicalExamination"
                 >
                 <com.zhy.autolayout.AutoRelativeLayout
                     android:id="@+id/rl_pingtaituijian"
@@ -200,7 +199,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/dp_180"
                     android:layout_below="@id/rl_tijianka"
-                    android:padding="@dimen/dp_10"
                     android:clipChildren="false"
                     ></android.support.v4.view.ViewPager>
 
@@ -241,7 +239,6 @@
                         android:id="@+id/tv_dingzhijilu"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/sp_16"
                         android:layout_marginRight="@dimen/dp_10"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
