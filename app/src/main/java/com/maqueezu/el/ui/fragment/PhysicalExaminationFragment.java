@@ -5,6 +5,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -18,9 +19,11 @@ import android.widget.BaseAdapter;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.AddPhysicalExaminationCardActivity;
@@ -34,6 +37,11 @@ import com.maqueezu.el.ui.adapter.PhysicalExaminationCardAdapter;
 import com.maqueezu.el.ui.adapter.PlatformAdapter;
 import com.maqueezu.el.ui.adapter.SetmealAdapter;
 import com.maqueezu.utils.ui.base.BaseFragment;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+import com.youth.banner.listener.OnBannerListener;
+import com.youth.banner.loader.ImageLoader;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -47,11 +55,12 @@ import java.util.List;
 /**
  * 体检模块
  */
-public class PhysicalExaminationFragment extends BaseFragment implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class PhysicalExaminationFragment extends BaseFragment implements View.OnClickListener,
+                        AdapterView.OnItemClickListener, OnBannerListener, ViewPager.PageTransformer {
 
 
     private View rootView;
-    private ImageView img_physical;//体检图
+    private Banner mBanner_PhysicalExamination;//体检轮播图
     private TextView tv_pingtaituijian_title;//平台推荐标题
     private AutoRelativeLayout rl_pingtaituijian;//平台推荐框
     //    private ImageView img_tijiantaocan;//体检套餐图
@@ -89,6 +98,8 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 
 
     private AdvertBean.DataBean data;
+    private PhysicalExaminationCardAdapter physicalExaminationCardAdapter;
+    private List<View> list;
 
     public PhysicalExaminationFragment() {
         // Required empty public constructor
@@ -106,6 +117,28 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         return rootView;
     }
 
+    private void initBanner() {
+        List<String> list_title = new ArrayList<>();
+        List<String> list_path = new ArrayList<>();
+        for (int i = 0; i < data.getAdvList().size(); i++) {
+            list_title.add(data.getAdvList().get(i).getAname());
+            list_path.add(data.getAdvList().get(i).getAtturl());
+        }
+
+
+        
+//        mBanner_PhysicalExamination.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
+        mBanner_PhysicalExamination.setImageLoader(new MyLoader());
+        mBanner_PhysicalExamination.setBannerAnimation(Transformer.Default);
+        mBanner_PhysicalExamination.setBannerTitles(list_title);
+        mBanner_PhysicalExamination.setDelayTime(3000);
+        mBanner_PhysicalExamination.isAutoPlay(true);
+        mBanner_PhysicalExamination.setIndicatorGravity(BannerConfig.CENTER);
+        mBanner_PhysicalExamination.setImages(list_path)
+                .setOnBannerListener(this)
+                .start();
+    }
+
     @Override
     protected int setLayoutResouceId() {
         return R.layout.fragment_physical_examination;
@@ -114,8 +147,6 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
     @Override
     protected void initView(View mRootView) {
 
-        img_physical = (ImageView) rootView.findViewById(R.id.img_physical);
-        img_physical.setOnClickListener(this);
         tv_pingtaituijian_title = (TextView) rootView.findViewById(R.id.tv_pingtaituijian_title);
         tv_pingtaituijian_title.setOnClickListener(this);
         rl_pingtaituijian = (AutoRelativeLayout) rootView.findViewById(R.id.rl_pingtaituijian);
@@ -174,6 +205,8 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         tv_dingzhijilu.setOnClickListener(this);
         mViewPager_tijianka = (ViewPager) rootView.findViewById(R.id.mViewPager_tijianka);
         mViewPager_tijianka.setOnClickListener(this);
+        mBanner_PhysicalExamination = (Banner) rootView.findViewById(R.id.mBanner_PhysicalExamination);
+        mBanner_PhysicalExamination.setOnClickListener(this);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -182,42 +215,55 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 //        设置平台推荐数据
         initPlatform();
 
-        List<View> list = new ArrayList<>();
+        list = new ArrayList<>();
         for (int i = 0; i < 11; i++) {
             ImageView imageView = new ImageView(getContext());
             imageView.setBackgroundResource(R.drawable.ic_launcher);
+            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
             list.add(imageView);
         }
 
-        PhysicalExaminationCardAdapter adapter = new PhysicalExaminationCardAdapter(getContext(),list);
-        mViewPager_tijianka.setAdapter(adapter);
+        initPhysicalExaminationCard();
 
-        mViewPager_tijianka.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+    }
+
+//    体检卡
+    private void initPhysicalExaminationCard() {
+        int itemWidth = (getResources().getDisplayMetrics().widthPixels) / 3;
+        RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) mViewPager_tijianka
+                .getLayoutParams();
+        layoutParams.leftMargin = itemWidth / 2;
+        layoutParams.rightMargin = itemWidth / 2;
+        mViewPager_tijianka.setLayoutParams(layoutParams);
+        mViewPager_tijianka.setPageMargin(getResources().getDimensionPixelSize(R.dimen.dp_5));
+        mViewPager_tijianka.setOffscreenPageLimit(3);
+        mViewPager_tijianka.setPageTransformer(true, this);
+
+        physicalExaminationCardAdapter = new PhysicalExaminationCardAdapter(getContext(), list);
+        mViewPager_tijianka.setAdapter(physicalExaminationCardAdapter);
+
+        ((ViewGroup)mViewPager_tijianka.getParent()).setOnTouchListener(new View.OnTouchListener() {
+            float x;
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                tv_tijianka_count.setText("("+(position+1)+"/"+list.size()+")");
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-//                状态变更
+            public boolean onTouch(View v, MotionEvent event) {
+                if (event.getAction() == MotionEvent.ACTION_DOWN) {
+                    x = event.getX();
+                }
+                //如果是点击事件，那么需要处理下，判断是否点在左右两边
+                if (event.getAction() == MotionEvent.ACTION_UP && Math.abs(event.getX() - x) < 20) {
+                    View view = viewOfClickOnScreen(event);
+                    if (view != null) {
+                        // int index = mViewPager.indexOfChild(view);
+                        int index = physicalExaminationCardAdapter.indexView(view);
+                        if (index != mViewPager_tijianka.getCurrentItem()) {
+                            mViewPager_tijianka.setCurrentItem(index);
+                            return true;
+                        }
+                    }
+                }
+                return mViewPager_tijianka.dispatchTouchEvent(event);
             }
         });
-
-//        事件分发
-//        mViewPager_tijianka.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View v, MotionEvent event) {
-//                return mViewPager_tijianka.dispatchTouchEvent(event);
-//            }
-//        });
-
-
     }
 
     private void initPlatform() {
@@ -260,6 +306,30 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 //                ToastUtil.showToast(getContext(), (position + 1) + ":" + aname);
 //            }
 //        });
+        mViewPager_tijianka.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                tv_tijianka_count.setText("(" + (position + 1) + "/" + list.size() + ")");
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+//                状态变更
+            }
+        });
+
+//        将父类的touch事件分发至ViewPager
+        rl_base_2.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return mViewPager_tijianka.dispatchTouchEvent(event);
+            }
+        });
 
     }
 
@@ -271,6 +341,8 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
     private void getAdvert(AdvertBean advert) {
         //        广告获取
         data = advert.getData();
+
+        initBanner();
         MedicalGridViewAdapter medicalGridViewAdapter = new MedicalGridViewAdapter(getContext(), this.data);
 //        setGridView(mGridView_tijianka, this.data, medicalGridViewAdapter, 300);
 //        medicalGridViewAdapter.notifyDataSetChanged();
@@ -304,6 +376,60 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         gridView.setAdapter(adapter);
     }
 
+//    banner监听
+    @Override
+    public void OnBannerClick(int position) {
+        Toast.makeText(mActivity, (position +1)+"---"+data.getAdvList().get(position).getAname(), Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 判断当前点击的位置在ViewPager的哪一个View上面
+     */
+    private View viewOfClickOnScreen(MotionEvent ev) {
+        int childCount = mViewPager_tijianka.getChildCount();
+        int[] location = new int[2];
+        for (int i = 0; i < childCount; i++) {
+            View v = mViewPager_tijianka.getChildAt(i);
+            v.getLocationOnScreen(location);
+
+            int minX = location[0];
+            int minY = mViewPager_tijianka.getTop();
+
+            int maxX = location[0] + v.getWidth();
+            int maxY = mViewPager_tijianka.getBottom();
+
+            float x = ev.getX();
+            float y = ev.getY();
+
+            if ((x > minX && x < maxX) && (y > minY && y < maxY)) {
+                return v;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public void transformPage(@NonNull View view, float position) {
+        if (position < -1){
+            view.setScaleY(0.8f);
+        }else if (position < 0){
+            view.setScaleY(0.2f * position + 1);
+        }else if (position < 1){
+            view.setScaleY(-0.2f * position + 1);
+        }else {
+            view.setScaleY(0.8f);
+        }
+    }
+
+    private class MyLoader extends ImageLoader {
+        @Override
+        public void displayImage(Context context, Object path, ImageView imageView) {
+            Glide.with(context.getApplicationContext())
+                    .load((String) path)
+                    .into(imageView);
+        }
+    }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
@@ -313,9 +439,6 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.img_physical://首张Image
-
-                break;
 //            case R.id.img_tijiantaocan://体检套餐
 //                Intent intent = new Intent(mActivity, PhysicalSetMealActivity.class);
 //                Bundle bundle = new Bundle();
@@ -332,6 +455,7 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 //                break;
             case R.id.mTv_tijianka_lijibangka://立即绑卡
                 multiplexIntent(mActivity, AddPhysicalExaminationCardActivity.class);
+                mActivity.overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                 break;
             case R.id.rl_zijidingzhi://自己定制
             case R.id.img_zijitu:

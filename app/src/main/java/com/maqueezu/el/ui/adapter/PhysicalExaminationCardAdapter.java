@@ -38,10 +38,10 @@ public class PhysicalExaminationCardAdapter extends PagerAdapter {
     }
 
 //    页面宽度所占ViewPager测量宽度的权重比例，默认为1
-    @Override
-    public float getPageWidth(int position) {
-        return (float) 0.8;
-    }
+//    @Override
+//    public float getPageWidth(int position) {
+//        return 1;
+//    }
 
     @Override
     public void destroyItem(@NonNull ViewGroup container, int position, @NonNull Object object) {
@@ -52,8 +52,19 @@ public class PhysicalExaminationCardAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        container.addView(mList.get(position), 0);
+        container.addView(mList.get(position));
         return mList.get(position);
 
+    }
+
+    public int indexView(View view){
+        int index = -1;
+        for (int i = 0; i < mList.size(); i++) {
+            if (mList.get(i) != null && mList.get(i).equals(view)){
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 }
