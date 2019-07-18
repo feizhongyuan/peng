@@ -63,6 +63,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
+                        android:nestedScrollingEnabled="false"
                         ></android.support.v7.widget.RecyclerView>
                 </com.zhy.autolayout.AutoRelativeLayout>
 
@@ -388,19 +389,25 @@
                         />
                 </com.zhy.autolayout.AutoRelativeLayout>
 
-
+                <!--用SmartRefreshLayout包裹RecyclerView-->
+                <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                    android:id="@+id/mSmart_refresh_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/rl_zhenxuantaocan"
+                    >
                         <android.support.v7.widget.RecyclerView
                             android:id="@+id/mRecycler_zhenxuantaocan"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:overScrollMode="never"
                             android:gravity="center"
                             android:stretchMode="spacingWidthUniform"
-                            android:layout_below="@+id/rl_zhenxuantaocan"></android.support.v7.widget.RecyclerView>
+                            android:nestedScrollingEnabled="false"
+                            ></android.support.v7.widget.RecyclerView>
+                </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
             </com.zhy.autolayout.AutoRelativeLayout>
-
-
-
 
 
 

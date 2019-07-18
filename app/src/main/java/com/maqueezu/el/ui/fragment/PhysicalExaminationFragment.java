@@ -26,8 +26,11 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.AddPhysicalExaminationCardActivity;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.CustomExpertActivity;
+import com.maqueezu.el.ui.activity.child.physicalexamination_child.CustomExpertRecordsActivity;
+import com.maqueezu.el.ui.activity.child.physicalexamination_child.CustomOneToOneActivity;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.CustomOneselfActivity;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.PhysicalOrganActivity;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.RecommendSetmealActivity;
@@ -36,7 +39,14 @@ import com.maqueezu.el.ui.adapter.MedicalGridViewAdapter;
 import com.maqueezu.el.ui.adapter.PhysicalExaminationCardAdapter;
 import com.maqueezu.el.ui.adapter.PlatformAdapter;
 import com.maqueezu.el.ui.adapter.SetmealAdapter;
+import com.maqueezu.el.ui.webview.NewWebFragment;
+import com.maqueezu.utils.ui.FragmentContainerActivity;
 import com.maqueezu.utils.ui.base.BaseFragment;
+import com.maqueezu.utils.ui.web.WebFragment;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -51,12 +61,13 @@ import org.greenrobot.eventbus.ThreadMode;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 /**
  * 体检模块
  */
 public class PhysicalExaminationFragment extends BaseFragment implements View.OnClickListener,
-                        AdapterView.OnItemClickListener, OnBannerListener, ViewPager.PageTransformer {
+        AdapterView.OnItemClickListener, OnBannerListener, ViewPager.PageTransformer {
 
 
     private View rootView;
@@ -95,11 +106,13 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
     private AutoRelativeLayout rl_base_4;//4、甄选套餐模块
     private RecyclerView mRecycler_zhenxuantaocan;//甄选套餐展示
     private RecyclerView mRecycler_platform;// 平台推荐更改
+    private SmartRefreshLayout mSmart_refresh_layout;//上拉加载
 
 
     private AdvertBean.DataBean data;
     private PhysicalExaminationCardAdapter physicalExaminationCardAdapter;
     private List<View> list;
+    private SetmealAdapter setmealAdapter;
 
     public PhysicalExaminationFragment() {
         // Required empty public constructor
@@ -126,7 +139,6 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         }
 
 
-        
 //        mBanner_PhysicalExamination.setBannerStyle(BannerConfig.CIRCLE_INDICATOR_TITLE_INSIDE);
         mBanner_PhysicalExamination.setImageLoader(new MyLoader());
         mBanner_PhysicalExamination.setBannerAnimation(Transformer.Default);
@@ -191,7 +203,6 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         rl_zhenxuantaocan = (AutoRelativeLayout) rootView.findViewById(R.id.rl_zhenxuantaocan);
         rl_base_4 = (AutoRelativeLayout) rootView.findViewById(R.id.rl_base_4);
         mRecycler_zhenxuantaocan = (RecyclerView) rootView.findViewById(R.id.mRecycler_zhenxuantaocan);
-        mRecycler_zhenxuantaocan.setOnClickListener(this);
 
         mRecycler_zhenxuantaocan.setLayoutManager(new GridLayoutManager(getContext(), 3));
 
@@ -207,6 +218,7 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         mViewPager_tijianka.setOnClickListener(this);
         mBanner_PhysicalExamination = (Banner) rootView.findViewById(R.id.mBanner_PhysicalExamination);
         mBanner_PhysicalExamination.setOnClickListener(this);
+        mSmart_refresh_layout = (SmartRefreshLayout) rootView.findViewById(R.id.mSmart_refresh_layout);
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -225,9 +237,11 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 
         initPhysicalExaminationCard();
 
+
+
     }
 
-//    体检卡
+    //    体检卡
     private void initPhysicalExaminationCard() {
         int itemWidth = (getResources().getDisplayMetrics().widthPixels) / 3;
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) mViewPager_tijianka
@@ -242,8 +256,9 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         physicalExaminationCardAdapter = new PhysicalExaminationCardAdapter(getContext(), list);
         mViewPager_tijianka.setAdapter(physicalExaminationCardAdapter);
 
-        ((ViewGroup)mViewPager_tijianka.getParent()).setOnTouchListener(new View.OnTouchListener() {
+        ((ViewGroup) mViewPager_tijianka.getParent()).setOnTouchListener(new View.OnTouchListener() {
             float x;
+
             @Override
             public boolean onTouch(View v, MotionEvent event) {
                 if (event.getAction() == MotionEvent.ACTION_DOWN) {
@@ -266,6 +281,7 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         });
     }
 
+    //    平台推荐
     private void initPlatform() {
         List<Integer> list = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
@@ -347,8 +363,53 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 //        setGridView(mGridView_tijianka, this.data, medicalGridViewAdapter, 300);
 //        medicalGridViewAdapter.notifyDataSetChanged();
 
-        mRecycler_zhenxuantaocan.setAdapter(new SetmealAdapter(getContext(), data.getAdvList(), PhysicalExaminationFragment.this));
+        setmealAdapter = new SetmealAdapter(getContext(), data.getAdvList(), PhysicalExaminationFragment.this);
+        mRecycler_zhenxuantaocan.setAdapter(setmealAdapter);
 
+//        下拉刷新
+        mSmart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+                    advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
+                    int i1 = new Random().nextInt(1000);
+                    advListBean.setAid(i1+i);
+                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                    advListBeans.add(advListBean);
+                }
+
+                if (advListBeans != null){
+                    setmealAdapter.refresh(advListBeans);
+                    refreshLayout.finishRefresh(2000);
+                }else {
+                    refreshLayout.finishRefresh(false);
+                }
+            }
+        });
+
+//        上拉加载
+        mSmart_refresh_layout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
+                for (int i = 0; i < 6; i++) {
+                    AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+                    advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
+                    int i1 = new Random().nextInt(1000);
+                    advListBean.setAid(i1+i);
+                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                    advListBeans.add(advListBean);
+                }
+                if (advListBeans != null){
+                    setmealAdapter.addList(advListBeans);
+                    refreshLayout.finishLoadMore(2000);
+                }else {
+                    refreshLayout.finishLoadMore(false);
+                }
+            }
+        });
     }
 
     /**
@@ -376,10 +437,16 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         gridView.setAdapter(adapter);
     }
 
-//    banner监听
+    //    banner监听
     @Override
     public void OnBannerClick(int position) {
-        Toast.makeText(mActivity, (position +1)+"---"+data.getAdvList().get(position).getAname(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(getContext(), FragmentContainerActivity.class);
+        intent.putExtra(FragmentContainerActivity.FragmentClassName, NewWebFragment.class.getName());
+//        intent.putExtra(NewWebFragment.urlKey, "file:///android_asset/222.html");
+//        intent.putExtra(NewWebFragment.urlKey, "https://forum.vuejs.org/t/vue/40391");
+        intent.putExtra(NewWebFragment.urlKey, "http://loadingmore.com/vue-element-admin-preview/#/login");//加载网络vue项目
+        getContext().startActivity(intent);
+        Toast.makeText(mActivity, (position + 1) + "---" + data.getAdvList().get(position).getAname(), Toast.LENGTH_SHORT).show();
     }
 
     /**
@@ -408,15 +475,16 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         return null;
     }
 
+    //    体检卡切换效果
     @Override
     public void transformPage(@NonNull View view, float position) {
-        if (position < -1){
+        if (position < -1) {
             view.setScaleY(0.8f);
-        }else if (position < 0){
+        } else if (position < 0) {
             view.setScaleY(0.2f * position + 1);
-        }else if (position < 1){
+        } else if (position < 1) {
             view.setScaleY(-0.2f * position + 1);
-        }else {
+        } else {
             view.setScaleY(0.8f);
         }
     }
@@ -454,28 +522,33 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 //                startActivity(intent1);
 //                break;
             case R.id.mTv_tijianka_lijibangka://立即绑卡
-                multiplexIntent(mActivity, AddPhysicalExaminationCardActivity.class);
+                multiplexIntent(mActivity,null, AddPhysicalExaminationCardActivity.class);
                 mActivity.overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
                 break;
             case R.id.rl_zijidingzhi://自己定制
             case R.id.img_zijitu:
             case R.id.tv_zijiDIY:
             case R.id.tv_zijidingzhi:
-                multiplexIntent(mActivity, CustomOneselfActivity.class);
+                multiplexIntent(mActivity,null, CustomOneselfActivity.class);
                 break;
             case R.id.rl_zhuanjia://专家定制
             case R.id.img_zhuanjiatu:
             case R.id.img_zhuanjiaVIP:
             case R.id.tv_zhuanjiadingzhi:
             case R.id.tv_1dui1:
-                multiplexIntent(mActivity, CustomExpertActivity.class);
+                Bundle bundle4 = new Bundle();
+                bundle4.putString("title",getResources().getString(R.string.name_yiduiyidingzhigoutong));
+                multiplexIntent(mActivity,bundle4, CustomOneToOneActivity.class);
+                break;
+            case R.id.tv_dingzhijilu://专家定制记录
+                Bundle bundle3 = new Bundle();
+                bundle3.putString("title",tv_dingzhijilu.getText().toString());
+                multiplexIntent(mActivity,bundle3, CustomExpertRecordsActivity.class);
                 break;
             case R.id.mTv_gengduo_zhenxuantaocan://甄选套餐-更多
-                Intent intent2 = new Intent(mActivity, RecommendSetmealActivity.class);
                 Bundle bundle2 = new Bundle();
                 bundle2.putSerializable("data", data);
-                intent2.putExtras(bundle2);
-                startActivity(intent2);
+                multiplexIntent(mActivity,bundle2,RecommendSetmealActivity.class);
                 break;
             default:
                 break;
@@ -487,8 +560,11 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         Toast.makeText(getActivity(), "点击第" + (position + 1) + "条", Toast.LENGTH_SHORT).show();
     }
 
-    private void multiplexIntent(Context context, Class cla) {
+    private void multiplexIntent(Context context,Bundle bundle, Class cla) {
         Intent intent = new Intent(context, cla);
+        if (bundle != null){
+            intent.putExtras(bundle);
+        }
         startActivity(intent);
     }
 

@@ -15,6 +15,9 @@ import com.maqueezu.el.R;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * 添加体检卡
  */
@@ -76,8 +79,7 @@ public class AddPhysicalExaminationCardActivity extends AppCompatActivity implem
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bt_nextStep:
-                Intent intent = new Intent(this,UsePhysicalExaminationCardActivity.class);
-                startActivity(intent);
+                submit();
                 break;
             case R.id.title_back_image://返回
             case R.id.back_layout:
@@ -99,12 +101,31 @@ public class AddPhysicalExaminationCardActivity extends AppCompatActivity implem
         // validate
         String card = et_physicalExmination_card.getText().toString().trim();
         if (TextUtils.isEmpty(card)) {
-            Toast.makeText(this, "card不能为空", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "卡号不能为空", Toast.LENGTH_SHORT).show();
             return;
         }
 
         // TODO validate success, do something
+        boolean b = checkCard(card);
+        if (b){
+            Intent intent = new Intent(this,UsePhysicalExaminationCardActivity.class);
+            startActivity(intent);
+        }else {
+            Toast.makeText(this, "您输入有误,请重新输入", Toast.LENGTH_SHORT).show();
+        }
 
+    }
+
+//    卡号判断
+    private boolean checkCard(String str) {
+
+        String regexp = "^\\d{14}$";
+
+        Pattern pattern = Pattern.compile(regexp);
+
+        Matcher matcher = pattern.matcher(str);
+
+        return matcher.matches();
 
     }
 }

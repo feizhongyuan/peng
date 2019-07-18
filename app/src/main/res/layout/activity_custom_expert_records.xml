@@ -4,27 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.maqueezu.el.ui.activity.child.physicalexamination_child.RecommendSetmealActivity">
+    tools:context="com.maqueezu.el.ui.activity.child.physicalexamination_child.CustomExpertRecordsActivity">
 
     <include layout="@layout/view_title1"
         android:id="@+id/include1"/>
 
-
-<com.scwang.smartrefresh.layout.SmartRefreshLayout
-    android:id="@+id/mSmart_refresh_layout"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_below="@id/include1"
-    >
-
     <android.support.v7.widget.RecyclerView
-        android:id="@+id/mRecycler_Recommend"
+        android:id="@+id/mRecycler_CustomExpertRecords"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:overScrollMode="never"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include1"
+        android:layout_marginTop="@dimen/dp_5"
         >
 
     </android.support.v7.widget.RecyclerView>
-</com.scwang.smartrefresh.layout.SmartRefreshLayout>
-
 </com.zhy.autolayout.AutoRelativeLayout>

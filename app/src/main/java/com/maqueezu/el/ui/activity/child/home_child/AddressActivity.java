@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.transition.Slide;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -77,6 +78,7 @@ public class AddressActivity extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_address);
         initView();
         initDate();
+        initListener();
 
         CityDBManager dbManager = new CityDBManager(this);
         dbManager.openDateBase();
@@ -132,6 +134,15 @@ public class AddressActivity extends AppCompatActivity implements View.OnClickLi
         cityLetterListView = (MyLetterListView) findViewById(R.id.cityLetterListView);
         city_layout = (AutoRelativeLayout) findViewById(R.id.city_layout);
         city_layout.setOnClickListener(this);
+    }
+
+    private void initListener() {
+        city_layout.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return mListView_City.dispatchTouchEvent(event);
+            }
+        });
     }
 
     @Override

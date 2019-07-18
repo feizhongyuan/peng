@@ -4,12 +4,17 @@
     android:layout_height="match_parent"
     tools:context="com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealListItemFragment">
 
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/mSmart_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecycler_SetMealList"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:nestedScrollingEnabled="false"
         >
-
     </android.support.v7.widget.RecyclerView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </com.zhy.autolayout.AutoRelativeLayout>

@@ -62,6 +62,7 @@ public class MainActivity extends BaseActivity<HomeContract.View, HomePresenter<
 
     String[] permissions = new String[]{
             Manifest.permission.INTERNET,
+            Manifest.permission.CALL_PHONE
 //            Manifest.permission.READ_CALENDAR,
 //            Manifest.permission.WRITE_CALENDAR,
 //            Manifest.permission.SET_ALARM,
@@ -558,6 +559,7 @@ public class MainActivity extends BaseActivity<HomeContract.View, HomePresenter<
                 Log.e("aaaa", "打开搜索");
                 Bundle bundle1 = new Bundle();
                 multiplexIntent(this,SearchActivity.class,bundle1);
+                overridePendingTransition(R.anim.in_from_right,R.anim.out_to_left);
                 break;
             case R.id.et_ProductSearch:
 //                submit();
@@ -571,7 +573,9 @@ public class MainActivity extends BaseActivity<HomeContract.View, HomePresenter<
 
     public void multiplexIntent(Context context,Class cla,Bundle bundle){
         Intent intent = new Intent(context,cla);
-        intent.putExtras(bundle);
+        if (bundle != null){
+            intent.putExtras(bundle);
+        }
         startActivity(intent);
     }
 

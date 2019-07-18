@@ -17,10 +17,12 @@ import com.maqueezu.el.ui.fragment.shopping_child.ThroughTrainListItemFragment;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
- * 直通车跳转
+ * 直通车、分类跳转
+ *  双列表展示（复用）
  */
 public class ThroughTrainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -82,9 +84,33 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
     }
 
     private void initDate() {
-        Intent intent = getIntent();
         String name = getIntent().getStringExtra("name");
-        dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");
+        String dataName = getIntent().getStringExtra("dataName");
+
+        if ("jiankangyundong".equals(dataName)){
+            dataBean = selectData("jiankangyundong");
+        }else if ("muyinghuli".equals(dataName)){
+            dataBean = selectData("muyinghuli");
+        }else if ("jiankangshebei".equals(dataName)){
+            dataBean = selectData("jiankangshebei");
+        }else if ("shipinbaojian".equals(dataName)){
+            dataBean = selectData("shipinbaojian");
+        }else if ("jiankangjiaju".equals(dataName)){
+            dataBean = selectData("jiankangjiaju");
+        }else if ("meizhuangxihu".equals(dataName)){
+            dataBean = selectData("meizhuangxihu");
+        }else if ("jiankangbaoxian".equals(dataName)){
+            dataBean = selectData("jiankangbaoxian");
+        }else if ("remaituijian".equals(dataName)){
+            dataBean = selectData("remaituijian");
+        }else if ("pinzhishenghuo_1".equals(dataName)){
+            dataBean = selectData("pinzhishenghuo_1");
+        }else if ("pinzhishenghuo_2".equals(dataName)){
+            dataBean = selectData("pinzhishenghuo_2");
+        }else if ("data".equals(dataName)){
+            dataBean = selectData("data");
+        }
+
         title_text.setText(name);
         fragments = new ArrayList<>();
         fragments.add(ThroughTrainListItemFragment.newInstance(dataBean));
@@ -92,6 +118,11 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
 
         FragmentAdapter2 adapter = new FragmentAdapter2(getSupportFragmentManager(), fragments);
         view_pager_shangpinliebiao.setAdapter(adapter);
+    }
+
+    private AdvertBean.DataBean selectData(String name) {
+        Intent intent = getIntent();
+        return (AdvertBean.DataBean) intent.getSerializableExtra(name);
     }
 
     private void initListener() {

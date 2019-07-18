@@ -224,7 +224,9 @@ public class GoodsDetailActivity extends AppCompatActivity implements View.OnCli
 
     private void multiplexIntent(Context context, Bundle bundle, Class cla) {
         Intent intent = new Intent(context,cla);
-        intent.putExtras(bundle);
+        if (bundle != null){
+            intent.putExtras(bundle);
+        }
         startActivity(intent);
     }
 }

@@ -43,11 +43,19 @@
             android:visibility="visible"
             />
         <TextView
+            android:id="@+id/tv_organ_week"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="周一至周日"
+            android:layout_below="@id/tv_organ_biaoqian1"
+            android:layout_marginTop="@dimen/dp_10"
+            />
+        <TextView
             android:id="@+id/tv_organ_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="周一至周日 08:00-17:30"
-            android:layout_below="@id/tv_organ_biaoqian1"
+            android:text="08:00-17:30"
+            android:layout_below="@id/tv_organ_week"
             android:layout_marginTop="@dimen/dp_10"
             />
         <TextView
@@ -69,16 +77,16 @@
             android:layout_marginRight="@dimen/dp_10"
             />
 
-        <TextView
-            android:id="@+id/tv_organ_distance"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="2.7km"
-            android:layout_alignParentRight="true"
-            android:layout_below="@id/tv_organ_time"
-            android:layout_marginTop="@dimen/dp_10"
-            android:layout_marginRight="@dimen/dp_10"
-            />
+        <!--<TextView-->
+            <!--android:id="@+id/tv_organ_distance"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="2.7km"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_below="@id/tv_organ_time"-->
+            <!--android:layout_marginTop="@dimen/dp_10"-->
+            <!--android:layout_marginRight="@dimen/dp_10"-->
+            <!--/>-->
 
     </com.zhy.autolayout.AutoRelativeLayout>
 

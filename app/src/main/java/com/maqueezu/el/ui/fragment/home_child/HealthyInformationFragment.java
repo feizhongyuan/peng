@@ -126,14 +126,12 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
         mRecyclerView_HealthyInformation.setAdapter(healthyInformationAdapter);
         mRecyclerView_HealthyInformation.addItemDecoration(new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL));
 
-        smart_refresh_layout.setEnableLoadMore(false);//是否启用上拉加载功能
-        smart_refresh_layout.setEnableAutoLoadMore(true);//是否启用列表惯性滑动到底部时自动加载更多
+//        smart_refresh_layout.setEnableLoadMore(false);//是否启用上拉加载功能
+//        smart_refresh_layout.setEnableAutoLoadMore(true);//是否启用列表惯性滑动到底部时自动加载更多
 //         刷新完成
         smart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-//                TODO 执行有问题
-                goodsCatBean = new GoodsCatBean();
                 List<GoodsCatBean.DataBean> dataBeans = new ArrayList<>();
                 for (int i = 0; i < 10; i++) {
                     GoodsCatBean.DataBean dataBean = new GoodsCatBean.DataBean();
@@ -143,16 +141,32 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
                     dataBeans.add(dataBean);
                 }
 
-                goodsCatBean.setData(dataBeans);
-                healthyInformationAdapter.notifyDataSetChanged();
-                refreshLayout.finishRefresh(2000);
+                if (dataBeans != null){
+                    healthyInformationAdapter.refresh(dataBeans);
+                    refreshLayout.finishRefresh(2000);
+                }else {
+                    refreshLayout.finishRefresh(false);
+                }
             }
         });
 //        加载更多
         smart_refresh_layout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                refreshLayout.finishRefresh(2000);
+                List<GoodsCatBean.DataBean> dataBeans = new ArrayList<>();
+                for (int i = 0; i < 6; i++) {
+                    GoodsCatBean.DataBean dataBean = new GoodsCatBean.DataBean();
+                    dataBean.setName("标题标题标题标题标题标题标题标题"+i);
+                    int i1 = new Random().nextInt(1000);
+                    dataBean.setLevel(i1+i);
+                    dataBeans.add(dataBean);
+                }
+                if (dataBeans != null){
+                    healthyInformationAdapter.addList(dataBeans);
+                    refreshLayout.finishLoadMore(2000);
+                }else {
+                    refreshLayout.finishLoadMore(false);
+                }
             }
         });
 

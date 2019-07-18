@@ -61,14 +61,20 @@
 
     </com.zhy.autolayout.AutoRelativeLayout>
 
+
+<com.scwang.smartrefresh.layout.SmartRefreshLayout
+    android:id="@+id/mSmart_refresh_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@id/rl_statusbar"
+    >
     <android.support.v7.widget.RecyclerView
         android:id="@+id/mRecycle_Organ"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/rl_statusbar"
         >
-
     </android.support.v7.widget.RecyclerView>
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 
 

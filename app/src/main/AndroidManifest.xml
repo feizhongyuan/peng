@@ -3,13 +3,14 @@
     package="com.maqueezu.el">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <!-- <uses-permission android:name="android.permission.CLIPBOARD_SERVICE"/> -->
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo_zhushou"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -29,18 +30,13 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.test.TestActivity" >
-
-        </activity>
-        <activity android:name=".ui.test.Test1Activity" >
-
-        </activity>
-
+        <activity android:name=".ui.test.TestActivity" />
+        <activity android:name=".ui.test.Test1Activity" />
         <activity android:name=".ui.activity.WelcomeActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity android:name=".ui.activity.child.home_child.AddressActivity" />
@@ -49,15 +45,21 @@
         <activity android:name=".ui.activity.child.physicalexamination_child.PhysicalSetMealActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.SetMealListActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.PhysicalOrganActivity" />
-        <activity android:name=".ui.activity.child.physicalexamination_child.OrganItemActivity" />
-        <activity android:name=".ui.activity.child.physicalexamination_child.SetMealItemActivity" />
+        <activity
+            android:name=".ui.activity.child.physicalexamination_child.OrganItemActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".ui.activity.child.physicalexamination_child.SetMealItemActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".ui.activity.child.physicalexamination_child.SubmitOrderActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.PaymentOrderActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.AddPhysicalExaminationCardActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.UsePhysicalExaminationCardActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.AddCardProcessActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.AdjustmentProjectActivity" />
-        <activity android:name=".ui.activity.child.physicalexamination_child.CustomOneselfActivity" />
+        <activity
+            android:name=".ui.activity.child.physicalexamination_child.CustomOneselfActivity"
+            android:launchMode="singleTask" />
         <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.RecommendSetmealActivity" />
         <activity android:name=".ui.activity.child.shopping_child.ThroughTrainActivity" />
@@ -69,7 +71,12 @@
         <activity android:name=".ui.activity.child.shopping_child.GoodsPaymentOrderActivity" />
         <activity android:name=".ui.activity.child.home_child.AllMessageActivity" />
         <activity android:name=".ui.activity.MultiplexActivity" />
-        <activity android:name=".ui.activity.child.home_child.HealthyInformationItemActivity"></activity>
+        <activity
+            android:name=".ui.activity.child.home_child.HealthyInformationItemActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".ui.activity.child.physicalexamination_child.CustomOneToOneActivity" />
+        <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertRecordsActivity" />
+        <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertDetailsActivity"></activity>
     </application>
 
 </manifest>

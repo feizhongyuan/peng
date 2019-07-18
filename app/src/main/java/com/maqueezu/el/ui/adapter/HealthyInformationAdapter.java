@@ -67,4 +67,19 @@ public class HealthyInformationAdapter extends BaseRecyclerAdapter<GoodsCatBean.
 
         }
     }
+
+    //下面两个方法提供给页面刷新和加载时调用
+    public void addList(List<GoodsCatBean.DataBean> addMessageList) {
+        //增加数据
+        int position = list.size();
+        list.addAll(position, addMessageList);
+        notifyItemInserted(position);
+    }
+
+    public void refresh(List<GoodsCatBean.DataBean> newList) {
+        //刷新数据
+        list.removeAll(list);
+        list.addAll(newList);
+        notifyDataSetChanged();
+    }
 }

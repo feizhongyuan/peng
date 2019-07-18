@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.physicalexamination_child.CustomOneToOneActivity">
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include1"
+        android:fillViewport="true"
+        >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+                <Button
+                    android:id="@+id/bt_next"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:text="@string/name_xiayibu"
+                    android:textSize="@dimen/sp_18"
+                    android:background="@color/huise"
+                    android:layout_alignParentBottom="true"
+                    />
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/ll_base_1"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="@dimen/dp_5"
+                >
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_jiankangzhuangkuang"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/yellow"
+                    >
+                    <TextView
+                        android:id="@+id/tv_jiankangzhuangkuang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="健康状况"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold"
+                        android:layout_centerInParent="true"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_jibingshi"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/darker_blue"
+                    >
+                    <TextView
+                        android:id="@+id/tv_jibingshi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="疾病史"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_centerInParent="true"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_shenghuoxiguan"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/green"
+                    >
+                    <TextView
+                        android:id="@+id/tv_shenghuoxiguan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="生活习惯"
+                        android:textSize="@dimen/sp_15"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:layout_centerInParent="true"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+            <!--<android.support.design.widget.TabLayout-->
+                <!--android:id="@+id/mTabLayout_OneToOne"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="?attr/actionBarSize"-->
+                <!--style="@style/Base.Widget.Design.TabLayout"-->
+                <!--android:layout_gravity="top"-->
+                <!--android:background="#ffffff"-->
+                <!--android:fillViewport="false"-->
+                <!--android:isScrollContainer="true"-->
+                <!--app:tabMode="fixed"-->
+                <!--app:layout_scrollFlags="scroll"-->
+                <!--app:tabIndicatorHeight="@null"-->
+                <!--app:tabIndicatorColor="@color/colorAccent"-->
+                <!--app:tabSelectedTextColor="@color/colorAccent"-->
+                <!--app:tabTextColor="#ced0d3"-->
+                <!--&gt;-->
+
+            <!--</android.support.design.widget.TabLayout>-->
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/mViewPager_OneToOne"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipChildren="false"
+                android:layout_below="@id/ll_base_1"
+                android:layout_above="@id/bt_next"
+                >
+
+            </android.support.v4.view.ViewPager>
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</com.zhy.autolayout.AutoRelativeLayout>

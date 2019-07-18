@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
+<script src="https://unpkg.com/dsbridge@3.1.3/dist/dsbridge.js"></script>
 <style>
 	html body{
 		font-size: 14px;
@@ -55,36 +56,55 @@
 		border-top: 1px solid #0497de;
 		color: #fff;
 	}
+
 </style>
 <script>
+
+var dsBridge = null;
+<!--先加载dsBridge模块-->
+    apiready = function() {
+	    dsBridge=api.require("dsbridge");
+    };
+
 	function toServes() {
 		alert("呼叫网管")
     }
     function toBuy() {
         alert("2222")
+        dsBridge.call("showToast","显示购买");
     }
+
+    function test(){
+        //注册 javascript API
+        dsBridge.register('addValue',function(l,r){
+            return l+r;
+        });
+    }
+
 </script>
 <body>
-	<div class="head_content">
-		<img src="images/gene-top.jpg" width="100%"/>
-	</div>
-	<div>
-		<p class="detailTitle">商品详情</p>
-		<div class="imgDec">
-			<img src="images/gene-1.jpg" width="100%"/>
-			<p class="textDec">基因是遗传的基本单元，携带有遗传信息的DNA或RNA序列，通过复制，把遗传信息传递给下一代，指导蛋白质的合成来表达自己所携带的遗传信息，从而控制生物个体的性状表达。基因检测是通过血液、其他体液、或细胞对DNA进行检测的技术，是取被检测者外周静脉血或其他组织细胞，扩增其基因信息后，通过特定设备对被检测者细胞中的DNA分子信息作检测，分析它所含有的基因类型和基因缺陷及其表达功能是否正常的一种方法，从而使人们能了解自己的基因信息，明确病因或预知身体患某种疾病的风险。</p>
-		</div>
-		<div class="imgDec">
-			<img src="images/gene-2.jpg" width="100%"/>
-			<p class="textDec">基因检测可以诊断疾病，也可以用于疾病风险的预测。疾病诊断是用基因检测技术检测引起遗传性疾病的突变基因。目前应用最广泛的基因检测是新生儿遗传性疾病的检测、遗传疾病的诊断和某些常见病的辅助诊断。</p>
-		</div>
-	</div>
-	<div class="bottomBox">
-		<div class="calltel" onclick="toServes()">
-			<img src="images/icon-mine-service.png" width="15"/>
-			<span>客服</span>
-		</div>
-		<div class="buy" onclick="toBuy()">立即购买</div>
-	</div>
+<div class="head_content">
+    <img src="images/gene-top.jpg" width="100%"/>
+</div>
+<div>
+    <p class="detailTitle">商品详情</p>
+    <div class="imgDec">
+        <img src="images/gene-1.jpg" width="100%"/>
+        <p class="textDec">
+            基因是遗传的基本单元，携带有遗传信息的DNA或RNA序列，通过复制，把遗传信息传递给下一代，指导蛋白质的合成来表达自己所携带的遗传信息，从而控制生物个体的性状表达。基因检测是通过血液、其他体液、或细胞对DNA进行检测的技术，是取被检测者外周静脉血或其他组织细胞，扩增其基因信息后，通过特定设备对被检测者细胞中的DNA分子信息作检测，分析它所含有的基因类型和基因缺陷及其表达功能是否正常的一种方法，从而使人们能了解自己的基因信息，明确病因或预知身体患某种疾病的风险。</p>
+    </div>
+    <div class="imgDec">
+        <img src="images/gene-2.jpg" width="100%"/>
+        <p class="textDec">
+            基因检测可以诊断疾病，也可以用于疾病风险的预测。疾病诊断是用基因检测技术检测引起遗传性疾病的突变基因。目前应用最广泛的基因检测是新生儿遗传性疾病的检测、遗传疾病的诊断和某些常见病的辅助诊断。</p>
+    </div>
+</div>
+<div class="bottomBox">
+    <div class="calltel" onclick="toServes()">
+        <img src="images/icon-mine-service.png" width="15"/>
+        <span>客服</span>
+    </div>
+    <div class="buy" onclick="toBuy()">立即购买</div>
+</div>
 </body>
 </html>

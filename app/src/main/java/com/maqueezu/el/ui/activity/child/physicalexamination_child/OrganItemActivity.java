@@ -46,6 +46,7 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
     private TextView tv_organ_item_address;
     private AutoLinearLayout rl_tijianjigou;
     private AutoLinearLayout rl_jigoutaocan;
+    private AutoRelativeLayout rl_base_viewpager;
 
     private List<Fragment> fragments;
 
@@ -92,9 +93,8 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
         tv_organ_item_address = (TextView) findViewById(R.id.tv_organ_item_address);
         tv_organ_item_address.setOnClickListener(this);
         rl_tijianjigou = (AutoLinearLayout) findViewById(R.id.rl_tijianjigou);
-        rl_tijianjigou.setOnClickListener(this);
         rl_jigoutaocan = (AutoLinearLayout) findViewById(R.id.rl_jigoutaocan);
-        rl_jigoutaocan.setOnClickListener(this);
+        rl_base_viewpager = (AutoRelativeLayout) findViewById(R.id.rl_base_viewpager);
     }
 
     private void initData() {
@@ -118,6 +118,13 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
 
         mViewPager_organ.setCurrentItem(0);
 
+
+        rl_base_viewpager.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return mViewPager_organ.dispatchTouchEvent(event);
+            }
+        });
     }
 
     private void initListener() {

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Project</string>
+    <string name="app_name">麻雀e疗Demo</string>
 
     <string name="main_page">首页</string>
     <string name="load_data_page">演示数据加载</string>
@@ -134,6 +134,7 @@
     <string name="name_xingbie">性别</string>
     <string name="name_lianxidianhua">联系电话</string>
     <string name="name_nianling">年龄</string>
+    <string name="name_chengshi">城市</string>
     <string name="name_tijiao">提交</string>
 
     <string name="name_zhuanjia_zhiyi1">请注意核对联系电话</string>
@@ -173,6 +174,11 @@
     <string name="name_guanzhu">+关注</string>
     <string name="name_wenzhangpinglun">文章评论</string>
 
+    <string name="name_dingzhigaiyao">定制概要</string>
+    <string name="name_tuijiantaocao">推荐套餐</string>
+    <string name="name_zhuanjiadingzhixiangqing">专家定制详情</string>
+    <string name="name_yiduiyidingzhigoutong">1V1定制沟通</string>
+
 
     <string name="name_youpinshangcheng">优品商城</string>
     <string name="name_tesejiuyi">特色就医</string>
@@ -184,7 +190,6 @@
     <string name="name_jianbuyoujiang">健步有奖</string>
     <string name="name_jiangchijine">奖池金额</string>
     <string name="name_dangqianmingci">当前名次</string>
-    <string name="name_mingci">第11名</string>
     <string name="name_zanwupaihang">暂无排行</string>
     <string name="name_dangqianpaimingjiangli">当前排名奖励</string>
     <string name="name_jianglipaiming">奖励排名</string>

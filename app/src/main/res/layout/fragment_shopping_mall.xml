@@ -614,23 +614,33 @@
                         />
                 </com.zhy.autolayout.AutoRelativeLayout>
 
+                <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                    android:id="@+id/mSmart_refresh_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/rl_pinzhishenghuo_1"
+                    >
                 <ImageView
                     android:id="@+id/img_pinzhishenghuo_"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_launcher_background"
                     android:scaleType="fitXY"
-                    android:layout_below="@id/rl_pinzhishenghuo_1"
                     android:layout_marginTop="@dimen/dp_5"
                     android:layout_marginBottom="@dimen/dp_5"
                     />
+
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/mRecycler_pinzhishenghuo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:stretchMode="spacingWidthUniform"
-                    android:layout_below="@+id/img_pinzhishenghuo_"></android.support.v7.widget.RecyclerView>
+                    android:layout_below="@+id/img_pinzhishenghuo_">
+
+                </android.support.v7.widget.RecyclerView>
+
+                </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 
 
@@ -645,6 +655,7 @@
 
     </android.support.v4.widget.NestedScrollView>
 
+    <!--购物车-->
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rl_shoppingCart"
         android:layout_width="wrap_content"

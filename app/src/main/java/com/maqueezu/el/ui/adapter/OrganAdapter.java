@@ -1,6 +1,8 @@
 package com.maqueezu.el.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,8 +45,19 @@ public class OrganAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvLis
         holder.tv_organ_biaoqian1.setVisibility(View.VISIBLE);
         holder.tv_organ_biaoqian2.setVisibility(View.VISIBLE);
         holder.tv_organ_address.setText("陕西省西安市莲湖区西华门大街2-4号");
-        holder.tv_organ_time.setText("周一至周日 08:00—17:30");
-        holder.tv_organ_distance.setText("4.9km");
+        holder.tv_organ_week.setText("周一至周五");
+        holder.tv_organ_time.setText("08:00—17:30");
+//        holder.tv_organ_distance.setText("4.9km");
+
+        holder.img_organ_telphone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //跳转到拨号界面
+                Intent intent = new Intent(Intent.ACTION_DIAL,Uri.parse("tel:" + "10086"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
+            }
+        });
     }
 
     public class Holder extends MyViewHolder{
@@ -54,7 +67,8 @@ public class OrganAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvLis
         private final TextView tv_organ_biaoqian2;
         private final TextView tv_organ_address;
         private final TextView tv_organ_time;
-        private final TextView tv_organ_distance;
+        private final TextView tv_organ_week;
+//        private final TextView tv_organ_distance;
         private final ImageView img_organ_telphone;
 
         public Holder(View itemView) {
@@ -64,10 +78,25 @@ public class OrganAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvLis
             tv_organ_biaoqian2 = (TextView) itemView.findViewById(R.id.tv_organ_biaoqian2);
             tv_organ_address = (TextView) itemView.findViewById(R.id.tv_organ_address);
             tv_organ_time = (TextView) itemView.findViewById(R.id.tv_organ_time);
-            tv_organ_distance = (TextView) itemView.findViewById(R.id.tv_organ_distance);
+            tv_organ_week = itemView.findViewById(R.id.tv_organ_week);
+//            tv_organ_distance = (TextView) itemView.findViewById(R.id.tv_organ_distance);
             img_organ_telphone = (ImageView) itemView.findViewById(R.id.img_organ_telphone);
 
         }
+    }
 
+    //下面两个方法提供给页面刷新和加载时调用
+    public void addList(List<AdvertBean.DataBean.AdvListBean> addMessageList) {
+        //增加数据
+        int position = list.size();
+        list.addAll(position, addMessageList);
+        notifyItemInserted(position);
+    }
+
+    public void refresh(List<AdvertBean.DataBean.AdvListBean> newList) {
+        //刷新数据
+        list.removeAll(list);
+        list.addAll(newList);
+        notifyDataSetChanged();
     }
 }

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.pojo.LoadModel;
 import com.maqueezu.utils.ui.recyclerView.adapter.BaseRecyclerAdapter;
 import com.maqueezu.utils.ui.recyclerView.adapter.MyViewHolder;
@@ -56,5 +57,20 @@ public class SetmealAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvL
             tv_goodsName = (TextView) view.findViewById(R.id.tv_goodsName);
             tv_goodsPrice = (TextView) view.findViewById(R.id.tv_goodsPrice);
         }
+    }
+
+    //下面两个方法提供给页面刷新和加载时调用
+    public void addList(List<AdvertBean.DataBean.AdvListBean> addMessageList) {
+        //增加数据
+        int position = list.size();
+        list.addAll(position, addMessageList);
+        notifyItemInserted(position);
+    }
+
+    public void refresh(List<AdvertBean.DataBean.AdvListBean> newList) {
+        //刷新数据
+        list.removeAll(list);
+        list.addAll(newList);
+        notifyDataSetChanged();
     }
 }

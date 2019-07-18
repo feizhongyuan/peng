@@ -1,0 +1,19 @@
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.webview.NewWebFragment">
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_base_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <com.zhy.autolayout.AutoFrameLayout
+            android:id="@+id/web_x5_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+</com.zhy.autolayout.AutoRelativeLayout>

@@ -2,6 +2,7 @@ package com.maqueezu.el.ui.activity.child.physicalexamination_child;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -14,8 +15,20 @@ import android.widget.Toast;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.adapter.SetMealListAdapter;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
+
+/**
+ * 甄选套餐--更多
+ */
 
 public class RecommendSetmealActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
@@ -27,7 +40,10 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
     private TextView right_text;
     private AutoRelativeLayout rl_statusbar;
     private RecyclerView mRecycler_Recommend;
+    private SmartRefreshLayout mSmart_refresh_layout;
+
     private AdvertBean.DataBean dataBean;
+    private SetMealListAdapter setMealListAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,23 +74,67 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
         mRecycler_Recommend = (RecyclerView) findViewById(R.id.mRecycler_Recommend);
         mRecycler_Recommend.setOnClickListener(this);
         mRecycler_Recommend.setLayoutManager(new LinearLayoutManager(this));
+        mSmart_refresh_layout = (SmartRefreshLayout) findViewById(R.id.mSmart_refresh_layout);
     }
 
     private void initDate() {
         Intent intent = getIntent();
         dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");
 
-        mRecycler_Recommend.setAdapter(new SetMealListAdapter(this, dataBean.getAdvList(),this));
+        setMealListAdapter = new SetMealListAdapter(this, dataBean.getAdvList(), this);
+        mRecycler_Recommend.setAdapter(setMealListAdapter);
 
     }
 
     private void initListener() {
+//        下拉刷新
+        mSmart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
+                for (int i = 0; i < 10; i++) {
+                    AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+                    advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
+                    int i1 = new Random().nextInt(1000);
+                    advListBean.setAid(i1+i);
+                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                    advListBeans.add(advListBean);
+                }
 
+                if (advListBeans != null){
+                    setMealListAdapter.refresh(advListBeans);
+                    refreshLayout.finishRefresh(2000);
+                }else {
+                    refreshLayout.finishRefresh(false);
+                }
+            }
+        });
+//        上拉加载
+        mSmart_refresh_layout.setOnLoadMoreListener(new OnLoadMoreListener() {
+            @Override
+            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
+                for (int i = 0; i < 6; i++) {
+                    AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+                    advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
+                    int i1 = new Random().nextInt(1000);
+                    advListBean.setAid(i1+i);
+                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                    advListBeans.add(advListBean);
+                }
+                if (advListBeans != null){
+                    setMealListAdapter.addList(advListBeans);
+                    refreshLayout.finishLoadMore(2000);
+                }else {
+                    refreshLayout.finishLoadMore(false);
+                }
+            }
+        });
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.back_layout:
             case R.id.title_back_image:
                 finish();
@@ -84,6 +144,6 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Toast.makeText(this, ""+(position+1), Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "" + (position + 1), Toast.LENGTH_SHORT).show();
     }
 }

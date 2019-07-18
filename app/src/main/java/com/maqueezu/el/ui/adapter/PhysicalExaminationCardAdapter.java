@@ -1,6 +1,7 @@
 package com.maqueezu.el.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -8,7 +9,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.maqueezu.utils.tools.LogUtil;
+import com.maqueezu.el.ui.webview.NewWebFragment;
+import com.maqueezu.utils.ui.FragmentContainerActivity;
+import com.maqueezu.utils.ui.web.WebFragment;
 
 import java.util.List;
 
@@ -20,10 +23,12 @@ import java.util.List;
 public class PhysicalExaminationCardAdapter extends PagerAdapter {
     private List<View> mList;
     private LayoutInflater layoutInflater;
+    private Context context;
 
     public PhysicalExaminationCardAdapter(Context context,List<View> mList) {
         super();
         this.mList = mList;
+        this.context = context;
         layoutInflater = LayoutInflater.from(context);
     }
 
