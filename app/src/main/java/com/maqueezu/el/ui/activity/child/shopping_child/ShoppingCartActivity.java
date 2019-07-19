@@ -17,13 +17,13 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.pojo.ShoppingCartBean;
 import com.maqueezu.el.ui.adapter.ShoppingCartAdater;
-import com.maqueezu.utils.tools.ToastUtil;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
+import ren.widget.refresh.SwipeMenuRefreshView;
 
 /**
  * 购物车跳转页
@@ -49,6 +49,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
     private CheckBox cb_select_all;//全选
     private TextView tv_total_price;//总价
     private TextView tv_total_count;//总数量
+    private SwipeMenuRefreshView mSwipeMenuRefresh;//侧滑控件
 
     private List<ShoppingCartBean> shoppingCartBeanList;
     private ShoppingCartAdater adater;
@@ -100,6 +101,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         tv_total_count.setOnClickListener(this);
         cb_select_all = (CheckBox) findViewById(R.id.cb_select_all);
         cb_select_all.setOnClickListener(this);
+        mSwipeMenuRefresh = (SwipeMenuRefreshView) findViewById(R.id.mSwipeMenuRefresh);
     }
 
     private void initDate() {
@@ -112,7 +114,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
 
         shoppingCartBeanList = new ArrayList<>();
         for (int i = 0; i < 5; i++) {
-            ShoppingCartBean shoppingCartBean = new ShoppingCartBean(0, "商品名称", "规格一", 1, 1111.00, 1);
+            ShoppingCartBean shoppingCartBean = new ShoppingCartBean(0, "商品名称"+(i+1), "规格一", 1, 111.00, 1);
             shoppingCartBeanList.add(shoppingCartBean);
         }
         adater = new ShoppingCartAdater(this, shoppingCartBeanList);
@@ -146,7 +148,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         }
     }
 
-//    全选
+    //    全选
     private void addElection() {
         if (shoppingCartBeanList.size() != 0) {
             if (cb_select_all.isChecked()) {
@@ -239,7 +241,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
      */
     @Override
     public void childCollection(int position) {
-
+//        添加到收藏页
     }
 
     /**
@@ -269,7 +271,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         for (int i = 0; i < shoppingCartBeanList.size(); i++) {
             ShoppingCartBean shoppingCartBean = shoppingCartBeanList.get(i);
             if (shoppingCartBean.isChoosed()) {
-                totalCount++;
+                totalCount += shoppingCartBean.getCount();
                 totalPrice += shoppingCartBean.getPrice() * shoppingCartBean.getCount();
             }
         }
@@ -294,12 +296,12 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
                 Log.d("TAG", id + "----id---" + shoppingName + "---" + count + "---" + price + "--size----" + size + "--attr---" + attribute);
             }
         }
-        Toast.makeText(this, "总价：" + totalPrice+"元", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "总价：" + totalPrice + "元", Toast.LENGTH_SHORT).show();
 
         //跳转到支付界面
 
-        Intent intent = new Intent(this,GoodsSubmitOrderActivity.class);
-        intent.putExtra("price",tv_total_price.getText().toString());
+        Intent intent = new Intent(this, GoodsSubmitOrderActivity.class);
+        intent.putExtra("price", tv_total_price.getText().toString());
         startActivity(intent);
 
     }

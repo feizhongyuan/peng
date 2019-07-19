@@ -9,11 +9,15 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.daimajia.swipe.SwipeLayout;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.ShoppingCartBean;
+import com.zhy.autolayout.AutoLinearLayout;
 
 import java.util.List;
 
@@ -90,6 +94,25 @@ public class ShoppingCartAdater extends BaseAdapter {
             viewHolder.cb_select.setChecked(false);
         }
 
+        viewHolder.mSwipeLayout.isClickToClose();//点击关闭
+        viewHolder.mSwipeLayout.isSwipeEnabled();//启用滑动
+
+        viewHolder.collection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "将 "+getItem(position) + "加入收藏", Toast.LENGTH_SHORT).show();
+                onClickListenerModel.childCollection(position);
+            }
+        });
+
+        viewHolder.delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                移除商品
+                onClickListenerModel.childDelete(position);
+            }
+        });
+
         viewHolder.cb_select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -125,6 +148,10 @@ public class ShoppingCartAdater extends BaseAdapter {
         private final ImageView iv_edit_subtract;//减少个数
         private final TextView tv_edit_buy_number;//总个数
         private final ImageView iv_edit_add;//添加个数
+        private final TextView collection;//收藏
+        private final TextView delete;//移除
+        private final AutoLinearLayout ll_wrapper;
+        private final SwipeLayout mSwipeLayout;
 
         public ViewHolder(View convertView){
             cb_select = convertView.findViewById(R.id.cb_select);
@@ -135,6 +162,11 @@ public class ShoppingCartAdater extends BaseAdapter {
             iv_edit_subtract = convertView.findViewById(R.id.iv_edit_subtract);
             tv_edit_buy_number = convertView.findViewById(R.id.tv_edit_buy_number);
             iv_edit_add = convertView.findViewById(R.id.iv_edit_add);
+
+            collection = convertView.findViewById(R.id.collection);
+            delete = convertView.findViewById(R.id.delete);
+            ll_wrapper = convertView.findViewById(R.id.ll_wrapper);
+            mSwipeLayout = convertView.findViewById(R.id.mSwipeLayout);
         }
 
         public static ViewHolder newViewHolder(View convertView){
