@@ -9,17 +9,6 @@
     <include layout="@layout/view_title1"
         android:id="@+id/include1"/>
 
-    <ListView
-        android:id="@+id/mListView_shopping_cart"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#ededed"
-        android:divider="@null"
-        android:groupIndicator="@null"
-        android:scrollbars="none"
-        android:visibility="visible"
-        android:layout_below="@id/include1"
-        />
 
     <com.zhy.autolayout.AutoRelativeLayout
         android:id="@+id/rl_base_1"
@@ -125,13 +114,33 @@
             android:background="#cccccc" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
+    <ren.widget.refresh.SwipeMenuRefreshView
+        android:id="@+id/mSwipeMenuRefresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include1"
+        android:layout_above="@id/rl_base_1"
+        >
 
-<com.zhy.autolayout.AutoRelativeLayout
-android:id="@+id/rl_no_contant"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content"
-android:layout_centerInParent="true"
-android:visibility="gone">
+    <ListView
+        android:id="@+id/mListView_shopping_cart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ededed"
+        android:divider="@null"
+        android:groupIndicator="@null"
+        android:scrollbars="none"
+        android:visibility="visible"
+        />
+
+    </ren.widget.refresh.SwipeMenuRefreshView>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_no_contant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone">
 
 <ImageView
     android:id="@+id/img_no_contant"

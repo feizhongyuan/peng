@@ -96,7 +96,7 @@
         android:layout_below="@id/ll_base_1"
         />
 
-    <android.support.v4.view.ViewPager
+    <com.maqueezu.el.ui.view.NoScrollViewPager
         android:id="@+id/view_pager_taocanliebiao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

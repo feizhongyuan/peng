@@ -162,6 +162,7 @@
 
 
     <color name="title_zhushou">#595959</color>
+    <color name="colorAccent">#FF4081</color>
 
 
 </resources>

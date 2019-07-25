@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.physicalexamination_child.SetMealEvaluateActivity">
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"/>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_base_taocanpingjia"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@+id/include1"
+        android:background="@color/huise"
+        >
+
+        <TextView
+            android:id="@+id/tv_taocanpingjia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_taocanpingjia"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_10"
+            />
+
+        <TextView
+            android:id="@+id/tv_haopingdu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="98.23%"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_10"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="好评度:"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_haopingdu"
+            />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:background="@color/black"
+        android:layout_below="@id/rl_base_taocanpingjia"
+        />
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_base_zongping"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:layout_below="@id/rl_base_taocanpingjia"
+        android:background="@color/huise"
+        >
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_base_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape2"
+            android:padding="@dimen/dp_5"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            >
+            <TextView
+                android:id="@+id/tv_all"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_quanbu"
+                />
+            <TextView
+                android:id="@+id/tv_all_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_all"
+                android:text="(XXX)"
+                />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_base_graph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/shape2"
+            android:padding="@dimen/dp_5"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toRightOf="@id/rl_base_all"
+            >
+            <TextView
+                android:id="@+id/tv_graph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_youtu"
+                />
+            <TextView
+                android:id="@+id/tv_graph_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/tv_graph"
+                android:text="(XXX)"
+                />
+        </com.zhy.autolayout.AutoRelativeLayout>
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/rl_base_zongping"
+        >
+        <android.support.v4.view.ViewPager
+            android:id="@+id/mViewPager_SetMealEvaluate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v4.view.ViewPager>
+
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dp_10"
+        />
+    <RadioGroup
+        android:id="@+id/mRadioGroup_CustomProblem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_title"
+        android:weightSum="2"
+        android:orientation="horizontal"
+        >
+        <RadioButton
+            android:id="@+id/mRb_one"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_22"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_weight="1"
+            style="@style/Custom_Problem"
+            android:gravity="center"
+            />
+        <RadioButton
+            android:id="@+id/mRb_two"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="@dimen/dp_22"
+            android:layout_margin="@dimen/dp_10"
+            android:layout_weight="1"
+            style="@style/Custom_Problem"
+            android:gravity="center"
+            />
+    </RadioGroup>
+
+</com.zhy.autolayout.AutoRelativeLayout>

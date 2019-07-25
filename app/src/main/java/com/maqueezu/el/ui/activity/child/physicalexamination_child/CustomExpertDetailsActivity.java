@@ -2,12 +2,14 @@ package com.maqueezu.el.ui.activity.child.physicalexamination_child;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.maqueezu.el.R;
@@ -16,10 +18,12 @@ import com.maqueezu.el.ui.adapter.SetMealListAdapter;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 专家定制详情页
+ */
 public class CustomExpertDetailsActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
@@ -49,6 +53,7 @@ public class CustomExpertDetailsActivity extends AppCompatActivity implements Vi
     private AutoRelativeLayout rl_base_2;
     private TextView tuijiantaocan;
     private RecyclerView mRecycler_RecommendSetmeal;
+    private NestedScrollView mNestedScrollView;
 
     private List<AdvertBean.DataBean.AdvListBean> advListBeans;
 
@@ -118,6 +123,12 @@ public class CustomExpertDetailsActivity extends AppCompatActivity implements Vi
         tuijiantaocan.setOnClickListener(this);
         mRecycler_RecommendSetmeal = (RecyclerView) findViewById(R.id.mRecycler_RecommendSetmeal);
         mRecycler_RecommendSetmeal.setLayoutManager(new LinearLayoutManager(this));
+        mNestedScrollView = (NestedScrollView) findViewById(R.id.mNestedScrollView);
+
+//      设置NestedSrcollView获取焦点
+        mNestedScrollView.setFocusable(true);
+        mNestedScrollView.setFocusableInTouchMode(true);
+        mNestedScrollView.requestFocus();
     }
 
     private void initData() {
@@ -146,7 +157,7 @@ public class CustomExpertDetailsActivity extends AppCompatActivity implements Vi
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.back_layout:
             case R.id.title_back_image:
                 finish();
@@ -157,7 +168,7 @@ public class CustomExpertDetailsActivity extends AppCompatActivity implements Vi
         }
     }
 
-//    条目监听
+    //    条目监听
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 

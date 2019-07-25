@@ -2,21 +2,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.maqueezu.el.ui.fragment.home_child.HealthyInformationFragment">
+    tools:context="com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealEvaluateFragment">
 
-     <!--用SmartRefreshLayout包裹RecyclerView-->
     <com.scwang.smartrefresh.layout.SmartRefreshLayout
-        android:id="@+id/smart_refresh_layout"
+        android:id="@+id/mSmart_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/mRecyclerView_HealthyInformation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:overScrollMode="never"
-            >
-        </android.support.v7.widget.RecyclerView>
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mRecycler_Evaluate"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </android.support.v7.widget.RecyclerView>
     </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
 </com.zhy.autolayout.AutoRelativeLayout>

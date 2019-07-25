@@ -1,12 +1,16 @@
 package com.maqueezu.el.ui.activity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -14,8 +18,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
+import com.maqueezu.el.ui.activity.child.shopping_child.ThroughTrainActivity;
 import com.maqueezu.el.ui.adapter.SearchRecordAdapter;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealListItemFragment;
+import com.maqueezu.utils.view.ClearEditText;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -26,7 +32,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
-    private EditText et_ProductSearch;
+    private ClearEditText et_ProductSearch;
     private AutoRelativeLayout rl_statusbar;
     private TextView tv_zuijinsousuo;
     private ImageView img_recycler;
@@ -36,6 +42,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     private RecyclerView mRecycler_RecentSearch;
     private RecyclerView mRecycler_HotSearch;
     private List<String> list;
+    private SearchRecordAdapter searchRecordAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +56,7 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     private void initView() {
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         back_layout = (AutoLinearLayout) findViewById(R.id.back_layout);
-        et_ProductSearch = (EditText) findViewById(R.id.et_ProductSearch);
+        et_ProductSearch = (ClearEditText) findViewById(R.id.et_ProductSearch);
         rl_statusbar = (AutoRelativeLayout) findViewById(R.id.rl_statusbar);
         tv_zuijinsousuo = (TextView) findViewById(R.id.tv_zuijinsousuo);
         img_recycler = (ImageView) findViewById(R.id.img_recycler);
@@ -69,25 +76,38 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         list.add("体检套餐");
         list.add("机构");
 
-        SearchRecordAdapter adapter = new SearchRecordAdapter(this, list,this);
-        mRecycler_RecentSearch.setAdapter(adapter);
+        searchRecordAdapter = new SearchRecordAdapter(this, list, new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String s = list.get(position);
+//                TODO 传递数据
+//                if ("体检套餐".equals(s)){
+//                    Intent intent = new Intent(SearchActivity.this, ThroughTrainActivity.class);
+//                    SearchActivity.this.startActivity(intent);
+//                }else if ("机构".equals(s)){
+//                    Intent intent = new Intent(SearchActivity.this, ThroughTrainActivity.class);
+//                    SearchActivity.this.startActivity(intent);
+//                }
+            }
+        });
+        mRecycler_RecentSearch.setAdapter(searchRecordAdapter);
+        SearchRecordAdapter adapter = new SearchRecordAdapter(this, list, this);
         mRecycler_HotSearch.setAdapter(adapter);
 
     }
 
     private void initListener() {
-//        取消预设字
-        et_ProductSearch.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        et_ProductSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
-            public void onFocusChange(View v, boolean hasFocus) {
-                EditText editText = (EditText) v;
-                if (!hasFocus){
-                    editText.setHint(editText.getTag().toString());
-                }else {
-                    String hint=editText.getHint().toString();
-                    editText.setTag(hint);//保存预设字
-                    editText.setHint(null);
+            public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
+                if (i == EditorInfo.IME_ACTION_UNSPECIFIED) {
+                    Toast.makeText(SearchActivity.this, "你点击了回车", Toast.LENGTH_SHORT).show();
+                    submit();
+                    //隐藏软键盘
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getWindow().getDecorView().getWindowToken(), 0);
                 }
+                return false;
             }
         });
     }
@@ -96,12 +116,13 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         // validate
         String ProductSearch = et_ProductSearch.getText().toString().trim();
         if (TextUtils.isEmpty(ProductSearch)) {
-            Toast.makeText(this, "体检套餐/体检机构名称", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "请输入体检套餐/体检机构名称", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (ProductSearch.equals("体检套餐") || ProductSearch.equals("体检机构名称")) {
-            Intent intent = new Intent(this, SetMealListItemFragment.class);
-            startActivity(intent);
+        if (ProductSearch.equals("体检套餐") || ProductSearch.equals("体检机构")) {
+//            TODO 传递数据
+//            Intent intent = new Intent(this, ThroughTrainActivity.class);
+//            startActivity(intent);
         }
 
     }
@@ -114,9 +135,11 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
                 this.finish();
                 break;
             case R.id.img_recycler://清空最近搜索
+                list.removeAll(list);
+                searchRecordAdapter.notifyDataSetChanged();
                 break;
             case R.id.et_ProductSearch:
-                submit();
+
                 break;
             default:
                 break;

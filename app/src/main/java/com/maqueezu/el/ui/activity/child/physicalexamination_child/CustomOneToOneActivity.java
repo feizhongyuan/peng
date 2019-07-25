@@ -100,7 +100,7 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
 
         fragments = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
-            CustomProblemFragment fragment = new CustomProblemFragment();
+            CustomProblemFragment fragment = CustomProblemFragment.newInstance("item"+i);
             fragments.add(fragment);
         }
 
@@ -126,20 +126,21 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
                 finish();
                 break;
             case R.id.bt_next:
+
                 Intent intent = new Intent(this, CustomExpertActivity.class);
                 startActivity(intent);
                 break;
             case R.id.rl_jiankangzhuangkuang:
             case R.id.tv_jiankangzhuangkuang:
-                MyOnClickListener myOnClickListener = new MyOnClickListener(0);
+                mViewPager_OneToOne.setCurrentItem(0);
                 break;
             case R.id.rl_jibingshi:
             case R.id.tv_jibingshi:
-                new MyOnClickListener(1);
+                mViewPager_OneToOne.setCurrentItem(1);
                 break;
             case R.id.rl_shenghuoxiguan:
             case R.id.tv_shenghuoxiguan:
-                new MyOnClickListener(2);
+                mViewPager_OneToOne.setCurrentItem(2);
                 break;
 
             default:

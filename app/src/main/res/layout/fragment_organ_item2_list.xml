@@ -18,7 +18,9 @@
         android:layout_width="@dimen/dp_0"
         android:layout_height="match_parent"
         android:layout_weight="5"
-        android:background="@android:color/white"></com.maqueezu.el.ui.view.doublelistview.PinnedHeaderListView>
+        android:background="@android:color/white"
+
+        ></com.maqueezu.el.ui.view.doublelistview.PinnedHeaderListView>
 
 
 </com.zhy.autolayout.AutoLinearLayout>

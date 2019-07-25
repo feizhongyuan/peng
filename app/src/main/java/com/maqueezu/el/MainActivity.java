@@ -62,7 +62,8 @@ public class MainActivity extends BaseActivity<HomeContract.View, HomePresenter<
 
     String[] permissions = new String[]{
             Manifest.permission.INTERNET,
-            Manifest.permission.CALL_PHONE
+            Manifest.permission.CALL_PHONE,
+            Manifest.permission.READ_PHONE_STATE,
 //            Manifest.permission.READ_CALENDAR,
 //            Manifest.permission.WRITE_CALENDAR,
 //            Manifest.permission.SET_ALARM,

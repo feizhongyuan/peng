@@ -76,7 +76,9 @@ public class ThroughTrainListItemFragment extends BaseFragment implements Adapte
 
     @Override
     protected void initData(Bundle arguments) {
-        dataBean = (AdvertBean.DataBean) arguments.getSerializable("data");
+        if (arguments != null){
+            dataBean = (AdvertBean.DataBean) arguments.getSerializable("data");
+        }
         throughTrainListAdapter = new ThroughTrainListAdapter(mActivity, dataBean.getAdvList(), this);
         mRecycler_ThroughTrainList.setAdapter(throughTrainListAdapter);
 

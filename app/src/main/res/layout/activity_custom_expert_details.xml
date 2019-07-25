@@ -10,6 +10,7 @@
         android:id="@+id/include1"/>
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/mNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/include1"
@@ -205,7 +206,7 @@ A men"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tuijiantaocan"
-                android:nestedScrollingEnabled="false"
+                android:focusable="false"
                 >
 
             </android.support.v7.widget.RecyclerView>

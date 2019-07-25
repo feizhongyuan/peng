@@ -1,9 +1,13 @@
 package com.maqueezu.el.ui.activity.child.physicalexamination_child;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -72,7 +76,31 @@ public class AddPhysicalExaminationCardActivity extends AppCompatActivity implem
     }
 
     private void initListener() {
+        et_physicalExmination_card.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                //EditText输入状态改变，Button背景颜色也改变
+                if (et_physicalExmination_card.getText().toString().length() == 14) {
+                    //设置selector来控制Button背景颜色
+                    bt_nextStep.setBackground(ContextCompat.getDrawable(AddPhysicalExaminationCardActivity.this,
+                            R.color.colorAccent));
+                    bt_nextStep.setEnabled(true);
+                } else {
+                    bt_nextStep.setBackgroundColor(getResources().getColor(R.color.huise));
+                    bt_nextStep.setEnabled(false);
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
     }
 
     @Override
@@ -108,8 +136,14 @@ public class AddPhysicalExaminationCardActivity extends AppCompatActivity implem
         // TODO validate success, do something
         boolean b = checkCard(card);
         if (b){
-            Intent intent = new Intent(this,UsePhysicalExaminationCardActivity.class);
-            startActivity(intent);
+            if (card.equals("不存在")){
+                Toast.makeText(this, "很抱歉，您输入的卡号不存在！", Toast.LENGTH_SHORT).show();
+            }else if (card.equals("被绑定")){
+                Toast.makeText(this, "很抱歉，您输入的卡号被绑定！", Toast.LENGTH_SHORT).show();
+            }else {
+                Intent intent = new Intent(this,UsePhysicalExaminationCardActivity.class);
+                startActivity(intent);
+            }
         }else {
             Toast.makeText(this, "您输入有误,请重新输入", Toast.LENGTH_SHORT).show();
         }

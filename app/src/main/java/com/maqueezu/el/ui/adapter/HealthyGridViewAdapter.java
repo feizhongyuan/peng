@@ -17,6 +17,7 @@ import java.util.List;
 /**
  * Created by fei .
  * Created by Date 2019/6/14 11:29
+ * 首页更改，暂时不用
  */
 
 public class HealthyGridViewAdapter extends BaseAdapter{

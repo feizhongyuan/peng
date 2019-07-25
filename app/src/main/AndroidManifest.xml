@@ -4,7 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <!-- <uses-permission android:name="android.permission.CLIPBOARD_SERVICE"/> -->
     <application
         android:name=".MyApplication"
@@ -76,7 +76,8 @@
             android:launchMode="singleTask" />
         <activity android:name=".ui.activity.child.physicalexamination_child.CustomOneToOneActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertRecordsActivity" />
-        <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertDetailsActivity"></activity>
+        <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertDetailsActivity" />
+        <activity android:name=".ui.activity.child.physicalexamination_child.SetMealEvaluateActivity"></activity>
     </application>
 
 </manifest>

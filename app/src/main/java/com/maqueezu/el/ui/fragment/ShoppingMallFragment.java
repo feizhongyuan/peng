@@ -321,7 +321,7 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
                     advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
                     int i1 = new Random().nextInt(1000);
                     advListBean.setAid(i1+i);
-                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                    advListBean.setAtturl("https://www.maqueezu.com/statics/attachment/adv/2018/12/12/9//16490758.jpg");
                     advListBeans.add(advListBean);
                 }
 
@@ -344,7 +344,7 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
                     advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
                     int i1 = new Random().nextInt(1000);
                     advListBean.setAid(i1+i);
-                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                    advListBean.setAtturl("https://www.maqueezu.com/statics/attachment/adv/2018/12/12/9//16490758.jpg");
                     advListBeans.add(advListBean);
                 }
                 if (advListBeans != null){

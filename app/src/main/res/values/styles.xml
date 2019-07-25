@@ -102,4 +102,10 @@
         <item name="textAllCaps">true</item>
     </style>
 
+    <style name="Custom_Problem">
+        <item name="android:textColor">@color/selector_text</item>
+        <item name="android:background">@drawable/check_boxs</item>
+        <item name="android:button">@null</item><!--去掉RadioButton的那个圆形-->
+    </style>
+
 </resources>

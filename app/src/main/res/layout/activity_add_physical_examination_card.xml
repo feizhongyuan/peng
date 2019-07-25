@@ -25,5 +25,6 @@
         android:text="@string/name_xiayibu"
         android:layout_below="@id/et_physicalExmination_card"
         android:layout_marginTop="@dimen/dp_5"
+        android:background="@color/huise"
         />
 </com.zhy.autolayout.AutoRelativeLayout>

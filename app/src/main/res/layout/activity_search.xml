@@ -31,7 +31,7 @@
                 android:visibility="visible" />
 
         </com.zhy.autolayout.AutoLinearLayout>
-        <EditText
+        <com.maqueezu.utils.view.ClearEditText
             android:id="@+id/et_ProductSearch"
             android:layout_width="@dimen/dp_280"
             android:layout_height="wrap_content"
@@ -42,6 +42,7 @@
             android:layout_toRightOf="@id/back_layout"
             android:drawableRight="@mipmap/fanhui"
             android:singleLine="true"
+            android:imeOptions="actionSearch"
             />
     </com.zhy.autolayout.AutoRelativeLayout>
 

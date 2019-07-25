@@ -10,35 +10,37 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
-import com.maqueezu.el.ui.activity.child.physicalexamination_child.SubmitOrderActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 套餐详情
  */
-public class SetMealItemActivity extends AppCompatActivity implements View.OnClickListener{
+public class SetMealItemActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private ImageView img_setmeal_item_tu;
-    private ImageView img_setmeal_item_back;
-    private ImageView img_setmeal_item_share;
-    private TextView tv_setmeal_item_title;
-    private TextView tv_setmeal_item_title1;
-    private TextView tv_setmeal_item_price;
-    private TextView tv_setmeal_item_sum;
-    private TextView tv_setmeal_item_note;
+    private ImageView img_setmeal_item_tu;//体检套餐大图
+    private ImageView img_setmeal_item_back;//返回上一级
+    private ImageView img_setmeal_item_share;//分享
+    private TextView tv_setmeal_item_title;//套餐名称
+    private TextView tv_setmeal_item_title1;//套餐副标题
+    private TextView tv_setmeal_item_price;//套餐价格
+    private TextView tv_setmeal_item_sum;//套餐已售
+    private TextView tv_setmeal_item_note;//注意事项
     private AutoRelativeLayout rl_base_1;
-    private ImageView img_setmeal_item_xiangqing;
-    private AutoRelativeLayout rl_base_xiangqing;
-    private AutoRelativeLayout rl_base_taocanpingjia;
+    private ImageView img_setmeal_item_xiangqing;//详情图
+    private AutoRelativeLayout rl_base_xiangqing;//套餐详情
+    private AutoRelativeLayout rl_base_taocanpingjia;//套餐评价模块
+    private TextView tv_taocanpingjia;//套餐评价
+    private TextView tv_haopinglv;//好评率
+    private AutoLinearLayout ll_base_1;
     private ImageView img_setmeal_item_jigou;
     private TextView tv_setmeal_item_jigou;
-    private AutoLinearLayout rL_base_jigou;
+    private AutoLinearLayout rL_base_jigou;//机构模块
     private ImageView img_setmeal_item_kefu;
     private TextView tv_setmeal_item_kefu;
-    private AutoLinearLayout rL_base_kefu;
+    private AutoLinearLayout rL_base_kefu;//客服模块
     private TextView tv_setmeal_item_buy;
-    private AutoRelativeLayout rl_base_buy;
+    private AutoRelativeLayout rl_base_buy;//立即购买模块
     private AdvertBean.DataBean.AdvListBean advListBean;
 
     @Override
@@ -93,6 +95,12 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
         tv_setmeal_item_buy.setOnClickListener(this);
         rl_base_buy = (AutoRelativeLayout) findViewById(R.id.rl_base_buy);
         rl_base_buy.setOnClickListener(this);
+        tv_taocanpingjia = (TextView) findViewById(R.id.tv_taocanpingjia);
+        tv_taocanpingjia.setOnClickListener(this);
+        tv_haopinglv = (TextView) findViewById(R.id.tv_haopinglv);
+        tv_haopinglv.setOnClickListener(this);
+        ll_base_1 = (AutoLinearLayout) findViewById(R.id.ll_base_1);
+        ll_base_1.setOnClickListener(this);
     }
 
     private void initDate() {
@@ -103,8 +111,8 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
         Glide.with(this).load(advListBean.getAtturl()).into(img_setmeal_item_xiangqing);
         tv_setmeal_item_title.setText(advListBean.getAname());
         tv_setmeal_item_title1.setText(advListBean.getAname());
-        tv_setmeal_item_price.setText("￥"+ advListBean.getAid());
-        tv_setmeal_item_sum.setText("已售 "+ advListBean.getAcid());
+        tv_setmeal_item_price.setText("￥" + advListBean.getAid());
+        tv_setmeal_item_sum.setText("已售 " + advListBean.getAcid());
         tv_setmeal_item_note.setText(advListBean.getAtturl());
     }
 
@@ -114,13 +122,17 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.img_setmeal_item_back://返回
                 finish();
                 break;
             case R.id.img_setmeal_item_share://分享
                 break;
             case R.id.rl_base_taocanpingjia://评价
+            case R.id.tv_taocanpingjia:
+            case R.id.tv_haopinglv:
+                Intent intent = new Intent(this,SetMealEvaluateActivity.class);
+                startActivity(intent);
                 break;
             case R.id.rL_base_jigou://机构
             case R.id.img_setmeal_item_jigou:
@@ -132,11 +144,13 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.rl_base_buy://立即购买
             case R.id.tv_setmeal_item_buy:
-                Intent intent = new Intent(this,SubmitOrderActivity.class);
+                Intent intent1 = new Intent(this, SubmitOrderActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putSerializable("date",advListBean);
-                intent.putExtras(bundle);
-                startActivity(intent);
+                bundle.putSerializable("date", advListBean);
+                intent1.putExtras(bundle);
+                startActivity(intent1);
+                break;
+            default:
                 break;
         }
     }

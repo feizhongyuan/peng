@@ -38,7 +38,6 @@ import java.util.Random;
  */
 public class HealthyInformationFragment extends BaseFragment implements AdapterView.OnItemClickListener {
 
-    private View rootView;
     private TextView tv;
     private String titleName;
     private GoodsCatBean goodsCatBean;
@@ -75,19 +74,16 @@ public class HealthyInformationFragment extends BaseFragment implements AdapterV
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootView = super.onCreateView(inflater, container, savedInstanceState);
-
 //        同一fragment不同界面的展示
-//        View rootView = null;
+        View rootView = null;
 //        if (titleName.equals("关注")){
-//            inflater.inflate(R.layout.healthy_information_item1,null);
+//            rootView = inflater.inflate(R.layout.healthy_information_item1, null);
 //            initView(rootView);
-//        }else if (titleName.equals("推荐")){
-//            inflater.inflate(R.layout.healthy_information_item2,null);
-//            initView(rootView);
+//        }else {
+            rootView = super.onCreateView(inflater, container, savedInstanceState);
+            initView(rootView);
 //        }
 
-        initView(rootView);
         return rootView;
     }
 

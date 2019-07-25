@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.zhy.autolayout.AutoLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.daimajia.swipe.SwipeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mSwipeLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="@dimen/dp_100">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_wrapper"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_100"
+        android:orientation="horizontal"
+        android:tag="Sideslipe"
+        >
+        <TextView
+            android:id="@+id/collection"
+            android:layout_width="@dimen/dp_70"
+            android:layout_height="match_parent"
+            android:background="#757575"
+            android:gravity="center"
+            android:text="加入收藏" />
+
+        <TextView
+            android:id="@+id/delete"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="match_parent"
+            android:background="#c5c5c5"
+            android:gravity="center"
+            android:text="移除" />
+
+    </com.zhy.autolayout.AutoLinearLayout>
+
     <com.zhy.autolayout.AutoLinearLayout
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="@dimen/dp_100"
         android:background="#ffffff">
 
         <CheckBox
@@ -12,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="center_vertical"
-            android:padding="10dp"
+            android:padding="@dimen/dp_5"
             />
 
         <com.zhy.autolayout.AutoRelativeLayout
@@ -21,8 +48,8 @@
 
             <ImageView
                 android:id="@+id/img_photo"
-                android:layout_width="90dp"
-                android:layout_height="90dp"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="@dimen/dp_90"
                 android:layout_centerVertical="true"
                 android:background="#ededed"
                 android:scaleType="centerCrop" />
@@ -31,15 +58,15 @@
                 android:id="@+id/tv_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
                 android:layout_toRightOf="@id/img_photo"
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:text="商品名称商品名称商品名称商品名商品"
                 android:textColor="#333333"
-                android:textSize="14dp" />
+                android:textSize="@dimen/sp_14" />
 
             <TextView
                 android:id="@+id/guige1"
@@ -65,7 +92,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_35"
                 android:layout_alignParentBottom="true"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="@dimen/dp_10"
                 android:layout_toRightOf="@id/img_photo">
 
                 <TextView
@@ -75,18 +102,18 @@
                     android:layout_centerVertical="true"
                     android:text="¥"
                     android:textColor="#ee1d23"
-                    android:textSize="12dp" />
+                    android:textSize="@dimen/sp_12" />
 
                 <TextView
                     android:id="@+id/tv_price_value"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="2dp"
+                    android:layout_marginLeft="@dimen/dp_2"
                     android:layout_toRightOf="@id/tv_price_key"
                     android:text="1111"
                     android:textColor="#ee1d23"
-                    android:textSize="14dp" />
+                    android:textSize="@dimen/sp_14" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -100,8 +127,8 @@
                         android:id="@+id/iv_edit_subtract"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
+                        android:paddingLeft="@dimen/dp_15"
+                        android:paddingRight="@dimen/dp_15"
                         android:src="@mipmap/fanhui" />
 
                     <TextView
@@ -112,32 +139,33 @@
                         android:minEms="1"
                         android:text="1"
                         android:textColor="#666666"
-                        android:textSize="12dp" />
+                        android:textSize="@dimen/sp_12" />
 
                     <ImageView
                         android:id="@+id/iv_edit_add"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
-                        android:paddingLeft="15dp"
-                        android:paddingRight="15dp"
+                        android:paddingLeft="@dimen/dp_15"
+                        android:paddingRight="@dimen/dp_15"
                         android:src="@mipmap/jiantou" />
                 </LinearLayout>
 
                 <View
                     android:id="@+id/view"
                     android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
+                    android:layout_height="@dimen/dp_0_5"
                     android:layout_alignParentBottom="true"
                     android:background="#cccccc" />
             </com.zhy.autolayout.AutoRelativeLayout>
         </com.zhy.autolayout.AutoRelativeLayout>
     </com.zhy.autolayout.AutoLinearLayout>
 
-    <View
-        android:id="@+id/view_last"
-        android:layout_width="match_parent"
-        android:layout_height="10dp"
-        android:layout_alignParentBottom="true"
-        android:background="#ededed"
-        android:visibility="gone" />
-</com.zhy.autolayout.AutoLinearLayout>
+    <!--<View-->
+        <!--android:id="@+id/view_last"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="@dimen/dp_10"-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:background="#ededed"-->
+        <!--android:visibility="gone" />-->
+
+</com.daimajia.swipe.SwipeLayout>

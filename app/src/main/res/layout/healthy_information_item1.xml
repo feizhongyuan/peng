@@ -4,7 +4,7 @@
     android:layout_height="match_parent">
 
     <com.zhy.autolayout.AutoRelativeLayout
-        android:id="@+id/rl_1"
+        android:id="@+id/rl_base_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <TextView
@@ -30,12 +30,12 @@
             />
     </com.zhy.autolayout.AutoRelativeLayout>
     <com.zhy.autolayout.AutoLinearLayout
-        android:id="@+id/ll_1"
+        android:id="@+id/ll_base_1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="3"
-        android:layout_below="@+id/rl_1"
+        android:layout_below="@+id/rl_base_1"
         android:layout_marginLeft="@dimen/dp_5"
         android:layout_marginRight="@dimen/dp_5"
         >
@@ -69,7 +69,7 @@
     <com.zhy.autolayout.AutoRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/ll_1"
+        android:layout_below="@+id/ll_base_1"
         android:layout_marginTop="@dimen/dp_5"
         android:layout_marginLeft="@dimen/dp_10"
         >

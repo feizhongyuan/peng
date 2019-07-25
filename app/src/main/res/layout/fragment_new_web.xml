@@ -16,4 +16,13 @@
             android:layout_height="match_parent" />
     </com.zhy.autolayout.AutoRelativeLayout>
 
+    <ImageView
+        android:id="@+id/mImage_animation"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_200"
+        android:src="@drawable/animation1"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        />
+
 </com.zhy.autolayout.AutoRelativeLayout>

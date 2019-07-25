@@ -82,6 +82,7 @@ public class OrganItem2Fragment extends BaseFragment {
                 return mViewPager_organ.dispatchTouchEvent(event);
             }
         });
+
     }
 
     @Override

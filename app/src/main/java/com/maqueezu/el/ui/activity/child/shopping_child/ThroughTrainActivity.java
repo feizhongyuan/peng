@@ -14,6 +14,7 @@ import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealListItemFragment;
 import com.maqueezu.el.ui.fragment.shopping_child.ThroughTrainListItemFragment;
+import com.maqueezu.el.ui.view.NoScrollViewPager;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -38,7 +39,7 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
     private TextView tv_xiaoliang;
     private AutoRelativeLayout rl_xiaoliang;
     private AutoLinearLayout ll_base_1;
-    private ViewPager view_pager_shangpinliebiao;
+    private NoScrollViewPager view_pager_shangpinliebiao;
 
     private ArrayList<Fragment> fragments;
     private AdvertBean.DataBean dataBean;
@@ -79,7 +80,7 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
         rl_xiaoliang.setOnClickListener(this);
         ll_base_1 = (AutoLinearLayout) findViewById(R.id.ll_base_1);
         ll_base_1.setOnClickListener(this);
-        view_pager_shangpinliebiao = (ViewPager) findViewById(R.id.view_pager_shangpinliebiao);
+        view_pager_shangpinliebiao = (NoScrollViewPager) findViewById(R.id.view_pager_shangpinliebiao);
         view_pager_shangpinliebiao.setOnClickListener(this);
     }
 

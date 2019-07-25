@@ -42,7 +42,7 @@ public class SetmealAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvL
         Holder holder = (Holder) viewHolder;
         Glide.with(context).load(list.get(position).getAtturl()).into(holder.img_jiankangshangpin);
         holder.tv_goodsName.setText(list.get(position).getAname());
-        holder.tv_goodsPrice.setText(list.get(position).getAid()+"");
+        holder.tv_goodsPrice.setText("¥"+list.get(position).getAid());
     }
 
     public class Holder extends MyViewHolder {

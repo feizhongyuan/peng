@@ -4,6 +4,7 @@ package com.maqueezu.el.ui.webview;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.AnimationDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -14,14 +15,12 @@ import android.view.ViewGroup;
 import android.webkit.CookieSyncManager;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.maqueezu.el.R;
 import com.maqueezu.utils.BaseApplication;
 import com.maqueezu.utils.tools.LogUtil;
 import com.maqueezu.utils.ui.base.BaseFragment;
 import com.maqueezu.utils.ui.web.OnCreateJsApiListener;
-import com.maqueezu.utils.ui.web.WebFragment;
 import com.tencent.smtt.export.external.interfaces.JsResult;
 import com.tencent.smtt.sdk.ValueCallback;
 import com.tencent.smtt.sdk.WebChromeClient;
@@ -29,7 +28,6 @@ import com.tencent.smtt.sdk.WebSettings;
 import com.tencent.smtt.sdk.WebView;
 import com.tencent.smtt.sdk.WebViewClient;
 import com.zhy.autolayout.AutoFrameLayout;
-import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 import wendu.dsbridge.DWebView;
@@ -40,13 +38,12 @@ import wendu.dsbridge.DWebView;
 public class NewWebFragment extends BaseFragment implements View.OnClickListener {
 
 
-
     private AutoFrameLayout web_x5_container;
     private AutoRelativeLayout rl_base_1;
 
     private DWebView mWebView;
     private static OnCreateJsApiListener createJsApiListener;//创建JsApi监听器
-    private com.tencent.smtt.sdk.ValueCallback<Uri[]> x5valueCallback;
+    private ValueCallback<Uri[]> x5valueCallback;
     private Object jsApi;
     private Runnable backRunnable;
 
@@ -58,6 +55,9 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
     // 存储选择文件的url
     private android.webkit.ValueCallback<Uri> uploadFile;
     private android.webkit.ValueCallback<Uri[]> uploadFiles;
+
+    private AnimationDrawable animationDrawable;
+    private ImageView mImage_animation;//动画图
 
 
     public NewWebFragment() {
@@ -84,6 +84,12 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
         web_x5_container = (AutoFrameLayout) mRootView.findViewById(R.id.web_x5_container);
         rl_base_1 = (AutoRelativeLayout) mRootView.findViewById(R.id.rl_base_1);
 
+//        设置动画
+        mImage_animation = (ImageView) mRootView.findViewById(R.id.mImage_animation);
+        animationDrawable = (AnimationDrawable) getResources().getDrawable(R.drawable.animation1);
+        mImage_animation.setVisibility(View.VISIBLE);
+        animationDrawable.setOneShot(false);
+        animationDrawable.start();
     }
 
     @Override
@@ -153,9 +159,9 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
     @Override
     protected void initListener() {
 
-        if (createJsApiListener != null){
+        if (createJsApiListener != null) {
             jsApi = createJsApiListener.createJsObj(getActivity(), mWebView);
-            mWebView.addJavascriptObject(jsApi,"JsName");
+            mWebView.addJavascriptObject(jsApi, "JsName");
         }
 
         mWebView.setWebViewClient(new WebViewClient() {
@@ -178,6 +184,8 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
             public void onPageFinished(WebView webView, String s) {
                 super.onPageFinished(webView, s);
 //                网页加载完成回调
+                mImage_animation.setVisibility(View.GONE);
+                animationDrawable.stop();
                 mWebView.post(new Runnable() {
                     @Override
                     public void run() {
@@ -289,7 +297,7 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
         startActivityForResult(Intent.createChooser(intent, "test"), uploadFilesRequestCode);
     }
 
-//    设置JsApi监听
+    //    设置JsApi监听
     public static void setCreateJsApiListener(OnCreateJsApiListener createJsApiListener) {
         NewWebFragment.createJsApiListener = createJsApiListener;
     }
@@ -308,6 +316,7 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
             mWebView.loadUrl(mIntentUrl);
         }
     }
+
     public WebView getWebView() {
         return mWebView;
     }
@@ -315,7 +324,7 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
 //            case R.id.back_layout:
 //            case R.id.title_back_image:
 //                getActivity().finish();
@@ -325,7 +334,7 @@ public class NewWebFragment extends BaseFragment implements View.OnClickListener
         }
     }
 
-//    web页返回
+    //    web页返回
     @Override
     public boolean onBackPressed() {
         if (goBack()) {

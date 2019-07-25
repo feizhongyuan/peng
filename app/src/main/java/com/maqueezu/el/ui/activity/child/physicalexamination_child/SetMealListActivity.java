@@ -13,6 +13,7 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealListItemFragment;
+import com.maqueezu.el.ui.view.NoScrollViewPager;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -30,7 +31,7 @@ public class SetMealListActivity extends AppCompatActivity implements View.OnCli
     private AutoLinearLayout title_buttn_layout;
     private TextView title_text;
     private AutoRelativeLayout rl_statusbar;
-    private ViewPager view_pager_taocanliebiao;
+    private NoScrollViewPager view_pager_taocanliebiao;
 
     private List<Fragment> fragments;
     private TextView tv_jigoudengji;
@@ -62,7 +63,7 @@ public class SetMealListActivity extends AppCompatActivity implements View.OnCli
         title_text.setOnClickListener(this);
         rl_statusbar = (AutoRelativeLayout) findViewById(R.id.rl_statusbar);
         rl_statusbar.setOnClickListener(this);
-        view_pager_taocanliebiao = (ViewPager) findViewById(R.id.view_pager_taocanliebiao);
+        view_pager_taocanliebiao = (NoScrollViewPager) findViewById(R.id.view_pager_taocanliebiao);
         view_pager_taocanliebiao.setOnClickListener(this);
         tv_jigoudengji = (TextView) findViewById(R.id.tv_jigoudengji);
         tv_jigoudengji.setOnClickListener(this);

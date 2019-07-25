@@ -116,8 +116,8 @@
 
 
     <string name="name_tijiankashiyong">体检卡使用</string>
-    <string name="name_waike">外科</string>
-    <string name="name_neike">内科</string>
+    <string name="name_chakanzunxiangfuwu">查看尊享服务</string>
+    <string name="name_taocanA">套餐A名称</string>
     <string name="name_xiaoji">小计:</string>
     <string name="name_anzhaotuijianxiangmutijian">按照推荐项目体检</string>
     <string name="name_tiaozhengtijianxiangmu">调整体检项目</string>
@@ -178,6 +178,12 @@
     <string name="name_tuijiantaocao">推荐套餐</string>
     <string name="name_zhuanjiadingzhixiangqing">专家定制详情</string>
     <string name="name_yiduiyidingzhigoutong">1V1定制沟通</string>
+
+
+    <string name="name_quanbupingjia">全部评价</string>
+    <string name="name_haopingdu">好评度</string>
+    <string name="name_quanbu">全部</string>
+    <string name="name_youtu">有图</string>
 
 
     <string name="name_youpinshangcheng">优品商城</string>

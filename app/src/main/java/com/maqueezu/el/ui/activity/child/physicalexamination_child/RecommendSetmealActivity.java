@@ -79,7 +79,10 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
 
     private void initDate() {
         Intent intent = getIntent();
+        String title = intent.getStringExtra("title");
         dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");
+
+        title_text.setText(title);
 
         setMealListAdapter = new SetMealListAdapter(this, dataBean.getAdvList(), this);
         mRecycler_Recommend.setAdapter(setMealListAdapter);

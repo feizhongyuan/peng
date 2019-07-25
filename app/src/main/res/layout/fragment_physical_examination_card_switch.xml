@@ -1,0 +1,50 @@
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.fragment.physicalexamination_child.PhysicalExaminationCardSwitchFragment">
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_single_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/huise"
+            android:padding="@dimen/dp_8"
+            >
+            <TextView
+                android:id="@+id/tv_useCard_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_taocanA"
+                android:layout_marginLeft="@dimen/dp_10"
+                android:layout_centerInParent="true"
+                />
+            <!--<TextView-->
+                <!--android:id="@+id/tv_useCard_waike_sum"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="￥400.00"-->
+                <!--android:textColor="@color/ref_red"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_marginRight="@dimen/dp_10"-->
+                <!--/>-->
+
+            <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:text="@string/name_xiaoji"-->
+                <!--android:layout_toLeftOf="@id/tv_useCard_waike_sum"-->
+                <!--/>-->
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mRecycler_Cart_setMeal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_single_1"
+            >
+
+        </android.support.v7.widget.RecyclerView>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

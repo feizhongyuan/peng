@@ -5,6 +5,7 @@
     tools:context="com.maqueezu.el.ui.fragment.PhysicalExaminationFragment">
 
     <android.support.v4.widget.NestedScrollView
+        android:id="@+id/mNestedScrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
@@ -64,7 +65,9 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:nestedScrollingEnabled="false"
-                        ></android.support.v7.widget.RecyclerView>
+                        >
+
+                    </android.support.v7.widget.RecyclerView>
                 </com.zhy.autolayout.AutoRelativeLayout>
 
                 <!--<com.zhy.autolayout.AutoLinearLayout-->
@@ -163,7 +166,6 @@
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@id/tv_tijianka_title"
-                        android:text="(1/11)"
                         />
 
                     <TextView
@@ -403,8 +405,10 @@
                             android:overScrollMode="never"
                             android:gravity="center"
                             android:stretchMode="spacingWidthUniform"
-                            android:nestedScrollingEnabled="false"
-                            ></android.support.v7.widget.RecyclerView>
+                            android:fadingEdge="none"
+                            >
+
+                        </android.support.v7.widget.RecyclerView>
                 </com.scwang.smartrefresh.layout.SmartRefreshLayout>
 
             </com.zhy.autolayout.AutoRelativeLayout>
