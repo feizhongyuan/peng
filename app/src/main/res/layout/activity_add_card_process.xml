@@ -8,12 +8,13 @@
 
     <include layout="@layout/view_title1"
         android:id="@+id/include1"/>
-    <ImageView
-        android:id="@+id/img_tianjialiucheng"
+
+    <FrameLayout
+        android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/include1"
-        android:src="@mipmap/ic_launcher"
-        android:scaleType="fitXY"
-        />
+        >
+
+    </FrameLayout>
 </com.zhy.autolayout.AutoRelativeLayout>

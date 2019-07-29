@@ -265,7 +265,11 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
         img_pinzhishenghuo_ = (ImageView) rootView.findViewById(R.id.img_pinzhishenghuo_);
         img_pinzhishenghuo_.setOnClickListener(this);
         mRecycler_pinzhishenghuo = (RecyclerView) rootView.findViewById(R.id.mRecycler_pinzhishenghuo);
-        mRecycler_pinzhishenghuo.setLayoutManager(new GridLayoutManager(mActivity, 3));
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(mActivity, 3);
+        gridLayoutManager.setSmoothScrollbarEnabled(true);
+        gridLayoutManager.setAutoMeasureEnabled(true);
+        mRecycler_pinzhishenghuo.setHasFixedSize(true);
+        mRecycler_pinzhishenghuo.setLayoutManager(gridLayoutManager);
         rl_base_4 = (AutoRelativeLayout) rootView.findViewById(R.id.rl_base_4);
         rl_base_4.setOnClickListener(this);
         tv_chakanxiangqing = (TextView) rootView.findViewById(R.id.tv_chakanxiangqing);

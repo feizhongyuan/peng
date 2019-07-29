@@ -1,0 +1,71 @@
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.fragment.HealthyFragment">
+
+    <com.zhy.autolayout.AutoLinearLayout
+        android:id="@+id/ll_base_1"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:weightSum="2"
+        >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_healthyArchives"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:id="@+id/mTv_healthyArchives"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_jiankangdangan"
+                android:layout_centerInParent="true"
+                />
+        </com.zhy.autolayout.AutoRelativeLayout>
+        <View
+            android:layout_width="@dimen/dp_0_1"
+            android:layout_height="match_parent"
+            android:background="@color/black"
+            />
+
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:id="@+id/rl_healthyService"
+            android:layout_width="@dimen/dp_0"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            >
+            <TextView
+                android:id="@+id/mTv_healthyService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name_jiankangfuwu"
+                android:layout_centerInParent="true"
+                />
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </com.zhy.autolayout.AutoLinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:background="@color/black"
+        android:layout_below="@id/ll_base_1"
+        />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0_1"
+        android:background="@color/black"
+        android:layout_above="@id/ll_base_1"
+        />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/mViewPager_Healthy"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_base_1"
+        >
+
+    </android.support.v4.view.ViewPager>
+
+</com.zhy.autolayout.AutoRelativeLayout>

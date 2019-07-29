@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.view.menu.BaseMenuPresenter;
+import android.view.KeyEvent;
 import android.view.View;
 
 
@@ -111,6 +112,16 @@ public abstract class BaseActivity<V,T extends BasePresenter<V>> extends Fragmen
 			}
 			fragment.onActivityResult(requestCode, resultCode, data);
 		}
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		// 点击手机上的返回键，返回上一层
+		if (keyCode == KeyEvent.KEYCODE_BACK) {
+			this.finish();
+			BaseApplication.getAppContext().removeActivity(this);
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 
 	//    获取状态栏高度

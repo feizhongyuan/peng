@@ -1,6 +1,8 @@
 package com.maqueezu.el.ui.activity.child.physicalexamination_child;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -47,6 +49,8 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
     private AutoLinearLayout rl_tijianjigou;
     private AutoLinearLayout rl_jigoutaocan;
     private AutoRelativeLayout rl_base_viewpager;
+    private ImageView img_organ_telphone;//电话按钮
+    private AutoLinearLayout ll_telPhone;//电话模块
 
     private List<Fragment> fragments;
 
@@ -95,13 +99,17 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
         rl_tijianjigou = (AutoLinearLayout) findViewById(R.id.rl_tijianjigou);
         rl_jigoutaocan = (AutoLinearLayout) findViewById(R.id.rl_jigoutaocan);
         rl_base_viewpager = (AutoRelativeLayout) findViewById(R.id.rl_base_viewpager);
+        img_organ_telphone = (ImageView) findViewById(R.id.img_organ_telphone);
+        img_organ_telphone.setOnClickListener(this);
+        ll_telPhone = (AutoLinearLayout) findViewById(R.id.ll_telPhone);
+        ll_telPhone.setOnClickListener(this);
     }
 
     private void initData() {
         Intent intent = getIntent();
         advListBean = (AdvertBean.DataBean.AdvListBean) intent.getSerializableExtra("date");
 
-        title_text.setText("体检机构详情");
+        title_text.setText(R.string.name_tijianjigouxiangqing);
         tv_organ_item_title.setText(advListBean.getAname());
         tv_organ_item_time.setText(advListBean.getUrl());
         tv_organ_item_address.setText(advListBean.getAtturl());
@@ -119,12 +127,12 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
         mViewPager_organ.setCurrentItem(0);
 
 
-        rl_base_viewpager.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View v, MotionEvent event) {
-                return mViewPager_organ.dispatchTouchEvent(event);
-            }
-        });
+//        rl_base_viewpager.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View v, MotionEvent event) {
+//                return mViewPager_organ.dispatchTouchEvent(event);
+//            }
+//        });
     }
 
     private void initListener() {
@@ -138,7 +146,7 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
             case R.id.title_back_image:
                 this.finish();
                 break;
-            case R.id.rl_tijianjigou:
+            case R.id.rl_tijianjigou://体检机构
             case R.id.img_organ_item_tijianjigou_img:
             case R.id.tv_organ_item_tijianjigou_tv:
                 mViewPager_organ.setCurrentItem(0);
@@ -147,6 +155,13 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
             case R.id.img_organ_item_jigoutaocan_img:
             case R.id.tv_organ_item_jigoutaocan_tv:
                 mViewPager_organ.setCurrentItem(1);
+                break;
+            case R.id.ll_telPhone:
+            case R.id.img_organ_telphone:
+                //跳转到拨号界面
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + "10086"));
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
                 break;
             default:
                 break;

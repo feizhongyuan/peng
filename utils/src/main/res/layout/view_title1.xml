@@ -47,7 +47,7 @@
                 android:paddingRight="@dimen/dp_10"
                 android:textColor="@color/white"
                 android:textSize="@dimen/sp_17"
-                android:visibility="visible" />
+                android:visibility="gone" />
 
         </com.zhy.autolayout.AutoLinearLayout>
 

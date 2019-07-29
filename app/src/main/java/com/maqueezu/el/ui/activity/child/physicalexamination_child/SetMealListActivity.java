@@ -75,8 +75,12 @@ public class SetMealListActivity extends AppCompatActivity implements View.OnCli
 
     private void initDate() {
         Intent intent = getIntent();
-        String name = getIntent().getStringExtra("name");
+        String name = intent.getStringExtra("name");
         data = (AdvertBean.DataBean) intent.getSerializableExtra("data");
+//        TODO 搜索未配数据传空值展示列表
+        if (data == null){
+            data = new AdvertBean.DataBean();
+        }
         title_text.setText(name);
         fragments = new ArrayList<>();
         fragments.add(SetMealListItemFragment.newInstance(data));

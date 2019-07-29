@@ -79,10 +79,10 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         settings.setJavaScriptEnabled(true);
         settings.setJavaScriptCanOpenWindowsAutomatically(true);
 
-        Intent intent = new Intent(this, FragmentContainerActivity.class);
-        intent.putExtra(FragmentContainerActivity.FragmentClassName, WebFragment.class.getName());
-        intent.putExtra(WebFragment.urlKey, "file:///android_asset/test_dw.html");
-        startActivity(intent);
+//        Intent intent = new Intent(this, FragmentContainerActivity.class);
+//        intent.putExtra(FragmentContainerActivity.FragmentClassName, WebFragment.class.getName());
+//        intent.putExtra(WebFragment.urlKey, "file:///android_asset/test_dw.html");
+//        startActivity(intent);
 
 //      加载方式 1.网页 2.apk包内页面 3.手机本地页面
         webView.loadUrl(url);

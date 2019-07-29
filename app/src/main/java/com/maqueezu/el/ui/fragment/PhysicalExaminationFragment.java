@@ -206,7 +206,13 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
         rl_base_4 = (AutoRelativeLayout) rootView.findViewById(R.id.rl_base_4);
         mRecycler_zhenxuantaocan = (RecyclerView) rootView.findViewById(R.id.mRecycler_zhenxuantaocan);
 
-        mRecycler_zhenxuantaocan.setLayoutManager(new GridLayoutManager(getContext(), 3));
+//        防止RecyclerView卡顿
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 3);
+        gridLayoutManager.setSmoothScrollbarEnabled(true);
+        gridLayoutManager.setAutoMeasureEnabled(true);
+        mRecycler_zhenxuantaocan.setHasFixedSize(true);
+        mRecycler_zhenxuantaocan.setLayoutManager(gridLayoutManager);
+//        mRecycler_zhenxuantaocan.setNestedScrollingEnabled(false);//禁止滑动
 
         mRecycler_platform = (RecyclerView) rootView.findViewById(R.id.mRecycler_platform);
         mRecycler_platform.setLayoutManager(new GridLayoutManager(getContext(), 4));
@@ -234,11 +240,13 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
     private void initCard() {
         listCard = new ArrayList<>();
         cardImgs = new ArrayList<>();
+//        添加体检卡
         for (int i = 0; i < data.getAdvList().size(); i++) {
-            ImageView imageView = new ImageView(getContext());
+            View inflate = LayoutInflater.from(getContext()).inflate(R.layout.layout_physicalexamination_card, null);
+            ImageView imageView = inflate.findViewById(R.id.img_Cart_backGround);
             Glide.with(getContext()).load(data.getAdvList().get(i).getAtturl()).into(imageView);
 //            imageView.setScaleType(ImageView.ScaleType.FIT_XY);
-            listCard.add(imageView);
+            listCard.add(inflate);
             cardImgs.add(data.getAdvList().get(i).getAtturl());
         }
 
@@ -248,13 +256,13 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 
     //    体检卡
     private void initPhysicalExaminationCard() {
-        int itemWidth = (getResources().getDisplayMetrics().widthPixels) / 3;
+        int itemWidth = (getResources().getDisplayMetrics().widthPixels) / 4;
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) mViewPager_tijianka
                 .getLayoutParams();
         layoutParams.leftMargin = itemWidth / 2;
         layoutParams.rightMargin = itemWidth / 2;
         mViewPager_tijianka.setLayoutParams(layoutParams);
-        mViewPager_tijianka.setPageMargin(getResources().getDimensionPixelSize(R.dimen.dp_20));
+        mViewPager_tijianka.setPageMargin(getResources().getDimensionPixelSize(R.dimen.dp_10));
         mViewPager_tijianka.setOffscreenPageLimit(3);
         mViewPager_tijianka.setPageTransformer(true, this);
 
@@ -288,11 +296,18 @@ public class PhysicalExaminationFragment extends BaseFragment implements View.On
 
     //    平台推荐
     private void initPlatform() {
-        List<Integer> list = new ArrayList<>();
+//        TODO 添加平台推荐数据
+        List<AdvertBean.DataBean.AdvListBean> list = new ArrayList<>();
         for (int i = 0; i < 7; i++) {
-            list.add(R.mipmap.touxiang_ertong);
+            AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+            advListBean.setUrl("https://www.maqueezu.com/statics/attachment/adv/2018/12/12/9//16581650.jpg");
+            advListBean.setAname("运营分类"+(i+1));
+            list.add(advListBean);
         }
-        list.add(7, R.mipmap.touxiang_laonian);
+        AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+        advListBean.setUrl("https://www.maqueezu.com/statics/attachment/adv/2018/12/12/9//16345000.jpg");
+        advListBean.setAname("体检机构");
+        list.add(7, advListBean);
 
         PlatformAdapter adapter = new PlatformAdapter(getContext(), list, new AdapterView.OnItemClickListener() {
             @Override

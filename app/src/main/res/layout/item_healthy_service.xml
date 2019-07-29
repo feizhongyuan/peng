@@ -2,13 +2,13 @@
 <com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/dp_10">
-
+    >
     <ImageView
         android:id="@+id/img_platform"
-        android:layout_width="@dimen/dp_50"
-        android:layout_height="@dimen/dp_50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:padding="@dimen/dp_20"
         />
     <TextView
         android:id="@+id/tv_platform"

@@ -15,19 +15,19 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:id="@+id/img_setmeal_item_tu"
+            <com.youth.banner.Banner
+                android:id="@+id/mBanner_SetMealItem"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_300"
-                android:src="@mipmap/ic_launcher"
-                android:scaleType="fitXY"
-                />
+                android:layout_height="@dimen/dp_300">
+
+            </com.youth.banner.Banner>
+
 
             <com.zhy.autolayout.AutoRelativeLayout
                 android:id="@+id/rl_base_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/img_setmeal_item_tu"
+                android:layout_below="@id/mBanner_SetMealItem"
                 android:layout_marginTop="@dimen/dp_10"
                 android:layout_marginBottom="@dimen/dp_10"
                 >
@@ -39,6 +39,8 @@
                     android:textStyle="bold"
                     android:text="[AAAAA]XXXXXX体检套餐名称"
                     android:layout_marginLeft="@dimen/dp_6"
+                    android:maxLines="2"
+
                     />
                 <TextView
                     android:id="@+id/tv_setmeal_item_title1"

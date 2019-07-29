@@ -1,5 +1,6 @@
 package com.maqueezu.el.ui.activity.child.physicalexamination_child;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -10,15 +11,22 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.youth.banner.Banner;
+import com.youth.banner.BannerConfig;
+import com.youth.banner.Transformer;
+import com.youth.banner.listener.OnBannerListener;
+import com.youth.banner.loader.ImageLoader;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 套餐详情
  */
-public class SetMealItemActivity extends AppCompatActivity implements View.OnClickListener {
+public class SetMealItemActivity extends AppCompatActivity implements View.OnClickListener, OnBannerListener {
 
-    private ImageView img_setmeal_item_tu;//体检套餐大图
     private ImageView img_setmeal_item_back;//返回上一级
     private ImageView img_setmeal_item_share;//分享
     private TextView tv_setmeal_item_title;//套餐名称
@@ -42,6 +50,7 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
     private TextView tv_setmeal_item_buy;
     private AutoRelativeLayout rl_base_buy;//立即购买模块
     private AdvertBean.DataBean.AdvListBean advListBean;
+    private Banner mBanner_SetMealItem;//轮播图
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +64,6 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
 
     private void initView() {
 
-        img_setmeal_item_tu = (ImageView) findViewById(R.id.img_setmeal_item_tu);
-        img_setmeal_item_tu.setOnClickListener(this);
         img_setmeal_item_back = (ImageView) findViewById(R.id.img_setmeal_item_back);
         img_setmeal_item_back.setOnClickListener(this);
         img_setmeal_item_share = (ImageView) findViewById(R.id.img_setmeal_item_share);
@@ -101,19 +108,36 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
         tv_haopinglv.setOnClickListener(this);
         ll_base_1 = (AutoLinearLayout) findViewById(R.id.ll_base_1);
         ll_base_1.setOnClickListener(this);
+        mBanner_SetMealItem = (Banner) findViewById(R.id.mBanner_SetMealItem);
     }
 
     private void initDate() {
         Intent intent = getIntent();
         advListBean = (AdvertBean.DataBean.AdvListBean) intent.getSerializableExtra("date");
 
-        Glide.with(this).load(advListBean.getAtturl()).into(img_setmeal_item_tu);
         Glide.with(this).load(advListBean.getAtturl()).into(img_setmeal_item_xiangqing);
         tv_setmeal_item_title.setText(advListBean.getAname());
         tv_setmeal_item_title1.setText(advListBean.getAname());
         tv_setmeal_item_price.setText("￥" + advListBean.getAid());
         tv_setmeal_item_sum.setText("已售 " + advListBean.getAcid());
         tv_setmeal_item_note.setText(advListBean.getAtturl());
+
+        List<String> list_title = new ArrayList<>();
+        List<String> list_path = new ArrayList<>();
+        for (int i = 0; i < 3; i++) {
+            list_title.add(advListBean.getAname());
+            list_path.add(advListBean.getAtturl());
+        }
+
+        mBanner_SetMealItem.setImageLoader(new MyLoader());
+        mBanner_SetMealItem.setBannerAnimation(Transformer.Default);
+        mBanner_SetMealItem.setBannerTitles(list_title);
+        mBanner_SetMealItem.setDelayTime(3000);
+        mBanner_SetMealItem.isAutoPlay(true);
+        mBanner_SetMealItem.setIndicatorGravity(BannerConfig.CENTER);
+        mBanner_SetMealItem.setImages(list_path)
+                .setOnBannerListener(this)
+                .start();
     }
 
     private void initListener() {
@@ -131,7 +155,7 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
             case R.id.rl_base_taocanpingjia://评价
             case R.id.tv_taocanpingjia:
             case R.id.tv_haopinglv:
-                Intent intent = new Intent(this,SetMealEvaluateActivity.class);
+                Intent intent = new Intent(this, SetMealEvaluateActivity.class);
                 startActivity(intent);
                 break;
             case R.id.rL_base_jigou://机构
@@ -154,4 +178,20 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
                 break;
         }
     }
+
+//    套餐详情页轮播图监听
+    @Override
+    public void OnBannerClick(int position) {
+
+    }
+
+    private class MyLoader extends ImageLoader {
+        @Override
+        public void displayImage(Context context, Object path, ImageView imageView) {
+            Glide.with(context.getApplicationContext())
+                    .load((String) path)
+                    .into(imageView);
+        }
+    }
+
 }

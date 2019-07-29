@@ -110,6 +110,8 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
             dataBean = selectData("pinzhishenghuo_2");
         }else if ("data".equals(dataName)){
             dataBean = selectData("data");
+        }else {
+            dataBean = selectData("data");
         }
 
         title_text.setText(name);

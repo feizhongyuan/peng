@@ -1,9 +1,14 @@
 package com.maqueezu.el.ui.activity.child.physicalexamination_child;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -23,7 +28,6 @@ public class AddCardProcessActivity extends AppCompatActivity implements View.On
     private TextView title_text;
     private TextView right_text;
     private AutoRelativeLayout rl_statusbar;
-    private ImageView img_tianjialiucheng;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class AddCardProcessActivity extends AppCompatActivity implements View.On
         initListener();
     }
 
+    @SuppressLint("SetJavaScriptEnabled")
     private void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
@@ -51,8 +56,19 @@ public class AddCardProcessActivity extends AppCompatActivity implements View.On
         right_text.setOnClickListener(this);
         rl_statusbar = (AutoRelativeLayout) findViewById(R.id.rl_statusbar);
         rl_statusbar.setOnClickListener(this);
-        img_tianjialiucheng = (ImageView) findViewById(R.id.img_tianjialiucheng);
-        img_tianjialiucheng.setOnClickListener(this);
+
+        //通过代码创建
+        FrameLayout parentLayout=findViewById(R.id.container);
+        WebView webView = new WebView(getApplicationContext());//使用应用级别的context，避免对Activity的引用
+        FrameLayout.LayoutParams layoutParams=new FrameLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        parentLayout.addView(webView,layoutParams);
+
+        WebSettings settings = webView.getSettings();
+        settings.setJavaScriptEnabled(true);
+        settings.setJavaScriptCanOpenWindowsAutomatically(true);
+
+        webView.loadUrl("file:///android_asset/test_dw.html");
     }
 
     private void initDate() {

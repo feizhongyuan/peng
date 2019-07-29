@@ -1,23 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.maqueezu.utils">
+    package="com.maqueezu.utils">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application>
-        <activity android:name=".ui.FragmentContainerActivity"
-                  android:configChanges="orientation|screenSize|keyboardHidden|keyboard|"
-                  android:screenOrientation="portrait"/>
-
+        <activity
+            android:name=".ui.FragmentContainerActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden|keyboard|"
+            android:screenOrientation="portrait" />
         <activity
             android:name="com.tencent.smtt.sdk.VideoActivity"
+            android:alwaysRetainTaskState="true"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:exported="false"
-            android:launchMode="singleTask"
-            android:alwaysRetainTaskState="true">
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="com.tencent.smtt.tbs.video.PLAY" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+
+        <receiver
+            android:name=".tools.NetBroadcastReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
     </application>
 
 </manifest>

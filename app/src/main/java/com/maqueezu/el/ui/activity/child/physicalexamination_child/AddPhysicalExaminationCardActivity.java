@@ -113,7 +113,7 @@ public class AddPhysicalExaminationCardActivity extends AppCompatActivity implem
             case R.id.back_layout:
                 finish();
                 break;
-            case R.id.right_text:
+            case R.id.right_text://添加流程
                 Intent intent1 = new Intent(this,AddCardProcessActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putString("name","操作流程");

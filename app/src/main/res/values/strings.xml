@@ -43,6 +43,11 @@
     <string name="name_zhuanjiadingzhijilu">专家定制记录</string>
 
 
+    <string name="name_tijianjigouxiangqing">体检机构详情</string>
+    <string name="name_jigoujieshao">机构介绍</string>
+    <string name="name_jigoutaocan">机构套餐</string>
+
+
     <string name="name_tijianka">体检卡</string>
     <string name="name_lijibangka">立即绑卡</string>
     <string name="name_zijidingzhi">自己定制</string>
@@ -184,6 +189,43 @@
     <string name="name_haopingdu">好评度</string>
     <string name="name_quanbu">全部</string>
     <string name="name_youtu">有图</string>
+
+
+    <string name="name_jiankang">健康</string>
+    <string name="name_jiankangdangan">健康档案</string>
+    <string name="name_jiankangfuwu">健康服务</string>
+    <string name="name_xindeshenqing">新的申请</string>
+    <string name="name_qiehuandangan">切换档案</string>
+    <string name="name_jibenxinxi">基本信息</string>
+    <string name="name_jiankangpinggu">健康评估</string>
+    <string name="name_richangjiankangshuju">日常健康数据</string>
+    <string name="name_tijianjiankangshuju">体检健康数据</string>
+    <string name="name_jiuyijiankangshuju">就医健康数据</string>
+
+    <string name="name_shenqingtongzhi">申请通知</string>
+    <string name="name_ninkenengrenshi">您可能认识</string>
+    <string name="name_tongyi">同意</string>
+    <string name="name_yitongyi">已同意</string>
+    <string name="name_yijujue">已拒绝</string>
+    <string name="name_dengdaiyanzheng">等待验证</string>
+    <string name="name_qingqiuguanliandangan">请求关联档案</string>
+    <string name="name_guanliandangan">关联档案:</string>
+    <string name="name_laiyuan">来源：</string>
+    <string name="name_danganchuangjian">档案创建</string>
+    <string name="name_xingmingchazhao">姓名查找</string>
+    <string name="name_shenfenzhenghaochazhao">身份证号查找</string>
+    <string name="name_tiianjia">添加</string>
+    <string name="name_shenfenzheng">身份证：</string>
+    <string name="name_chakangengduo">查看更多</string>
+    <string name="name_guanliangengduodangan">关联更多档案</string>
+
+
+
+
+
+
+
+
 
 
     <string name="name_youpinshangcheng">优品商城</string>

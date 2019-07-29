@@ -77,6 +77,11 @@ public class PhysicalOrganActivity extends AppCompatActivity implements View.OnC
         Intent intent = getIntent();
         dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");
 
+        //        TODO 搜索未配数据传空值展示列表
+        if (dataBean == null){
+            dataBean = new AdvertBean.DataBean();
+        }
+
         title_text.setText("体检机构");
 
         organAdapter = new OrganAdapter(this, dataBean.getAdvList(), this);
@@ -84,51 +89,56 @@ public class PhysicalOrganActivity extends AppCompatActivity implements View.OnC
     }
 
     private void initListener() {
+        if (dataBean.getAdvList() == null){
+            mSmart_refresh_layout.setVisibility(View.GONE);
+        }else {
 //        下拉刷新
-        mSmart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
-            @Override
-            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
-                List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
-                for (int i = 0; i < 10; i++) {
-                    AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
-                    advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
-                    int i1 = new Random().nextInt(1000);
-                    advListBean.setAid(i1+i);
-                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
-                    advListBeans.add(advListBean);
-                }
+            mSmart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
+                @Override
+                public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                    List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
+                    for (int i = 0; i < 10; i++) {
+                        AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+                        advListBean.setAname("标题标题标题标题标题标题标题标题" + i);
+                        int i1 = new Random().nextInt(1000);
+                        advListBean.setAid(i1 + i);
+                        advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                        advListBeans.add(advListBean);
+                    }
 
-                if (advListBeans != null){
-                    organAdapter.refresh(advListBeans);
-                    refreshLayout.finishRefresh(2000);
-                }else {
-                    refreshLayout.finishRefresh(false);
+                    if (advListBeans != null) {
+                        organAdapter.refresh(advListBeans);
+                        refreshLayout.finishRefresh(2000);
+                    } else {
+                        refreshLayout.finishRefresh(false);
+                    }
                 }
-            }
-        });
+            });
 
 //        上拉加载
-        mSmart_refresh_layout.setOnLoadMoreListener(new OnLoadMoreListener() {
-            @Override
-            public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
-                List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
-                for (int i = 0; i < 6; i++) {
-                    AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
-                    advListBean.setAname("标题标题标题标题标题标题标题标题"+i);
-                    int i1 = new Random().nextInt(1000);
-                    advListBean.setAid(i1+i);
-                    advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
-                    advListBeans.add(advListBean);
-                }
+            mSmart_refresh_layout.setOnLoadMoreListener(new OnLoadMoreListener() {
+                @Override
+                public void onLoadMore(@NonNull RefreshLayout refreshLayout) {
+                    List<AdvertBean.DataBean.AdvListBean> advListBeans = new ArrayList<>();
+                    for (int i = 0; i < 6; i++) {
+                        AdvertBean.DataBean.AdvListBean advListBean = new AdvertBean.DataBean.AdvListBean();
+                        advListBean.setAname("标题标题标题标题标题标题标题标题" + i);
+                        int i1 = new Random().nextInt(1000);
+                        advListBean.setAid(i1 + i);
+                        advListBean.setAtturl(String.valueOf(R.drawable.ic_launcher));
+                        advListBeans.add(advListBean);
+                    }
 
-                if (advListBeans != null){
-                    organAdapter.addList(advListBeans);
-                    refreshLayout.finishLoadMore(2000);
-                }else {
-                    refreshLayout.finishLoadMore(false);
+                    if (advListBeans != null) {
+                        organAdapter.addList(advListBeans);
+                        refreshLayout.finishLoadMore(2000);
+                    } else {
+                        refreshLayout.finishLoadMore(false);
+                    }
                 }
-            }
-        });
+            });
+        }
+
     }
 
     @Override
@@ -137,9 +147,11 @@ public class PhysicalOrganActivity extends AppCompatActivity implements View.OnC
             case R.id.back_layout:
                 this.finish();
                 break;
-            case R.id.mText_Addr:
+            case R.id.mText_Addr://区域选择
                 Intent intent = new Intent(this, AddressActivity.class);
                 startActivity(intent);
+                break;
+            default:
                 break;
         }
     }

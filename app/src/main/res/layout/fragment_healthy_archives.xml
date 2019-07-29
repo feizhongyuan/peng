@@ -1,0 +1,315 @@
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/huise"
+    tools:context="com.maqueezu.el.ui.fragment.healthy_child.HealthyArchivesFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:id="@+id/mNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+
+            >
+            
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/ll_base_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_150"
+                android:weightSum="2"
+                >
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/white"
+                    >
+                    <ImageView
+                        android:id="@+id/mImg_touxiang"
+                        android:layout_width="@dimen/dp_80"
+                        android:layout_height="@dimen/dp_80"
+                        android:src="@mipmap/touxiang_pinglun"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/dp_20"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_healthy_Sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="性别"
+                        android:layout_toRightOf="@id/mImg_touxiang"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_healthy_Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="名称"
+                        android:layout_toRightOf="@id/mImg_touxiang"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_above="@id/mTv_healthy_Sex"
+                        android:layout_marginBottom="@dimen/dp_20"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_healthy_Age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_nianling"
+                        android:layout_toRightOf="@id/mImg_touxiang"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_below="@id/mTv_healthy_Sex"
+                        android:layout_marginTop="@dimen/dp_20"
+                        />
+
+                    <View
+                        android:layout_width="@dimen/dp_0_1"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"
+                        android:layout_alignParentRight="true"
+                        />
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0_1"
+                        android:background="@color/black"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <com.zhy.autolayout.AutoLinearLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:weightSum="2"
+                    >
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:id="@+id/rl_newApply"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/mImg_newApply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/touxiang_nan"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            />
+                        <TextView
+                            android:id="@+id/mTv_newApply"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name_xindeshenqing"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/mImg_newApply"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            />
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/dp_0_1"
+                            android:background="@color/black"
+                            android:layout_alignParentBottom="true"
+                            />
+                    </com.zhy.autolayout.AutoRelativeLayout>
+                    <com.zhy.autolayout.AutoRelativeLayout
+                        android:id="@+id/rl_switchArchives"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_0"
+                        android:layout_weight="1">
+                        <ImageView
+                            android:id="@+id/mImg_switchArchives"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@mipmap/touxiang_nan"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_20"
+                            />
+                        <TextView
+                            android:id="@+id/mTv_switchArchives"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/name_qiehuandangan"
+                            android:layout_centerVertical="true"
+                            android:layout_toRightOf="@id/mImg_switchArchives"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            />
+
+                    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+                </com.zhy.autolayout.AutoLinearLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/ll_base_1"
+                />
+            <!--基本信息以及健康评估-->
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/ll_base_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_below="@id/ll_base_1"
+                android:weightSum="2"
+                >
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:id="@+id/mTv_healthy_jibenxinxi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_jibenxinxi"
+                        android:padding="@dimen/dp_20"
+                        android:background="@color/white"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/dp_10"
+                        />
+                    <View
+                        android:layout_width="@dimen/dp_0_1"
+                        android:layout_height="match_parent"
+                        android:background="@color/black"
+                        android:layout_alignParentRight="true"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:id="@+id/mTv_healthy_jiankangpinggu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_jiankangpinggu"
+                        android:padding="@dimen/dp_20"
+                        android:background="@color/white"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="@dimen/dp_10"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/ll_base_2"
+                    />
+            <!--日常健康数据-->
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_daily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ll_base_2"
+                android:layout_marginTop="@dimen/dp_20"
+                >
+                <TextView
+                    android:id="@+id/tv_daily"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_richangjiankangshuju"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecycler_daily"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_daily"
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <!--体检健康数据-->
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_physicalExamination"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_daily"
+                android:layout_marginTop="@dimen/dp_20"
+                >
+                <TextView
+                    android:id="@+id/tv_physicalExamination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_tijianjiankangshuju"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecycler_physicalExamination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_physicalExamination"
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_medicalAdvice"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_physicalExamination"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_marginBottom="@dimen/dp_20"
+                >
+                <TextView
+                    android:id="@+id/tv_medicalAdvice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_jiuyijiankangshuju"
+                    android:layout_marginBottom="@dimen/dp_10"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:textColor="@color/black"
+                    />
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/mRecycler_medicalAdvice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tv_medicalAdvice"
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:layout_marginRight="@dimen/dp_10"
+                    >
+
+                </android.support.v7.widget.RecyclerView>
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+
+
+
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</com.zhy.autolayout.AutoRelativeLayout>

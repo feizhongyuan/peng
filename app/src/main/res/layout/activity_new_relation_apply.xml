@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.healthy_child.NewRelationApplyActivity">
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"/>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_base_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/include1"
+        >
+        <TextView
+            android:id="@+id/tv_relationApply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name_shenqingtongzhi"
+            android:padding="@dimen/dp_10"
+            android:background="@color/huise"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mRecycler_relationApply"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_relationApply"
+            >
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/mTv_seeMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_chakangengduo"
+            android:drawableRight="@mipmap/jiantou"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/mRecycler_relationApply"
+            android:padding="@dimen/dp_5"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            android:background="@color/black"
+            android:layout_below="@id/mTv_seeMore"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            android:background="@color/black"
+            android:layout_above="@id/mTv_seeMore"
+            />
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+    <com.zhy.autolayout.AutoRelativeLayout
+        android:id="@+id/rl_base_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_base_1"
+        >
+        <TextView
+            android:id="@+id/tv_possibleKnowledge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/name_ninkenengrenshi"
+            android:padding="@dimen/dp_10"
+            android:background="@color/huise"
+            />
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/mRecycler_possibleKnowledge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_possibleKnowledge"
+            >
+        </android.support.v7.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/mTv_moreRelevance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name_guanliangengduodangan"
+            android:drawableRight="@mipmap/jiantou"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/mRecycler_possibleKnowledge"
+            android:padding="@dimen/dp_5"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            android:background="@color/black"
+            android:layout_below="@id/mTv_moreRelevance"
+            />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_0_1"
+            android:background="@color/black"
+            android:layout_above="@id/mTv_moreRelevance"
+            />
+
+    </com.zhy.autolayout.AutoRelativeLayout>
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

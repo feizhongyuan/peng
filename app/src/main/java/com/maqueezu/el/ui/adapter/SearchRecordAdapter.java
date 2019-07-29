@@ -47,6 +47,11 @@ public class SearchRecordAdapter extends BaseRecyclerAdapter<String> {
         }
     }
 
+    //清空数据
+    public void removeAll(List<String> newList) {
+        list.removeAll(newList);
+        notifyDataSetChanged();
+    }
 
 
 }

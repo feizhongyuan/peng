@@ -40,7 +40,7 @@
             android:layout_margin="@dimen/dp_8"
             android:background="@drawable/shape2"
             android:layout_toRightOf="@id/back_layout"
-            android:drawableRight="@mipmap/fanhui"
+            android:drawableEnd="@mipmap/fanhui"
             android:singleLine="true"
             android:imeOptions="actionSearch"
             />
@@ -81,7 +81,9 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/mRecycler_RecentSearch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
@@ -112,7 +114,9 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/mRecycler_HotSearch"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
+                android:layout_height="wrap_content">
+
+            </android.support.v7.widget.RecyclerView>
 
         </com.zhy.autolayout.AutoLinearLayout>
 
