@@ -9,13 +9,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.maqueezu.el.R;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 商品订单支付页
  */
-public class GoodsPaymentOrderActivity extends AppCompatActivity implements View.OnClickListener {
+public class GoodsPaymentOrderActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -67,16 +68,18 @@ public class GoodsPaymentOrderActivity extends AppCompatActivity implements View
     private AutoLinearLayout ll_base_1;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_goods_payment_order);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_goods_payment_order;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -177,11 +180,14 @@ public class GoodsPaymentOrderActivity extends AppCompatActivity implements View
         mRecycler_goodsList.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
 
     }
 
-    private void initListener() {
+
+    @Override
+    protected void initListener() {
 
     }
 

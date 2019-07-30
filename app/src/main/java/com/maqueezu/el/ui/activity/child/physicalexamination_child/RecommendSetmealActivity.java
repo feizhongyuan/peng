@@ -3,7 +3,7 @@ package com.maqueezu.el.ui.activity.child.physicalexamination_child;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -14,7 +14,8 @@ import android.widget.Toast;
 
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
-import com.maqueezu.el.ui.adapter.SetMealListAdapter;
+import com.maqueezu.el.ui.adapter.RecommendListAdapter;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -30,7 +31,7 @@ import java.util.Random;
  * 甄选套餐--更多
  */
 
-public class RecommendSetmealActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class RecommendSetmealActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -43,19 +44,21 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
     private SmartRefreshLayout mSmart_refresh_layout;
 
     private AdvertBean.DataBean dataBean;
-    private SetMealListAdapter setMealListAdapter;
+    private RecommendListAdapter recommendListAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recommend_setmeal);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_recommend_setmeal;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -72,24 +75,25 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
         rl_statusbar = (AutoRelativeLayout) findViewById(R.id.rl_statusbar);
         rl_statusbar.setOnClickListener(this);
         mRecycler_Recommend = (RecyclerView) findViewById(R.id.mRecycler_Recommend);
-        mRecycler_Recommend.setOnClickListener(this);
         mRecycler_Recommend.setLayoutManager(new LinearLayoutManager(this));
         mSmart_refresh_layout = (SmartRefreshLayout) findViewById(R.id.mSmart_refresh_layout);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");
 
         title_text.setText(title);
 
-        setMealListAdapter = new SetMealListAdapter(this, dataBean.getAdvList(), this);
-        mRecycler_Recommend.setAdapter(setMealListAdapter);
-
+        recommendListAdapter = new RecommendListAdapter(this, dataBean.getAdvList(), this);
+        mRecycler_Recommend.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        mRecycler_Recommend.setAdapter(recommendListAdapter);
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 //        下拉刷新
         mSmart_refresh_layout.setOnRefreshListener(new OnRefreshListener() {
             @Override
@@ -105,7 +109,7 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
                 }
 
                 if (advListBeans != null){
-                    setMealListAdapter.refresh(advListBeans);
+                    recommendListAdapter.refresh(advListBeans);
                     refreshLayout.finishRefresh(2000);
                 }else {
                     refreshLayout.finishRefresh(false);
@@ -126,7 +130,7 @@ public class RecommendSetmealActivity extends AppCompatActivity implements View.
                     advListBeans.add(advListBean);
                 }
                 if (advListBeans != null){
-                    setMealListAdapter.addList(advListBeans);
+                    recommendListAdapter.addList(advListBeans);
                     refreshLayout.finishLoadMore(2000);
                 }else {
                     refreshLayout.finishLoadMore(false);

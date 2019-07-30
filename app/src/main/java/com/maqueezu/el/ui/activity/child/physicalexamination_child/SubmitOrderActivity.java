@@ -9,13 +9,14 @@ import android.widget.TextView;
 
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 提交订单
  */
-public class SubmitOrderActivity extends AppCompatActivity implements View.OnClickListener{
+public class SubmitOrderActivity extends OtherBaseActivity implements View.OnClickListener{
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -44,16 +45,18 @@ public class SubmitOrderActivity extends AppCompatActivity implements View.OnCli
     private AdvertBean.DataBean.AdvListBean advListBean;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_submit_order);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_submit_order;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -105,15 +108,16 @@ public class SubmitOrderActivity extends AppCompatActivity implements View.OnCli
         rl_tijiaodingdan.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         advListBean = (AdvertBean.DataBean.AdvListBean) intent.getSerializableExtra("date");
         title_text.setText(R.string.name_tijiaodingdan);
 
-
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

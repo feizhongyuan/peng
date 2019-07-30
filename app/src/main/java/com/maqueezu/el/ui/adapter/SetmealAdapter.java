@@ -31,18 +31,40 @@ public class SetmealAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvL
     }
 
     @Override
-    public MyViewHolder onCreateViewHolder(ViewGroup arg0, int arg1) {
-        Holder holder = new Holder(LayoutInflater.from(context).inflate(R.layout.item_healthygoodsgridview, null));
+    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
+
+        MyViewHolder holder = null;
+//        if (viewType == 0){
+//            View inflate = LayoutInflater.from(context).inflate(R.layout.item_healthygoodsgridview_frist, null);
+//            holder = new FirstHolder(inflate);
+//        }else {
+            View inflate = LayoutInflater.from(context).inflate(R.layout.item_healthygoodsgridview, null);
+            holder = new Holder(inflate);
+//        }
         return holder;
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder viewHolder, int position) {
         super.onBindViewHolder(viewHolder, position);
-        Holder holder = (Holder) viewHolder;
-        Glide.with(context).load(list.get(position).getAtturl()).into(holder.img_jiankangshangpin);
-        holder.tv_goodsName.setText(list.get(position).getAname());
-        holder.tv_goodsPrice.setText("¥"+list.get(position).getAid());
+//        if (viewHolder instanceof Holder){
+            Holder holder = (Holder) viewHolder;
+            Glide.with(context).load(list.get(position).getAtturl()).into(holder.img_jiankangshangpin);
+            holder.tv_goodsName.setText(list.get(position).getAname());
+            holder.tv_goodsPrice.setText("¥"+list.get(position).getAid());
+//        }else if (viewHolder instanceof FirstHolder){
+//            FirstHolder holder = (FirstHolder) viewHolder;
+//            Glide.with(context).load(list.get(0).getAtturl()).into(holder.mImg_xianshicuxiao);
+//        }
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        if (position == 0){
+            return 0;
+        }else {
+            return 1;
+        }
     }
 
     public class Holder extends MyViewHolder {
@@ -56,6 +78,16 @@ public class SetmealAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvL
             img_jiankangshangpin = (ImageView) view.findViewById(R.id.jiankangshangpin_img);
             tv_goodsName = (TextView) view.findViewById(R.id.tv_goodsName);
             tv_goodsPrice = (TextView) view.findViewById(R.id.tv_goodsPrice);
+        }
+    }
+
+    public class FirstHolder extends MyViewHolder {
+
+        private final ImageView mImg_xianshicuxiao;
+
+        public FirstHolder(View itemView) {
+            super(itemView);
+            mImg_xianshicuxiao = itemView.findViewById(R.id.mImg_xianshicuxiao);
         }
     }
 

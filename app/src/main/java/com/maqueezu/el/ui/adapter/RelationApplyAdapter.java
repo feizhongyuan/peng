@@ -1,6 +1,7 @@
 package com.maqueezu.el.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.el.ui.activity.child.healthy_child.ApplyInformationProcessActivity;
 import com.maqueezu.utils.ui.recyclerView.adapter.BaseRecyclerAdapter;
 import com.maqueezu.utils.ui.recyclerView.adapter.MyViewHolder;
 
@@ -40,6 +42,16 @@ public class RelationApplyAdapter extends BaseRecyclerAdapter<AdvertBean.DataBea
         holder.mTv_age.setText(list.get(position).getCname());
         holder.mTv_relationArchives.setText(list.get(position).getAid()+"XXX");
         holder.mTv_source.setText(list.get(position).getDisabled());
+
+        holder.mTv_agree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                申请信息处理
+                Intent intent = new Intent(context,ApplyInformationProcessActivity.class);
+                context.startActivity(intent);
+
+            }
+        });
     }
 
     public class Holder extends MyViewHolder{

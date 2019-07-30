@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.healthy_child.ApplyInformationProcessActivity">
+
+    <include layout="@layout/view_title1"
+        android:id="@+id/include1"/>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@id/include1"
+        >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_1"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_80"
+                android:padding="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"
+                >
+                <ImageView
+                    android:id="@+id/mImage_head"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/ic_launcher"
+                    />
+                <TextView
+                    android:id="@+id/mTv_Apply_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_xingming"
+                    android:layout_toRightOf="@id/mImage_head"
+                    android:layout_marginLeft="@dimen/dp_30"
+                    android:layout_alignTop="@id/mImage_head"
+                    />
+                <TextView
+                    android:id="@+id/mTv_Apply_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三十"
+                    android:drawableLeft="@mipmap/jiantou"
+                    android:layout_toRightOf="@id/mImage_head"
+                    android:layout_marginLeft="@dimen/dp_30"
+                    android:layout_alignBottom="@id/mImage_head"
+                    />
+
+                <ImageView
+                    android:id="@+id/mImage_personInformation"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:src="@mipmap/jiantou"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/rl_base_1"
+                />
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_2"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_50"
+                android:layout_below="@id/rl_base_1"
+                android:padding="@dimen/dp_10"
+                >
+                <TextView
+                    android:id="@+id/guanliandangan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_guanliandangan"
+                    android:layout_centerVertical="true"
+                    />
+                <ImageView
+                    android:id="@+id/mImage_archiveInformation"
+                    android:layout_width="@dimen/dp_20"
+                    android:layout_height="@dimen/dp_20"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/jiantou"
+                    />
+                <TextView
+                    android:id="@+id/mTv_archiveName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="名称"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/mImage_archiveInformation"
+                    android:layout_marginRight="@dimen/dp_20"
+                    />
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/rl_base_2"
+                />
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_2"
+                android:padding="@dimen/dp_10"
+                android:layout_marginBottom="@dimen/dp_20"
+                >
+
+                <TextView
+                    android:id="@+id/fujiaxinxi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_fujiaxinxi"
+                    android:layout_marginTop="@dimen/dp_20"
+                    android:layout_marginBottom="@dimen/dp_20"
+                    />
+                <ImageView
+                    android:id="@+id/mImage_telPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/touxiang_pinglun"
+                    android:layout_alignParentRight="true"
+                    />
+                <EditText
+                    android:id="@+id/mEt_Additional"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/fujiaxinxi"
+                    android:focusable="false"
+                    android:background="@drawable/edittext_border"
+                    android:text="Ave Maria grazia ricevuta per la mia famiglia。
+Con risentito con un'amorevole divino
+一个男人
+Grazie chiedo a te o signore divino
+在questo giorno di grazia prego per te
+Ave Maria piena di grazia
+发出信号
+Sia fatta la tua volonta
+Cosi in cieloecosìinterra neil nome
+Del padre del figliolo e dello spirito santo
+一个男人
+Ave Maria grazia ricevuta per la mia famiglia。"
+                    />
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:layout_below="@id/rl_base_3"
+                />
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:id="@+id/rl_base_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_3"
+                android:padding="@dimen/dp_10"
+                >
+                <TextView
+                    android:id="@+id/laiyuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/name_laiyuan"
+                    android:layout_centerVertical="true"
+                    />
+                <TextView
+                    android:id="@+id/mTv_source"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="创建档案"
+                    android:layout_alignParentRight="true"
+                    />
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_0_1"
+                android:background="@color/black"
+                android:layout_below="@id/rl_base_4"
+                />
+
+
+            <com.zhy.autolayout.AutoLinearLayout
+                android:id="@+id/ll_base_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rl_base_4"
+                android:weightSum="2"
+                android:layout_marginTop="@dimen/dp_30"
+                >
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:id="@+id/mTv_Refuse"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_jujue"
+                        android:textColor="@color/black"
+                        android:background="@drawable/shape2"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:paddingLeft="@dimen/dp_40"
+                        android:paddingRight="@dimen/dp_40"
+                        android:layout_centerHorizontal="true"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    >
+                    <TextView
+                        android:id="@+id/mTv_Agree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_tongyi"
+                        android:textColor="@color/white"
+                        android:background="@drawable/shape1"
+                        android:paddingTop="@dimen/dp_5"
+                        android:paddingBottom="@dimen/dp_5"
+                        android:paddingLeft="@dimen/dp_40"
+                        android:paddingRight="@dimen/dp_40"
+                        android:layout_centerHorizontal="true"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+            </com.zhy.autolayout.AutoLinearLayout>
+
+
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+
+
+</com.zhy.autolayout.AutoRelativeLayout>

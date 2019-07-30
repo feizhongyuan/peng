@@ -19,6 +19,7 @@ import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.adapter.SingleProjectAdatper;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.PhysicalExaminationCardSwitchFragment;
 import com.maqueezu.el.ui.view.NoScrollViewPager;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -28,7 +29,7 @@ import java.util.List;
 /**
  * 体检卡使用
  */
-public class UsePhysicalExaminationCardActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class UsePhysicalExaminationCardActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
 
     private List<String> list;
@@ -61,16 +62,18 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
     private List<Fragment> fragments;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_use_physical_examination_card);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_use_physical_examination_card;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -147,7 +150,8 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
         img_useCard_left.setVisibility(View.GONE);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         title_text.setText(R.string.name_tijiankashiyong);
 
         Intent intent = getIntent();
@@ -166,10 +170,10 @@ public class UsePhysicalExaminationCardActivity extends AppCompatActivity implem
 
         FragmentAdapter2 adapter = new FragmentAdapter2(getSupportFragmentManager(), fragments);
         mViewPager_SetMeal.setAdapter(adapter);
-
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.maqueezu.el.R;
 import com.maqueezu.el.ui.adapter.GoodsSubmitOrderAdapter;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -21,7 +22,7 @@ import java.util.List;
 /**
  * 商品提交订单页
  */
-public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class GoodsSubmitOrderActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -56,16 +57,19 @@ public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.
     private List<String> list ;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_goods_submit_order);
 
-        initView();
-        initDate();
-        initListener();
+
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_goods_submit_order;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -128,7 +132,8 @@ public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.
         mRecycler_goodsOrder.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         title_text.setText(R.string.name_tijiaodingdan);
         list = new ArrayList<>();
         list.add("name1");
@@ -137,7 +142,8 @@ public class GoodsSubmitOrderActivity extends AppCompatActivity implements View.
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

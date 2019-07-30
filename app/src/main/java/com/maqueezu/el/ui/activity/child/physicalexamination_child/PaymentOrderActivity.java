@@ -10,13 +10,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 支付订单
  */
-public class PaymentOrderActivity extends AppCompatActivity implements View.OnClickListener {
+public class PaymentOrderActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -62,16 +63,18 @@ public class PaymentOrderActivity extends AppCompatActivity implements View.OnCl
     private TextView tv_fuzhidanhao;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment_order);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_payment_order;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -159,11 +162,13 @@ public class PaymentOrderActivity extends AppCompatActivity implements View.OnCl
         tv_fuzhidanhao.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 
@@ -178,7 +183,8 @@ public class PaymentOrderActivity extends AppCompatActivity implements View.OnCl
                 String orderNumber = tv_paymentOrder_number1.getText().toString();
                 copy(this,orderNumber);
                 break;
-
+            default:
+                break;
         }
     }
 

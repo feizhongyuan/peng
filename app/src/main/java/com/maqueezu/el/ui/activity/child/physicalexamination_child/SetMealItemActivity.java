@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.youth.banner.Banner;
 import com.youth.banner.BannerConfig;
 import com.youth.banner.Transformer;
@@ -25,7 +26,7 @@ import java.util.List;
 /**
  * 套餐详情
  */
-public class SetMealItemActivity extends AppCompatActivity implements View.OnClickListener, OnBannerListener {
+public class SetMealItemActivity extends OtherBaseActivity implements View.OnClickListener, OnBannerListener {
 
     private ImageView img_setmeal_item_back;//返回上一级
     private ImageView img_setmeal_item_share;//分享
@@ -53,16 +54,18 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
     private Banner mBanner_SetMealItem;//轮播图
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_meal_item);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_set_meal_item;
+    }
+
+    @Override
+    protected void initView() {
 
         img_setmeal_item_back = (ImageView) findViewById(R.id.img_setmeal_item_back);
         img_setmeal_item_back.setOnClickListener(this);
@@ -111,7 +114,8 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
         mBanner_SetMealItem = (Banner) findViewById(R.id.mBanner_SetMealItem);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         advListBean = (AdvertBean.DataBean.AdvListBean) intent.getSerializableExtra("date");
 
@@ -140,7 +144,8 @@ public class SetMealItemActivity extends AppCompatActivity implements View.OnCli
                 .start();
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

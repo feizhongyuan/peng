@@ -15,6 +15,7 @@ import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealListItemFragment;
 import com.maqueezu.el.ui.fragment.shopping_child.ThroughTrainListItemFragment;
 import com.maqueezu.el.ui.view.NoScrollViewPager;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -25,7 +26,7 @@ import java.util.ArrayList;
  * 直通车、分类跳转
  *  双列表展示（复用）
  */
-public class ThroughTrainActivity extends AppCompatActivity implements View.OnClickListener {
+public class ThroughTrainActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -45,16 +46,18 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
     private AdvertBean.DataBean dataBean;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_through_train);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_through_train;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -84,7 +87,8 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
         view_pager_shangpinliebiao.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         String name = getIntent().getStringExtra("name");
         String dataName = getIntent().getStringExtra("dataName");
 
@@ -128,7 +132,8 @@ public class ThroughTrainActivity extends AppCompatActivity implements View.OnCl
         return (AdvertBean.DataBean) intent.getSerializableExtra(name);
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 //

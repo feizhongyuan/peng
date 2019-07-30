@@ -19,6 +19,7 @@ import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.OrganItem2Fragment;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.OrganItemFragment;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -28,7 +29,7 @@ import java.util.List;
 /**
  * 机构详情
  */
-public class OrganItemActivity extends AppCompatActivity implements View.OnClickListener {
+public class OrganItemActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -55,16 +56,18 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
     private List<Fragment> fragments;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_organ_item);
 
-        initView();
-        initData();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_organ_item;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -105,7 +108,8 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
         ll_telPhone.setOnClickListener(this);
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         advListBean = (AdvertBean.DataBean.AdvListBean) intent.getSerializableExtra("date");
 
@@ -135,7 +139,8 @@ public class OrganItemActivity extends AppCompatActivity implements View.OnClick
 //        });
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

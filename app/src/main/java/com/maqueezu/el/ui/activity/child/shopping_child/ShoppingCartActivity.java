@@ -17,6 +17,7 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.pojo.ShoppingCartBean;
 import com.maqueezu.el.ui.adapter.ShoppingCartAdater;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -28,7 +29,7 @@ import ren.widget.refresh.SwipeMenuRefreshView;
 /**
  * 购物车跳转页
  */
-public class ShoppingCartActivity extends AppCompatActivity implements View.OnClickListener, ShoppingCartAdater.CheckListener, ShoppingCartAdater.OnClickListenerModel {
+public class ShoppingCartActivity extends OtherBaseActivity implements View.OnClickListener, ShoppingCartAdater.CheckListener, ShoppingCartAdater.OnClickListenerModel {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -57,15 +58,18 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
     private int totalCount = 0;// 购买的商品总数量
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_shopping_cart);
-        initView();
-        initDate();
-        initListener();
+
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_shopping_cart;
+    }
+
+    @Override
+    protected void initView() {
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
         back_layout = (AutoLinearLayout) findViewById(R.id.back_layout);
@@ -104,7 +108,8 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
         mSwipeMenuRefresh = (SwipeMenuRefreshView) findViewById(R.id.mSwipeMenuRefresh);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         title_text.setText(name);
@@ -122,11 +127,10 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
 
         adater.setCheckListener(this);
         adater.setOnClickListenerModel(this);
-
-
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

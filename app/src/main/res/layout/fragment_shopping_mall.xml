@@ -597,7 +597,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/name_pinzhishenghuo"
+                        android:text="@string/name_xianshicuxiao"
                         android:textStyle="bold"
                         android:textSize="@dimen/sp_16"
                         android:layout_marginLeft="@dimen/dp_10"
@@ -620,16 +620,6 @@
                     android:layout_height="match_parent"
                     android:layout_below="@id/rl_pinzhishenghuo_1"
                     >
-                <ImageView
-                    android:id="@+id/img_pinzhishenghuo_"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_launcher_background"
-                    android:scaleType="fitXY"
-                    android:layout_marginTop="@dimen/dp_5"
-                    android:layout_marginBottom="@dimen/dp_5"
-                    />
-
                 <android.support.v7.widget.RecyclerView
                     android:id="@+id/mRecycler_pinzhishenghuo"
                     android:layout_width="wrap_content"

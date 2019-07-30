@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoFrameLayout;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -24,7 +25,7 @@ import wendu.dsbridge.DWebView;
 /**
  * 复用Activity 跳转详情H5页
  */
-public class MultiplexActivity extends AppCompatActivity implements View.OnClickListener {
+public class MultiplexActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -38,16 +39,18 @@ public class MultiplexActivity extends AppCompatActivity implements View.OnClick
     private WebView webView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multiplex);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_multiplex;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -81,7 +84,8 @@ public class MultiplexActivity extends AppCompatActivity implements View.OnClick
         webView.loadUrl("file:///android_asset/222.html");
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         title_text.setText(title);
@@ -99,7 +103,8 @@ public class MultiplexActivity extends AppCompatActivity implements View.OnClick
         });
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

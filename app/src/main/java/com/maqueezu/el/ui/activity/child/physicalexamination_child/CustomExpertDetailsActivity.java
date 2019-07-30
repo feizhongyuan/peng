@@ -14,7 +14,9 @@ import android.widget.TextView;
 
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.el.ui.adapter.RecommendListAdapter;
 import com.maqueezu.el.ui.adapter.SetMealListAdapter;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -24,7 +26,7 @@ import java.util.List;
 /**
  * 专家定制详情页
  */
-public class CustomExpertDetailsActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class CustomExpertDetailsActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -58,16 +60,18 @@ public class CustomExpertDetailsActivity extends AppCompatActivity implements Vi
     private List<AdvertBean.DataBean.AdvListBean> advListBeans;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_expert_details);
 
-        initView();
-        initData();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_custom_expert_details;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -131,7 +135,8 @@ public class CustomExpertDetailsActivity extends AppCompatActivity implements Vi
         mNestedScrollView.requestFocus();
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
 //        Serializable userInfo = intent.getSerializableExtra("UserInfo");
@@ -146,12 +151,13 @@ public class CustomExpertDetailsActivity extends AppCompatActivity implements Vi
         advListBeans.add(new AdvertBean.DataBean.AdvListBean());
         advListBeans.add(new AdvertBean.DataBean.AdvListBean());
 
-        SetMealListAdapter setMealListAdapter = new SetMealListAdapter(this, advListBeans, this);
-        mRecycler_RecommendSetmeal.setAdapter(setMealListAdapter);
+        RecommendListAdapter recommendListAdapter = new RecommendListAdapter(this, advListBeans, this);
+        mRecycler_RecommendSetmeal.setAdapter(recommendListAdapter);
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

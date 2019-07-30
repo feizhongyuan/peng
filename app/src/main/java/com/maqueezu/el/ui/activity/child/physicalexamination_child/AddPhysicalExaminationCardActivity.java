@@ -16,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -25,7 +26,7 @@ import java.util.regex.Pattern;
 /**
  * 添加体检卡
  */
-public class AddPhysicalExaminationCardActivity extends AppCompatActivity implements View.OnClickListener {
+public class AddPhysicalExaminationCardActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -38,16 +39,18 @@ public class AddPhysicalExaminationCardActivity extends AppCompatActivity implem
     private Button bt_nextStep;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_physical_examination_card);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_add_physical_examination_card;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -69,13 +72,15 @@ public class AddPhysicalExaminationCardActivity extends AppCompatActivity implem
         bt_nextStep.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         title_text.setText(R.string.name_tianjiatijianka);
         right_text.setText(R.string.name_tianjialiucheng);
-
     }
 
-    private void initListener() {
+
+    @Override
+    protected void initListener() {
         et_physicalExmination_card.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {

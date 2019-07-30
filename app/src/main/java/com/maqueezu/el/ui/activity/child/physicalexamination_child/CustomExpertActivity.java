@@ -11,13 +11,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.maqueezu.el.R;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 专家定制
  */
-public class CustomExpertActivity extends AppCompatActivity implements View.OnClickListener {
+public class CustomExpertActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -49,16 +50,19 @@ public class CustomExpertActivity extends AppCompatActivity implements View.OnCl
     private AutoRelativeLayout rl_city;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_expert);
 
-        initView();
-        initDate();
-        initListener();
+
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_custom_expert;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -118,11 +122,15 @@ public class CustomExpertActivity extends AppCompatActivity implements View.OnCl
         rl_city.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         title_text.setText(R.string.name_zhuanjiadingzhi);
+
     }
 
-    private void initListener() {
+
+    @Override
+    protected void initListener() {
 
     }
 

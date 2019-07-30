@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhy.autolayout.AutoRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.maqueezu.el.ui.activity.child.healthy_child.SeeArchiveInformationActivity">
+
+
+    <include
+        android:id="@+id/include1"
+        layout="@layout/view_title1" />
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/include1"
+        android:fillViewport="true"
+        >
+        <com.zhy.autolayout.AutoRelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.zhy.autolayout.AutoRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <!--头像-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_touxiang"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_60"
+                    android:padding="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/touxiang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/name_touxiang" />
+
+                    <ImageView
+                        android:id="@+id/mImage_head"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:src="@mipmap/touxiang_nan" />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:layout_below="@id/rl_touxiang"
+                    android:background="@color/black" />
+                <!--姓名-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_below="@id/rl_touxiang"
+                    android:padding="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/name_xingming" />
+
+                    <TextView
+                        android:id="@+id/mTv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="石原さとみ" />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:layout_below="@id/rl_name"
+                    android:background="@color/black" />
+                <!--性别-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_sex"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_below="@id/rl_name"
+                    android:padding="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/name_xingbie" />
+
+                    <TextView
+                        android:id="@+id/mTv_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="女" />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:layout_below="@id/rl_sex"
+                    android:background="@color/black" />
+                <!--出生日期-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_dateOfBirth"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_below="@id/rl_sex"
+                    android:padding="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/dateOfBirth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/name_chushengriqi" />
+
+                    <TextView
+                        android:id="@+id/mTv_dateOfBirth"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="1986年11月22日" />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:layout_below="@id/rl_dateOfBirth"
+                    android:background="@color/black" />
+                <!--年龄-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_age"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_40"
+                    android:layout_below="@id/rl_dateOfBirth"
+                    android:padding="@dimen/dp_10">
+
+                    <TextView
+                        android:id="@+id/age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:text="@string/name_nianling" />
+
+                    <TextView
+                        android:id="@+id/mTv_age"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="32" />
+
+                </com.zhy.autolayout.AutoRelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:layout_below="@id/rl_age"
+                    android:background="@color/black" />
+
+                <View
+                    android:id="@+id/notView"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_15"
+                    android:layout_below="@id/rl_age"
+                    />
+                <!--婚姻状况-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_maritalStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/notView"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/maritalStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_hunyinzhuangkuang"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_maritalStatus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="未婚"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_maritalStatus"
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_above="@id/rl_maritalStatus"
+                    />
+                <!--籍贯-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_nativePlace"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_maritalStatus"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/nativePlace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_jiguan"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_nativePlace"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="日本 - 东京都 - 一丁目"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_nativePlace"
+                    />
+                <!--职业-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_profession"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_nativePlace"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/profession"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_zhiye"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_profession"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="程序猿"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_profession"
+                    />
+                <!--血型-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_bloodType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_profession"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/bloodType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_xuexing"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_bloodType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="AB型"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_bloodType"
+                    />
+                <!--文化程度-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_degreeOfEducation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_bloodType"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/degreeOfEducation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_wenhuachengdu"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_degreeOfEducation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="幼儿园"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_degreeOfEducation"
+                    />
+                <!--身份证号-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_idCardNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_degreeOfEducation"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/idCardNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_shenfenzhenghao"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_idCardNumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="411327198612240012"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_idCardNumber"
+                    />
+                <!--电话-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_telPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_idCardNumber"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/telPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_dianhua"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_telPhone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="18991910502"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_telPhone"
+                    />
+                <!--既往病史-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_pastHistory"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_telPhone"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/pastHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_jiwangbingshi"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_pastHistory"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="无"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_pastHistory"
+                    />
+                <!--在服药物-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_onMedication"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_pastHistory"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/onMedication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_zaifuyaowu"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_onMedication"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="无"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_onMedication"
+                    />
+                <!--过敏史-->
+                <com.zhy.autolayout.AutoRelativeLayout
+                    android:id="@+id/rl_historyOfAllergy"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rl_onMedication"
+                    android:padding="@dimen/dp_10"
+                    >
+                    <TextView
+                        android:id="@+id/historyOfAllergy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/name_guominshi"
+                        android:layout_centerVertical="true"
+                        />
+                    <TextView
+                        android:id="@+id/mTv_historyOfAllergy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="无"
+                        />
+                </com.zhy.autolayout.AutoRelativeLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_0_1"
+                    android:background="@color/black"
+                    android:layout_below="@id/rl_historyOfAllergy"
+                    android:layout_marginBottom="@dimen/dp_100"
+                    />
+
+
+            </com.zhy.autolayout.AutoRelativeLayout>
+
+
+
+
+
+
+        </com.zhy.autolayout.AutoRelativeLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</com.zhy.autolayout.AutoRelativeLayout>

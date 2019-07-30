@@ -30,6 +30,7 @@ import com.maqueezu.el.ui.test.TestActivity;
 import com.maqueezu.el.ui.view.citylist.CityDBManager;
 import com.maqueezu.el.ui.view.citylist.CityModel;
 import com.maqueezu.el.ui.view.citylist.MyLetterListView;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -77,7 +78,7 @@ public class AddressActivity extends AppCompatActivity implements View.OnClickLi
         }
         setContentView(R.layout.activity_address);
         initView();
-        initDate();
+        initData();
         initListener();
 
         CityDBManager dbManager = new CityDBManager(this);
@@ -97,14 +98,8 @@ public class AddressActivity extends AppCompatActivity implements View.OnClickLi
         mListView_City.setOnItemClickListener(new CityListOnItemClick());
     }
 
-    private void initDate() {
-        title_text.setText("选择地区");
-
-        tv_dangqianCity.setText("当前城市");
-        dangqian_name.setText("西安市");
-        tv_dingweiCity.setText("定位城市");
-        dingwei_name.setText("西安市");
-
+    private int getLayoutId() {
+        return R.layout.activity_address;
     }
 
     private void initView() {
@@ -134,6 +129,15 @@ public class AddressActivity extends AppCompatActivity implements View.OnClickLi
         cityLetterListView = (MyLetterListView) findViewById(R.id.cityLetterListView);
         city_layout = (AutoRelativeLayout) findViewById(R.id.city_layout);
         city_layout.setOnClickListener(this);
+    }
+
+    private void initData() {
+        title_text.setText("选择地区");
+
+        tv_dangqianCity.setText("当前城市");
+        dangqian_name.setText("西安市");
+        tv_dingweiCity.setText("定位城市");
+        dingwei_name.setText("西安市");
     }
 
     private void initListener() {

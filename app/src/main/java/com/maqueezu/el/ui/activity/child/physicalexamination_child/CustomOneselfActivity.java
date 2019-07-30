@@ -9,13 +9,14 @@ import android.widget.TextView;
 
 import com.maqueezu.el.R;
 import com.maqueezu.el.ui.fragment.PhysicalExaminationFragment;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * DIY定制
  */
-public class CustomOneselfActivity extends AppCompatActivity implements View.OnClickListener {
+public class CustomOneselfActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -37,16 +38,18 @@ public class CustomOneselfActivity extends AppCompatActivity implements View.OnC
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_oneself);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_custom_oneself;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -84,11 +87,13 @@ public class CustomOneselfActivity extends AppCompatActivity implements View.OnC
         rl_lable3.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.ui.adapter.HealthyInformationAdapter;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -25,7 +26,7 @@ import static com.maqueezu.el.MyApplication.getContext;
 /**
  * 健康资讯详情页
  */
-public class HealthyInformationItemActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class HealthyInformationItemActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private TextView tv_information_item_title;//文章标题
     private ImageView img_healthyNumber_img;//健康号头像
@@ -48,16 +49,18 @@ public class HealthyInformationItemActivity extends AppCompatActivity implements
     private AutoLinearLayout ll_bottom;//底部栏模块
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_healthy_information_item);
 
-        initView();
-        initData();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_healthy_information_item;
+    }
+
+    @Override
+    protected void initView() {
 
         tv_information_item_title = (TextView) findViewById(R.id.tv_information_item_title);
         tv_information_item_title.setOnClickListener(this);
@@ -96,7 +99,8 @@ public class HealthyInformationItemActivity extends AppCompatActivity implements
         mRecycler_comment.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         GoodsCatBean goodsCatBean = (GoodsCatBean) intent.getSerializableExtra("goods");
 
@@ -108,7 +112,8 @@ public class HealthyInformationItemActivity extends AppCompatActivity implements
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

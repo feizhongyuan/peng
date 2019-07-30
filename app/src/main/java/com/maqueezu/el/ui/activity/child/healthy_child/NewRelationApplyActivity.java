@@ -1,6 +1,7 @@
 package com.maqueezu.el.ui.activity.child.healthy_child;
 
 import android.os.Bundle;
+import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -39,12 +40,17 @@ public class NewRelationApplyActivity extends OtherBaseActivity implements View.
     private RecyclerView mRecycler_possibleKnowledge;//认识列表
     private TextView mTv_moreRelevance;//关联更多档案
     private AutoRelativeLayout rl_base_2;
+    private NestedScrollView mNestedScrollView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_new_relation_apply);
 
+    }
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_new_relation_apply;
     }
 
     @Override
@@ -68,7 +74,7 @@ public class NewRelationApplyActivity extends OtherBaseActivity implements View.
         tv_relationApply.setOnClickListener(this);
         mRecycler_relationApply = (RecyclerView) findViewById(R.id.mRecycler_relationApply);
         mRecycler_relationApply.setLayoutManager(new LinearLayoutManager(this));
-        mRecycler_relationApply.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        mRecycler_relationApply.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mTv_seeMore = (TextView) findViewById(R.id.mTv_seeMore);
         mTv_seeMore.setOnClickListener(this);
         rl_base_1 = (AutoRelativeLayout) findViewById(R.id.rl_base_1);
@@ -77,11 +83,12 @@ public class NewRelationApplyActivity extends OtherBaseActivity implements View.
         tv_possibleKnowledge.setOnClickListener(this);
         mRecycler_possibleKnowledge = (RecyclerView) findViewById(R.id.mRecycler_possibleKnowledge);
         mRecycler_possibleKnowledge.setLayoutManager(new LinearLayoutManager(this));
-        mRecycler_possibleKnowledge.addItemDecoration(new DividerItemDecoration(this,DividerItemDecoration.VERTICAL));
+        mRecycler_possibleKnowledge.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         mTv_moreRelevance = (TextView) findViewById(R.id.mTv_moreRelevance);
         mTv_moreRelevance.setOnClickListener(this);
         rl_base_2 = (AutoRelativeLayout) findViewById(R.id.rl_base_2);
         rl_base_2.setOnClickListener(this);
+        mNestedScrollView = (NestedScrollView) findViewById(R.id.mNestedScrollView);
     }
 
     @Override
@@ -113,10 +120,16 @@ public class NewRelationApplyActivity extends OtherBaseActivity implements View.
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
+        switch (v.getId()) {
             case R.id.back_layout:
             case R.id.title_back_image:
                 finish();
+                break;
+            case R.id.mTv_seeMore://查看更多
+
+                break;
+            case R.id.mTv_moreRelevance://关联更多档案
+
                 break;
             default:
                 break;

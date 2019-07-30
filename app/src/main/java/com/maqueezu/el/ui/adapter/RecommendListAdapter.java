@@ -17,20 +17,17 @@ import java.util.List;
 
 /**
  * Created by fei .
- * Created by Date 2019/6/26 15:10
- *
- * 套餐列表适配
+ * Created by Date 2019/7/30 18:07
  */
 
-public class SetMealListAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvListBean> {
-
-    public SetMealListAdapter(Context context, List<AdvertBean.DataBean.AdvListBean> list, AdapterView.OnItemClickListener itemClickListener) {
+public class RecommendListAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.AdvListBean> {
+    public RecommendListAdapter(Context context, List<AdvertBean.DataBean.AdvListBean> list, AdapterView.OnItemClickListener itemClickListener) {
         super(context, list, itemClickListener);
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup arg0, int arg1) {
-        Holder holder = new Holder(LayoutInflater.from(context).inflate(R.layout.item_setmeallist, null));
+        Holder holder = new Holder(LayoutInflater.from(context).inflate(R.layout.item_recommendlist, null));
         return holder;
     }
 
@@ -39,7 +36,7 @@ public class SetMealListAdapter extends BaseRecyclerAdapter<AdvertBean.DataBean.
         super.onBindViewHolder(viewHolder, position);
         Holder holder = (Holder) viewHolder;
         String aname = list.get(position).getAname();
-        holder.tv_taocan_title.setText("套餐AAAAAAAAAAAAAAAAAAAAAAAAAAAaAAAAAAAAAA");
+        holder.tv_taocan_title.setText("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         holder.tv_taocan_price.setText("￥888");
         holder.tv_taocan_jigou.setText("XXXX体检机构");
         holder.img_taocan_tu.setBackgroundResource(R.drawable.ic_launcher);

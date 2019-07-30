@@ -16,6 +16,7 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.activity.child.home_child.AddressActivity;
 import com.maqueezu.el.ui.adapter.OrganAdapter;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
 import com.scwang.smartrefresh.layout.listener.OnLoadMoreListener;
@@ -30,7 +31,7 @@ import java.util.Random;
 /**
  * 体检机构
  */
-public class PhysicalOrganActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class PhysicalOrganActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -44,16 +45,18 @@ public class PhysicalOrganActivity extends AppCompatActivity implements View.OnC
     private OrganAdapter organAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_physical_organ);
 
-        initView();
-        initData();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_physical_organ;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -72,7 +75,8 @@ public class PhysicalOrganActivity extends AppCompatActivity implements View.OnC
         mSmart_refresh_layout = (SmartRefreshLayout) findViewById(R.id.mSmart_refresh_layout);
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
 
         Intent intent = getIntent();
         dataBean = (AdvertBean.DataBean) intent.getSerializableExtra("data");
@@ -88,7 +92,8 @@ public class PhysicalOrganActivity extends AppCompatActivity implements View.OnC
         mRecycle_Organ.setAdapter(organAdapter);
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
         if (dataBean.getAdvList() == null){
             mSmart_refresh_layout.setVisibility(View.GONE);
         }else {

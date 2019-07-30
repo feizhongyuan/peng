@@ -14,6 +14,7 @@ import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealListItemFragment;
 import com.maqueezu.el.ui.view.NoScrollViewPager;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -23,7 +24,7 @@ import java.util.List;
 /**
  * 套餐列表
  */
-public class SetMealListActivity extends AppCompatActivity implements View.OnClickListener {
+public class SetMealListActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -40,16 +41,19 @@ public class SetMealListActivity extends AppCompatActivity implements View.OnCli
     private AdvertBean.DataBean data;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_meal_list);
-        initView();
-        initDate();
-        initListener();
+
 
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_set_meal_list;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -73,7 +77,8 @@ public class SetMealListActivity extends AppCompatActivity implements View.OnCli
         ll_base_1.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         data = (AdvertBean.DataBean) intent.getSerializableExtra("data");
@@ -88,10 +93,10 @@ public class SetMealListActivity extends AppCompatActivity implements View.OnCli
 
         FragmentAdapter2 adapter = new FragmentAdapter2(getSupportFragmentManager(), fragments);
         view_pager_taocanliebiao.setAdapter(adapter);
-
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 
@@ -108,6 +113,8 @@ public class SetMealListActivity extends AppCompatActivity implements View.OnCli
                 break;
             case R.id.tv_xiaoliang:
                 view_pager_taocanliebiao.setCurrentItem(1);
+                break;
+            default:
                 break;
         }
     }

@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.maqueezu.el.R;
 import com.maqueezu.el.ui.adapter.SingleProjectAdatper;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -21,7 +22,7 @@ import java.util.List;
 /**
  * 专家定制记录页
  */
-public class CustomExpertRecordsActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+public class CustomExpertRecordsActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -35,16 +36,18 @@ public class CustomExpertRecordsActivity extends AppCompatActivity implements Vi
     private List<String> list;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_expert_records);
 
-        initView();
-        initData();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_custom_expert_records;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -65,7 +68,8 @@ public class CustomExpertRecordsActivity extends AppCompatActivity implements Vi
         mRecycler_CustomExpertRecords.setLayoutManager(new LinearLayoutManager(this));
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         title_text.setText(title);
@@ -78,7 +82,8 @@ public class CustomExpertRecordsActivity extends AppCompatActivity implements Vi
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

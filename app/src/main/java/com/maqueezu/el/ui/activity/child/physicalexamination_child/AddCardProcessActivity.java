@@ -13,13 +13,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.maqueezu.el.R;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 添加卡流程
  */
-public class AddCardProcessActivity extends AppCompatActivity implements View.OnClickListener{
+public class AddCardProcessActivity extends OtherBaseActivity implements View.OnClickListener{
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -30,17 +31,19 @@ public class AddCardProcessActivity extends AppCompatActivity implements View.On
     private AutoRelativeLayout rl_statusbar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add_card_process);
 
-        initView();
-        initDate();
-        initListener();
     }
 
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_add_card_process;
+    }
+
+    @Override
     @SuppressLint("SetJavaScriptEnabled")
-    private void initView() {
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -71,13 +74,15 @@ public class AddCardProcessActivity extends AppCompatActivity implements View.On
         webView.loadUrl("file:///android_asset/test_dw.html");
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String name = intent.getStringExtra("name");
         title_text.setText(name);
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

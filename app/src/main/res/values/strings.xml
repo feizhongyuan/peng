@@ -49,9 +49,8 @@
 
 
     <string name="name_tijianka">体检卡</string>
-    <string name="name_lijibangka">立即绑卡</string>
     <string name="name_zijidingzhi">自己定制</string>
-    <string name="name_zhuanjiadingzhi">专家定制（VIP）</string>
+    <string name="name_zhuanjiadingzhi">专家定制</string>
 
     <string name="name_zhenxuanjigou">甄选机构</string>
     <string name="name_zhenxuantaocan">甄选套餐</string>
@@ -75,6 +74,7 @@
 
     <string name="name_remaituijian">热卖推荐</string>
     <string name="name_pinzhishenghuo">品质生活</string>
+    <string name="name_xianshicuxiao">限时促销</string>
 
     <string name="name_shangpinmingcheng">商品名称AAAAA</string>
     <string name="name_shangpinjiage">￥888</string>
@@ -135,12 +135,29 @@
     <string name="name_querentijiao">确认提交</string>
 
 
+    <string name="name_touxiang">头像</string>
     <string name="name_xingming">姓名</string>
     <string name="name_xingbie">性别</string>
+    <string name="name_chushengriqi">出生日期</string>
+    <string name="name_shoujihaoma">手机号码</string>
+    <string name="name_shenfenzhenghaoma">身份证号码</string>
+    <string name="name_hunfou">婚否</string>
+    <string name="name_yufou">育否</string>
     <string name="name_lianxidianhua">联系电话</string>
     <string name="name_nianling">年龄</string>
     <string name="name_chengshi">城市</string>
     <string name="name_tijiao">提交</string>
+    <string name="name_hunyinzhuangkuang">婚姻状况</string>
+    <string name="name_jiguan">籍贯</string>
+    <string name="name_zhiye">职业</string>
+    <string name="name_xuexing">血型</string>
+    <string name="name_wenhuachengdu">文化程度</string>
+    <string name="name_shenfenzhenghao">身份证号</string>
+    <string name="name_dianhua">电话</string>
+    <string name="name_jiwangbingshi">既往病史</string>
+    <string name="name_zaifuyaowu">在服药物</string>
+    <string name="name_guominshi">过敏史</string>
+
 
     <string name="name_zhuanjia_zhiyi1">请注意核对联系电话</string>
     <string name="name_zhuanjia_zhiyi2">体检定制专家会在48小时内跟您联系</string>
@@ -205,12 +222,14 @@
     <string name="name_shenqingtongzhi">申请通知</string>
     <string name="name_ninkenengrenshi">您可能认识</string>
     <string name="name_tongyi">同意</string>
+    <string name="name_jujue">拒绝</string>
     <string name="name_yitongyi">已同意</string>
     <string name="name_yijujue">已拒绝</string>
     <string name="name_dengdaiyanzheng">等待验证</string>
     <string name="name_qingqiuguanliandangan">请求关联档案</string>
-    <string name="name_guanliandangan">关联档案:</string>
-    <string name="name_laiyuan">来源：</string>
+    <string name="name_guanliandangan">关联档案</string>
+    <string name="name_fujiaxinxi">附加信息</string>
+    <string name="name_laiyuan">来源</string>
     <string name="name_danganchuangjian">档案创建</string>
     <string name="name_xingmingchazhao">姓名查找</string>
     <string name="name_shenfenzhenghaochazhao">身份证号查找</string>
@@ -220,12 +239,9 @@
     <string name="name_guanliangengduodangan">关联更多档案</string>
 
 
-
-
-
-
-
-
+    <string name="name_shenqingxinxichuli">申请信息处理</string>
+    <string name="name_shenqingrenxinxi">申请人信息</string>
+    <string name="name_guanliandanganxinxi">关联档案信息</string>
 
 
     <string name="name_youpinshangcheng">优品商城</string>

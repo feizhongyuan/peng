@@ -10,13 +10,14 @@ import android.widget.TextView;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.SetMealListActivity;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 体检套餐分类 （弃用）
  */
-public class PhysicalSetMealActivity extends AppCompatActivity implements View.OnClickListener {
+public class PhysicalSetMealActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -39,16 +40,19 @@ public class PhysicalSetMealActivity extends AppCompatActivity implements View.O
     private AdvertBean.DataBean data;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_physical_set_meal);
-        initView();
-        initDate();
-        initListener();
+
 
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_physical_set_meal;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -88,13 +92,15 @@ public class PhysicalSetMealActivity extends AppCompatActivity implements View.O
         rl_taocan_4.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         title_text.setText("套餐分类");
         Intent intent = getIntent();
         data = (AdvertBean.DataBean) intent.getSerializableExtra("data");
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

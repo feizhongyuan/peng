@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.ShoppingCartBean;
 import com.maqueezu.el.ui.adapter.SingleProjectAdatper2;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -25,7 +26,7 @@ import java.util.List;
 /**
  * 调整体检项目
  */
-public class AdjustmentProjectActivity extends AppCompatActivity implements View.OnClickListener {
+public class AdjustmentProjectActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -59,16 +60,18 @@ public class AdjustmentProjectActivity extends AppCompatActivity implements View
     private List<ShoppingCartBean> kexuanList;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_adjustment_project);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_adjustment_project;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -119,7 +122,8 @@ public class AdjustmentProjectActivity extends AppCompatActivity implements View
         tv_adjustment_count.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         title_text.setText(R.string.name_tiaozhengxiangmu);
 
         shoppingCartBeanList = new ArrayList<>();
@@ -157,7 +161,8 @@ public class AdjustmentProjectActivity extends AppCompatActivity implements View
         mRecycler_kexuanxiangmu.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
         yixuanAdaper.setCheckListener(new SingleProjectAdatper2.CheckListener() {
             @Override
             public void checkGroup(int position, boolean isChecked) {

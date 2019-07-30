@@ -7,10 +7,14 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.maqueezu.el.R;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
-public class AllMessageActivity extends AppCompatActivity implements View.OnClickListener {
+/**
+ * 消息列表页
+ */
+public class AllMessageActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -52,16 +56,18 @@ public class AllMessageActivity extends AppCompatActivity implements View.OnClic
     private AutoRelativeLayout rl_yixuekefu;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_message);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_all_message;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -141,11 +147,13 @@ public class AllMessageActivity extends AppCompatActivity implements View.OnClic
         rl_yixuekefu.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         title_text.setText(R.string.name_xiaoxi);
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

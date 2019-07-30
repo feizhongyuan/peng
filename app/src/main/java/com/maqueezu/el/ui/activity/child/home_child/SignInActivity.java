@@ -17,6 +17,7 @@ import android.widget.TextView;
 import com.maqueezu.el.R;
 import com.maqueezu.el.ui.test.TestActivity;
 import com.maqueezu.utils.ui.FragmentContainerActivity;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.maqueezu.utils.ui.web.WebFragment;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -24,7 +25,7 @@ import com.zhy.autolayout.AutoRelativeLayout;
 /**
  * 签到页
  */
-public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
+public class SignInActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -38,16 +39,18 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private String url = "file:///android_asset/test_dw.html";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_sign_in);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_sign_in;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -103,11 +106,13 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         }
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

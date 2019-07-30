@@ -106,10 +106,9 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
     private TextView tv_pinzhishenghuo_3_name;
     private TextView tv_pinzhishenghuo_3_price;
     private AutoRelativeLayout rl_base_3;
-    private TextView mTv_gengduo_pinzhishenghuo_1;//品质生活1-更多
+    private TextView mTv_gengduo_pinzhishenghuo_1;//限时促销-更多
     private AutoRelativeLayout rl_pinzhishenghuo_1;
-    private ImageView img_pinzhishenghuo_;
-    private RecyclerView mRecycler_pinzhishenghuo;
+    private RecyclerView mRecycler_pinzhishenghuo;//限时促销列表
     private AutoRelativeLayout rl_base_4;
     private ImageView img_shoppingCart;//购物车
     private TextView tv_shoppingCart_num;//购物车数量
@@ -262,8 +261,6 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
         mTv_gengduo_pinzhishenghuo_1.setOnClickListener(this);
         rl_pinzhishenghuo_1 = (AutoRelativeLayout) rootView.findViewById(R.id.rl_pinzhishenghuo_1);
         rl_pinzhishenghuo_1.setOnClickListener(this);
-        img_pinzhishenghuo_ = (ImageView) rootView.findViewById(R.id.img_pinzhishenghuo_);
-        img_pinzhishenghuo_.setOnClickListener(this);
         mRecycler_pinzhishenghuo = (RecyclerView) rootView.findViewById(R.id.mRecycler_pinzhishenghuo);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(mActivity, 3);
         gridLayoutManager.setSmoothScrollbarEnabled(true);
@@ -330,7 +327,6 @@ public class ShoppingMallFragment extends BaseFragment implements View.OnClickLi
                 }
 
                 if (advListBeans != null){
-                    img_pinzhishenghuo_.setBackgroundResource(R.drawable.ic_launcher);
                     setmealAdapter.refresh(advListBeans);
                     refreshLayout.finishRefresh(2000);
                 }else {

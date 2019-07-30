@@ -25,6 +25,7 @@ import com.maqueezu.el.engine.DBManager;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.PhysicalOrganActivity;
 import com.maqueezu.el.ui.activity.child.physicalexamination_child.SetMealListActivity;
 import com.maqueezu.el.ui.adapter.SearchRecordAdapter;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.maqueezu.utils.view.ClearEditText;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
@@ -32,7 +33,10 @@ import com.zhy.autolayout.AutoRelativeLayout;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SearchActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+/**
+ * 搜索页
+ */
+public class SearchActivity extends OtherBaseActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -50,15 +54,18 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
     private SearchRecordAdapter searchRecordAdapter;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_search);
-        initView();
-        initData();
-        initListener();
+
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_search;
+    }
+
+    @Override
+    protected void initView() {
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         back_layout = (AutoLinearLayout) findViewById(R.id.back_layout);
         et_ProductSearch = (ClearEditText) findViewById(R.id.et_ProductSearch);
@@ -77,7 +84,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
         mRecycler_HotSearch.setLayoutManager(new GridLayoutManager(this,4));
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         list = new ArrayList<>();
         list.add("体检套餐");
         list.add("机构");
@@ -104,7 +112,8 @@ public class SearchActivity extends AppCompatActivity implements View.OnClickLis
 
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
         et_ProductSearch.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {

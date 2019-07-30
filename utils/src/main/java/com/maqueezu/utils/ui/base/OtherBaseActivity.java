@@ -20,21 +20,26 @@ public abstract class OtherBaseActivity extends AppCompatActivity implements Net
     public static NetBroadcastReceiver.NetChangeListener netEvent;// 网络状态改变监听事件
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState, @Nullable PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
         // 添加到Activity工具类
 //        BaseApplication.getAppContext().addActivity(this);
 
         // 初始化netEvent
         netEvent = this;
-        //		初始化View
+
+//		设置布局
+        setContentView(getLayoutId());
+//		初始化View
         initView();
 //		初始化数据
         initData();
 //		初始化监听
         initListener();
     }
+
+    protected abstract int getLayoutId();
 
     protected abstract void initView();
 

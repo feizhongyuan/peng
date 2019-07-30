@@ -46,8 +46,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/name_pingtaituijian"
-                        android:textStyle="bold"
                         android:textSize="@dimen/sp_16"
+                        android:textColor="@color/black"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"/>
                 </com.zhy.autolayout.AutoRelativeLayout>
@@ -154,7 +154,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/name_tijianka"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/sp_16"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"/>
@@ -162,7 +162,7 @@
                         android:id="@+id/tv_tijianka_count"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/sp_16"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"
@@ -173,7 +173,7 @@
                         android:id="@+id/mTv_tijianka_lijibangka"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/name_lijibangka"
+                        android:text="@string/name_tianjiatijianka"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="@dimen/dp_10"
@@ -235,7 +235,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/name_dingzhitijian"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/sp_16"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"/>
@@ -286,7 +286,8 @@
                             android:layout_marginTop="@dimen/dp_10"
                             android:layout_toRightOf="@id/img_zijitu"
                             android:text="DIY"
-                            android:textSize="@dimen/sp_15" />
+                            android:textStyle="bold"
+                            android:textSize="@dimen/sp_20" />
 
                         <TextView
                             android:id="@+id/tv_zijidingzhi"
@@ -301,7 +302,10 @@
                             android:layout_width="@dimen/dp_0_1"
                             android:layout_height="match_parent"
                             android:layout_alignParentRight="true"
-                            android:background="@color/black" />
+                            android:background="@color/black"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_marginBottom="@dimen/dp_10"
+                            />
                     </com.zhy.autolayout.AutoRelativeLayout>
 
                     <com.zhy.autolayout.AutoRelativeLayout
@@ -334,7 +338,8 @@
                             android:layout_marginTop="@dimen/dp_10"
                             android:layout_toRightOf="@id/img_zhuanjiatu"
                             android:text="1对1"
-                            android:textSize="@dimen/sp_15" />
+                            android:textStyle="bold"
+                            android:textSize="@dimen/sp_20" />
 
                         <TextView
                             android:id="@+id/tv_zhuanjiadingzhi"
@@ -376,7 +381,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/name_zhenxuantaocan"
-                        android:textStyle="bold"
+                        android:textColor="@color/black"
                         android:textSize="@dimen/sp_16"
                         android:layout_marginLeft="@dimen/dp_10"
                         android:layout_centerVertical="true"/>

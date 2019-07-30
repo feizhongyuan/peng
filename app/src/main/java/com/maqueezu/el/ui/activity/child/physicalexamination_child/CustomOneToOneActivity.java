@@ -16,13 +16,18 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.ui.adapter.FragmentAdapter;
 import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.CustomProblemFragment;
+import com.maqueezu.el.ui.view.NoScrollViewPager;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CustomOneToOneActivity extends AppCompatActivity implements View.OnClickListener {
+/**
+ * 1对1定制
+ */
+public class CustomOneToOneActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -31,7 +36,7 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
     private TextView title_text;
     private TextView right_text;
     private AutoRelativeLayout rl_statusbar;
-    private ViewPager mViewPager_OneToOne;//Viewpager展示
+    private NoScrollViewPager mViewPager_OneToOne;//Viewpager展示
     private Button bt_next;//下一步
     private TextView tv_jiankangzhuangkuang;
     private AutoRelativeLayout rl_jiankangzhuangkuang;
@@ -47,16 +52,18 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_custom_one_to_one);
 
-        initView();
-        initData();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_custom_one_to_one;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -72,7 +79,7 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
         right_text.setOnClickListener(this);
         rl_statusbar = (AutoRelativeLayout) findViewById(R.id.rl_statusbar);
         rl_statusbar.setOnClickListener(this);
-        mViewPager_OneToOne = (ViewPager) findViewById(R.id.mViewPager_OneToOne);
+        mViewPager_OneToOne = (NoScrollViewPager) findViewById(R.id.mViewPager_OneToOne);
         mViewPager_OneToOne.setOnClickListener(this);
         bt_next = (Button) findViewById(R.id.bt_next);
         bt_next.setOnClickListener(this);
@@ -93,7 +100,8 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
 
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         String title = intent.getStringExtra("title");
         title_text.setText(title);
@@ -113,8 +121,66 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
     }
 
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 //        bt_next.setBackgroundColor(R.color.def_title_text_color);
+//        页卡切换监听
+        mViewPager_OneToOne.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                switch (position){
+                    //当前为页卡1
+                    case 0:
+                        //从页卡1跳转转到页卡2
+                        if(currIndex == 1){
+                            resetTextViewTextColor();
+                            tv_jibingshi.setTextColor(getResources().getColor(R.color.white));
+                        }else if(currIndex == 2){//从页卡1跳转转到页卡3
+                            resetTextViewTextColor();
+                            tv_shenghuoxiguan.setTextColor(getResources().getColor(R.color.white));
+                        }
+                        break;
+
+                    //当前为页卡2
+                    case 1:
+                        //从页卡1跳转转到页卡2
+                        if (currIndex == 0) {
+                            resetTextViewTextColor();
+                            tv_jiankangzhuangkuang.setTextColor(getResources().getColor(R.color.black));
+                        } else if (currIndex == 2) { //从页卡1跳转转到页卡2
+                            resetTextViewTextColor();
+                            tv_shenghuoxiguan.setTextColor(getResources().getColor(R.color.white));
+                        }
+                        break;
+
+                    //当前为页卡3
+                    case 2:
+                        //从页卡1跳转转到页卡2
+                        if (currIndex == 0) {
+                            resetTextViewTextColor();
+                            tv_jiankangzhuangkuang.setTextColor(getResources().getColor(R.color.black));
+                        } else if (currIndex == 1) {//从页卡1跳转转到页卡2
+                            resetTextViewTextColor();
+                            tv_jibingshi.setTextColor(getResources().getColor(R.color.white));
+                        }
+                        break;
+                    default:
+                        break;
+                }
+                currIndex = position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
     }
 
 
@@ -125,14 +191,15 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
             case R.id.title_back_image:
                 finish();
                 break;
-            case R.id.bt_next:
+            case R.id.bt_next://下一步
 
                 Intent intent = new Intent(this, CustomExpertActivity.class);
                 startActivity(intent);
                 break;
             case R.id.rl_jiankangzhuangkuang:
             case R.id.tv_jiankangzhuangkuang:
-                mViewPager_OneToOne.setCurrentItem(0);
+//                mViewPager_OneToOne.setCurrentItem(0);
+                mViewPager_OneToOne.setCurrentItem(mViewPager_OneToOne.getCurrentItem() -1 , true);
                 break;
             case R.id.rl_jibingshi:
             case R.id.tv_jibingshi:
@@ -165,55 +232,12 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
         }
     }
 
-    /**
-     * 页卡切换监听
-     * @author weizhi
-     * @version 1.0
-     */
+
     public class MyOnPageChangeListener implements ViewPager.OnPageChangeListener{
 
         @Override
         public void onPageSelected(int position) {
-            switch (position){
-                //当前为页卡1
-                case 0:
-                    //从页卡1跳转转到页卡2
-                    if(currIndex == 1){
-                        resetTextViewTextColor();
-                        tv_jibingshi.setTextColor(getResources().getColor(R.color.white));
-                    }else if(currIndex == 2){//从页卡1跳转转到页卡3
-                        resetTextViewTextColor();
-                        tv_shenghuoxiguan.setTextColor(getResources().getColor(R.color.white));
-                    }
-                    break;
 
-                //当前为页卡2
-                case 1:
-                    //从页卡1跳转转到页卡2
-                    if (currIndex == 0) {
-                        resetTextViewTextColor();
-                        tv_jiankangzhuangkuang.setTextColor(getResources().getColor(R.color.black));
-                    } else if (currIndex == 2) { //从页卡1跳转转到页卡2
-                        resetTextViewTextColor();
-                        tv_shenghuoxiguan.setTextColor(getResources().getColor(R.color.white));
-                    }
-                    break;
-
-                //当前为页卡3
-                case 2:
-                    //从页卡1跳转转到页卡2
-                    if (currIndex == 0) {
-                        resetTextViewTextColor();
-                        tv_jiankangzhuangkuang.setTextColor(getResources().getColor(R.color.black));
-                    } else if (currIndex == 1) {//从页卡1跳转转到页卡2
-                        resetTextViewTextColor();
-                        tv_jibingshi.setTextColor(getResources().getColor(R.color.white));
-                    }
-                    break;
-                default:
-                    break;
-            }
-            currIndex = position;
         }
 
         @Override
@@ -225,7 +249,7 @@ public class CustomOneToOneActivity extends AppCompatActivity implements View.On
         public void onPageScrollStateChanged(int state) {
 
         }
-    };
+    }
 
     /**
      * 将顶部文字恢复默认值

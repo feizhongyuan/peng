@@ -14,6 +14,7 @@ import android.widget.FrameLayout;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.GoodsCatBean;
 import com.maqueezu.el.ui.adapter.GoodsSortLeftListAdapter;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ import java.util.List;
 /**
  * 商品分类
  */
-public class GoodsSortActivity extends AppCompatActivity {
+public class GoodsSortActivity extends OtherBaseActivity {
 
     private RecyclerView mRecycler_goodsSort;
     private FrameLayout fl_fragment;
@@ -32,16 +33,19 @@ public class GoodsSortActivity extends AppCompatActivity {
     private List<String> titles;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_goods_sort);
         mContext = this;
-        initView();
-        initDate();
-        initListener();
+
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_goods_sort;
+    }
+
+    @Override
+    protected void initView() {
 
         mRecycler_goodsSort = (RecyclerView) findViewById(R.id.mRecycler_goodsSort);
         fl_fragment = (FrameLayout) findViewById(R.id.fl_fragment);
@@ -49,7 +53,8 @@ public class GoodsSortActivity extends AppCompatActivity {
         mRecycler_goodsSort.addItemDecoration(new DividerItemDecoration(mContext, DividerItemDecoration.VERTICAL));
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
 //        Intent intent = getIntent();
 //        String name = intent.getStringExtra("name");
 //        goodsCatBean = (GoodsCatBean) intent.getSerializableExtra("data");
@@ -67,10 +72,10 @@ public class GoodsSortActivity extends AppCompatActivity {
             }
         });
         mRecycler_goodsSort.setAdapter(adapter);
-
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 }

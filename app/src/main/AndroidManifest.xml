@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
-    <!--网络状态-->
+    <!-- 网络状态 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <!-- <uses-permission android:name="android.permission.CLIPBOARD_SERVICE"/> -->
@@ -82,7 +82,11 @@
         <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertRecordsActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.CustomExpertDetailsActivity" />
         <activity android:name=".ui.activity.child.physicalexamination_child.SetMealEvaluateActivity" />
-        <activity android:name=".ui.activity.child.healthy_child.NewRelationApplyActivity"></activity>
+        <activity android:name=".ui.activity.child.healthy_child.NewRelationApplyActivity" />
+        <activity android:name=".ui.activity.child.healthy_child.ApplyInformationProcessActivity" />
+        <activity android:name=".ui.activity.child.healthy_child.SeeApplyInformationActivity" />
+        <activity android:name=".ui.activity.child.healthy_child.SeeArchiveInformationActivity" />
+        <activity android:name=".ui.activity.child.healthy_child.SwitchAchivesActivity"></activity>
     </application>
 
 </manifest>

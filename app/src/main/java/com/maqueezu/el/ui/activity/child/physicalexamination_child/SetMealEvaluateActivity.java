@@ -12,6 +12,7 @@ import com.maqueezu.el.R;
 import com.maqueezu.el.ui.adapter.FragmentAdapter;
 import com.maqueezu.el.ui.adapter.FragmentAdapter2;
 import com.maqueezu.el.ui.fragment.physicalexamination_child.SetMealEvaluateFragment;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
@@ -21,7 +22,7 @@ import java.util.List;
 /**
  * 套餐评价页
  */
-public class SetMealEvaluateActivity extends AppCompatActivity implements View.OnClickListener {
+public class SetMealEvaluateActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView title_back_image;
     private AutoLinearLayout back_layout;
@@ -45,16 +46,18 @@ public class SetMealEvaluateActivity extends AppCompatActivity implements View.O
     private List<Fragment> fragments;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_set_meal_evaluate);
 
-        initView();
-        initData();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_set_meal_evaluate;
+    }
+
+    @Override
+    protected void initView() {
 
         title_back_image = (ImageView) findViewById(R.id.title_back_image);
         title_back_image.setOnClickListener(this);
@@ -95,7 +98,8 @@ public class SetMealEvaluateActivity extends AppCompatActivity implements View.O
         mViewPager_SetMealEvaluate.setOnClickListener(this);
     }
 
-    private void initData() {
+    @Override
+    protected void initData() {
         fragments = new ArrayList<>();
         fragments.add(SetMealEvaluateFragment.newInstance());
         fragments.add(SetMealEvaluateFragment.newInstance());
@@ -104,7 +108,8 @@ public class SetMealEvaluateActivity extends AppCompatActivity implements View.O
         mViewPager_SetMealEvaluate.setAdapter(adapter);
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 

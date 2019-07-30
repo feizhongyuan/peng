@@ -12,13 +12,14 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.maqueezu.el.R;
 import com.maqueezu.el.pojo.AdvertBean;
+import com.maqueezu.utils.ui.base.OtherBaseActivity;
 import com.zhy.autolayout.AutoLinearLayout;
 import com.zhy.autolayout.AutoRelativeLayout;
 
 /**
  * 商品详情页
  */
-public class GoodsDetailActivity extends AppCompatActivity implements View.OnClickListener {
+public class GoodsDetailActivity extends OtherBaseActivity implements View.OnClickListener {
 
     private ImageView img_goodsDetail_item_tu;//详情展示图
     private TextView tv_goodsDetail_item_title;//商品名称
@@ -61,16 +62,18 @@ public class GoodsDetailActivity extends AppCompatActivity implements View.OnCli
     private AdvertBean.DataBean.AdvListBean advListBean;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_goods_detail);
 
-        initView();
-        initDate();
-        initListener();
     }
 
-    private void initView() {
+    @Override
+    protected int getLayoutId() {
+        return R.layout.activity_goods_detail;
+    }
+
+    @Override
+    protected void initView() {
         img_goodsDetail_item_tu = (ImageView) findViewById(R.id.img_goodsDetail_item_tu);
         img_goodsDetail_item_tu.setOnClickListener(this);
         tv_goodsDetail_item_title = (TextView) findViewById(R.id.tv_goodsDetail_item_title);
@@ -145,7 +148,8 @@ public class GoodsDetailActivity extends AppCompatActivity implements View.OnCli
         rl_base_attribute.setOnClickListener(this);
     }
 
-    private void initDate() {
+    @Override
+    protected void initData() {
         Intent intent = getIntent();
         advListBean = (AdvertBean.DataBean.AdvListBean) intent.getSerializableExtra("date");
 
@@ -160,7 +164,8 @@ public class GoodsDetailActivity extends AppCompatActivity implements View.OnCli
         tv_goodsDetail_item_note.setText(advListBean.getAtturl());
     }
 
-    private void initListener() {
+    @Override
+    protected void initListener() {
 
     }
 
